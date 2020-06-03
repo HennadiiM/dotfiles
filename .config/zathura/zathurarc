@@ -1,0 +1,7 @@
+set recolor "true"
+set recolor-darkcolor "#a4a4a4" #"#d8dee9"
+set recolor-lightcolor "#2c333c"
+
+set selection-clipboard clipboard
+# history(doesn't work)
+# map H feedkeys ":exec sh -c \"cat ~/.local/share/zathura/history | grep -Po '\[\K[^\]]*' | dmenu | xargs zathura\""
