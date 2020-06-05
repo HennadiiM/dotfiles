@@ -219,6 +219,11 @@ let g:riv_disable_indent = 1
 
 Bundle 'Rykka/InstantRst'
 let g:instant_rst_browser = 'surf'
-inoremap <c-r> <esc>:InstantRst<Enter>
+
+" in insert mode tap ctrl+r to launch InstantRst
+inoremap <c-r> <esc>:InstantRst<Enter>i
 "let g:instant_rst_forever = 1 " Preview all the buffer, but not launch
 "preview automatically
+"
+" highlight color name by this color
+Plugin 'ap/vim-css-color'
