@@ -179,14 +179,14 @@ nnoremap <C-s> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 
 
 
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-" Initialize plugin system
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"
+"" Make sure you use single quotes
+"
+""Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+"
+"" Initialize plugin system
+"call plug#end()
 
 
 

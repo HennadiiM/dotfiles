@@ -71,16 +71,6 @@
 ##exec $(get_session)
 #exec dwm
 #
-
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
-fi
-
-# twm &
 # xclock -geometry 50x50-1+1 &
 # xterm -geometry 80x50+494+51 &
 # xterm -geometry 80x20+494-0 &
@@ -90,19 +80,39 @@ fi
 #xscreensaver &
 #xsetroot -cursor_name left_ptr &
 
-
-# launch xmodmap after start 
-if [ -s ~/.Xmodmap ]; then
-    xmodmap ~/.Xmodmap
-fi
-
 # language
 #setxkbmap -model pc105 -layout us,ru, -option grp:alt_shift_toggle
 #setxkbmap -option terminate:ctrl_alt_bksp,grp:shifts_toggle ru,us
 
+
+
+
+# launch xmodmap after start 
+
+#xrdb -merge .Xresources
+
+setxkbmap -model pc104 -layout us,ru  -option grp:alt_shift_toggle
+
+# run xmodmap ONLY after setxkbmap. Else setxkbmap overwrite xmodmap settings
+if [ -s ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+#
 while true; do
     dwm >/dev/null 2>&1
 done
 
+# any of 2 lines above doesn't work! No wallpaper appears.
+#xpmroot ~/Downloads/wallpaper.jpg &
+xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
 
 exec dwm
+
+#/bin/xmonad
