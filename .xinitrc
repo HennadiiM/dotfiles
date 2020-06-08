@@ -91,7 +91,7 @@
 
 #xrdb -merge .Xresources
 
-setxkbmap -model pc104 -layout us,ru  -option grp:alt_shift_toggle
+#setxkbmap -model pc104 -layout us,ru  -option grp:alt_shift_toggle
 
 # run xmodmap ONLY after setxkbmap. Else setxkbmap overwrite xmodmap settings
 if [ -s ~/.Xmodmap ]; then
@@ -104,6 +104,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     done
     unset f
 fi
+slstatus &
 #
 while true; do
     dwm >/dev/null 2>&1
@@ -111,7 +112,7 @@ done
 
 # any of 2 lines above doesn't work! No wallpaper appears.
 #xpmroot ~/Downloads/wallpaper.jpg &
-xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
+#xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
 
 exec dwm
 

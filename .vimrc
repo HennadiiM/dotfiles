@@ -98,6 +98,11 @@ set spelllang=en,ru,uk
 setlocal spellfile=/home/prodper/.vim/spell/ru.utf-8.add
 setlocal spellfile+=/home/prodper/.vim/spell/en.utf-8.add
 setlocal spellfile+=/home/prodper/.vim/spell/uk.utf-8.add
+
+" disable spell check in file types:
+autocmd Filetype help setlocal nospell
+
+
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " disable spell check for comments

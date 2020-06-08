@@ -208,11 +208,13 @@ export LC_ALL="en_US.UTF-8"
 				# aliases
 
 # for ideas
-alias i='vim $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
+alias n=nvim
+
+alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
+
+alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
 
 alias e=ranger
-
-alias n=nvim
 
 # reload profile
 alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/prodper'
