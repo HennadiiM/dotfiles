@@ -1,15 +1,17 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+
 #include <X11/XF86keysym.h>
 //#include "vanitygaps.c"
 //#include "shiftview.c"
 
 static const unsigned int borderpx  = 0;        /* border pixel of Mod4Maskdows */
-static const unsigned int snap      = 5;//32;       /* snap pixel */
+static const unsigned int snap      = 0;//32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
+static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=13", "fontawesome:size=13" };
+static const char *fonts[]          = { "monospace:size=14", "fontawesome:size=14" };
 static const char dmenufont[]       = "monospace:size=13";
 //static const char col_gray1[]       = "#2c333c";
 //static const char col_gray2[]       = "#222222";
@@ -36,8 +38,19 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+//	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+//	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+
+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	//{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	//{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	//{ "st",      NULL,     NULL,           0,         0,          1,          -1,        -1 },
+	//{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
+	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,           0,        -1 },
+	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
+
 };
 
 /* layout(s) */
@@ -73,9 +86,9 @@ static const char *lock[] = {"slock", NULL};
 //static const char *volup[] = { "audio", "up", NULL };
 //static const char *voldown[] = { "audio", "down", NULL };
 //static const char *volmute[] = { "audio", "mute", NULL };
-static const char *audioplay[] = { "audio", "playpause", NULL };
-static const char *audioback[] = { "audio", "prev", NULL };
-static const char *audionext[] = { "audio", "next", NULL };
+//static const char *audioplay[] = { "audio", "playpause", NULL };
+//static const char *audioback[] = { "audio", "prev", NULL };
+//static const char *audionext[] = { "audio", "next", NULL };
 //static const char *backlightup[] = { "light", "-A", "5", NULL };
 //static const char *backlightdown[] = { "light", "-U", "5", NULL };
 
@@ -116,14 +129,18 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ Mod4Mask,			XK_l,	   spawn,	   {.v = lock }},
 // Media keys
-	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("amixer -q sset Master 5%+" )},
-	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("amixer -q sset Master 5%-" )},
+	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("amixer -q sset Master 10%+" )},
+	{ ShiftMask, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("amixer -q sset Master 3%+" )},
+	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("amixer -q sset Master 10%-" )},
+	{ ShiftMask, XF86XK_AudioLowerVolume,              spawn,          SHCMD("amixer -q sset Master 3%-" )},
 	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("amixer -q sset Master toggle")},
-	{ 0, XF86XK_AudioPlay,                     spawn,          {.v = audioplay } },
-	{ 0, XF86XK_AudioPrev,                     spawn,          {.v = audioback } },
-	{ 0, XF86XK_AudioNext,                     spawn,          {.v = audionext } },
+	//{ 0, XF86XK_AudioPlay,                     spawn,          {.v = audioplay } },
+	//{ 0, XF86XK_AudioPrev,                     spawn,          {.v = audioback } },
+	//{ 0, XF86XK_AudioNext,                     spawn,          {.v = audionext } },
 	{ 0, XF86XK_MonBrightnessUp,               spawn,          SHCMD("xbacklight -inc 10") },
+	{ ShiftMask, XF86XK_MonBrightnessUp,               spawn,          SHCMD("xbacklight -inc 3") },
 	{ 0, XF86XK_MonBrightnessDown,             spawn,          SHCMD("xbacklight -dec 10")},
+	{ ShiftMask, XF86XK_MonBrightnessDown,             spawn,          SHCMD("xbacklight -dec 3")},
 };
 
 /* button definitions */

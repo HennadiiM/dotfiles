@@ -8,7 +8,7 @@ set encoding=utf-8
 autocmd FileType lisp setlocal nolisp
 
 " copy to clipboard after selecting in visual mode
-vnoremap <C-c> "+y
+vnoremap <c-k> "+y
 " visual block can be created using ctrl+a combination
 nnoremap <c-a> <c-v>
 " in normal mode paste from clipboard using ctrl+v
@@ -82,7 +82,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
-" colorscheme for LaTeX
+" color scheme for LaTeX
 Plugin 'dylanaraps/wal.vim'
 
 colorscheme wal
@@ -99,11 +99,13 @@ setlocal spellfile=/home/prodper/.vim/spell/ru.utf-8.add
 setlocal spellfile+=/home/prodper/.vim/spell/en.utf-8.add
 setlocal spellfile+=/home/prodper/.vim/spell/uk.utf-8.add
 
+" auto spell correction
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
 " disable spell check in file types:
 autocmd Filetype help setlocal nospell
 
 
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " disable spell check for comments
 let g:tex_comment_nospell=1

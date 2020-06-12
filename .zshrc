@@ -216,5 +216,11 @@ alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
 
 alias e=ranger
 
-# reload profile
+# dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/prodper'
+
+alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
+alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
+
+#line below doesn't work. Maybe because aliases initializes after start
+#alias s=startx
