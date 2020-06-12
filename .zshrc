@@ -212,8 +212,6 @@ alias n=nvim
 
 alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
 
-alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
-
 alias e=ranger
 
 # dot add <filename> -- for store dotfiles 
@@ -221,6 +219,7 @@ alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/pro
 
 alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
 alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
+alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
 
-#line below doesn't work. Maybe because aliases initializes after start
+#line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx

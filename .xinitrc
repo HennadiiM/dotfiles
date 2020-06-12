@@ -51,13 +51,13 @@ fi
 
 # unique keyboard layout for each tag
 xxkb &
-#feh --bg-scale $HOME/sandbox/wallpapers/wallpaperflare.com_wallpaper(2).jpg &
+feh --bg-scale $HOME/sandbox/wallpapers/wallpaperflare.com_wallpaper.jpg &
 
 # Launch slstatus
-#slstatus &
+slstatus &
 
 # Launch dwmstatus
-dwmstatus 2>&1 >/dev/null &
+#dwmstatus 2>&1 >/dev/null &
 
 while true; do
     dwm >/dev/null 2>&1
