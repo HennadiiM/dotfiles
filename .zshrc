@@ -220,6 +220,16 @@ alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/pro
 alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
 alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
 alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
+alias do='n /home/prodper/Documents/knowledge-base/optimization/do,dont-do.md'
+
+# network connection aliases
+#alias senm='systemctl enable NetworkManager'
+#alias sdnm='systemctl disable NetworkManager'
+alias sstnm='systemctl start NetworkManager'
+alias sspnm='systemctl stop NetworkManager'
+
+alias dc='n $HOME/.config/dwm/config.h'
+alias dw='$HOME/.config/dwm'
 
 #line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx

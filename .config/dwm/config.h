@@ -26,20 +26,21 @@ static const char *colors[][3]      = {
 
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "1", "", "3", "", "", "5", "", "", "" }; // ,,
+static const char *tags[] = { "1", "龜", "3", "", "", "6", "", "", "" }; // ,,,,,
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "firefox", NULL,     NULL,           1 << 1,    0,          0,           0,        -1 },
-	{ "st",      NULL,     NULL,           1 << 0,         0,          1,           0,        -1 },
-	{ "TelegramDesktop", NULL,     NULL,           1 << 3,    0,          0,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
-//	{ "ranger",   NULL,      NULL,   1 << 6,       False,    	0,		0, 	-1 },
+	/* class     		instance  	title 	tags mask  	isfloating  	isterminal	noswallow  	monitor */
+	{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
+	{ "firefox", 		NULL,     	NULL,           1 << 1,		0,    		0,           	0,        -1 },
+	//{ "St",      		NULL,     	NULL,           1 << 2,		0,     		1,           	0,        -1 },
+	{ "qBittorrent",      	NULL,     	NULL,           1 << 8,		0,     		0,           	0,        -1 },
+	{ "TelegramDesktop", 	NULL,     	NULL,           1 << 3,		0,     		0,           	0,        -1 },
+	{ NULL,      		NULL,     	"Event Tester", 0,     		1,     		0,           	1,        -1 }, /* xev */
+	//{ "Ranger",   		NULL,      	NULL,   	1 << 6,       	0,    		0,		0, 	-1 },
 
 };
 
@@ -81,8 +82,11 @@ static const char *messenger[] = {"telegram-desktop", NULL};
 
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
+	// start program in it's tag and go to this tag simultaneously 
 	{ mod4,                       	XK_f,	  	spawn,          {.v = browser } },
+	{ mod4,                  	XK_f,      	view,           {.ui = 1 << 1} },
 	{ mod4,                       	XK_t,	  	spawn,          {.v = messenger } },
+	{ mod4,                       	XK_t,	  	view,          	{.ui = 1 << 3}},
 	//{ mod4,                       	XK_r,	  	spawn,          {.v = fmcmd}},
 	{ mod4,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },

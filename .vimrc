@@ -64,7 +64,7 @@ Plugin 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-set conceallevel=2
+set conceallevel=3
 let g:tex_conceal='abdmg'
 
 let g:tex_no_error=1
@@ -216,7 +216,7 @@ let g:riv_disable_indent = 1
 "setl foldmethod=expr                                                             
 "setl foldexpr=riv#fold#expr(v:lnum)                                              
 "setl foldtext=riv#fold#text()    
-" didn't help for remove * symbols
+" didn't help for fold * symbols
 "let g:riv_fold_level = 0
 "let g:riv_fold_auto_update = 0
 "filetype plugin indent on

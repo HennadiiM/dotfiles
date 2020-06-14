@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/prodper/.config/dwm'
 let g:netrw_dirhist_7='/home/prodper/.config/slstatus'
 let g:netrw_dirhist_6='/home/prodper/Documents/knowledge-base/routine'
 let g:netrw_dirhist_5='/home/prodper/.config/dwm'

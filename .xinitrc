@@ -51,7 +51,7 @@ fi
 
 # unique keyboard layout for each tag
 xxkb &
-feh --bg-scale $HOME/sandbox/wallpapers/wallpaperflare.com_wallpaper.jpg &
+feh --bg-scale $HOME/sandbox/wallpapers/terror.jpg &
 
 # Launch slstatus
 slstatus &
