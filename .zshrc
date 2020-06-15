@@ -230,6 +230,8 @@ alias sspnm='systemctl stop NetworkManager'
 
 alias dc='n $HOME/.config/dwm/config.h'
 alias dw='$HOME/.config/dwm'
+alias di='$HOME/.config/dwm && sudo make install'
+
 
 #line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx
