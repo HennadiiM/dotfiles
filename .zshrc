@@ -12,7 +12,7 @@ setopt  autocd autopushd 					#if only directory path is entered, cd there. Go b
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -165,7 +165,7 @@ bindkey '^[[B' history-substring-search-down
 # Apply different settigns for different terminals
 case $(basename "$(cat "/proc/$PPID/comm")") in
   login)
-    	RPROMPT="%{$fg[red]%} %(?..[%?])" 
+    	RPROMPT="%{$fg[red]%} %(?..[%?])"
     	alias x='startx ~/.xinitrc'      # Type name of desired desktop after x, xinitrc is configured for it
     ;;
 #  'tmux: server')
@@ -207,20 +207,29 @@ export LC_ALL="en_US.UTF-8"
 
 				# aliases
 
-# for ideas
 alias n=nvim
-
-alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
-
 alias e=ranger
+
+
 
 # dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/prodper'
 
+# standard git commands
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+
+# for files
 alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
 alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
-alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
 alias do='n /home/prodper/Documents/knowledge-base/optimization/do,dont-do.md'
+alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
+alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
+alias c='n /home/prodper/Documents/knowledge-base/1.philosophy/conclusions.md'
+alias h='n /home/prodper/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
+alias nms='n $HOME/.vim/UltiSnips/markdown.snippets'
 
 # network connection aliases
 #alias senm='systemctl enable NetworkManager'
@@ -228,10 +237,22 @@ alias do='n /home/prodper/Documents/knowledge-base/optimization/do,dont-do.md'
 alias sstnm='systemctl start NetworkManager'
 alias sspnm='systemctl stop NetworkManager'
 
-alias dc='n $HOME/.config/dwm/config.h'
+# dwm manipulations
+alias ndc='n $HOME/.config/dwm/config.h'
 alias dw='$HOME/.config/dwm'
 alias di='$HOME/.config/dwm && sudo make install'
+alias nc='n config.h'
+alias smi='sudo make install'
 
+alias nv='n $HOME/.vimrc'
+alias nz='n $HOME/.zshrc'
+alias nx='n $HOME/.xinitrc'
+
+alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
+alias mv='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+alias ma='time mpv --no-video'
+
+alias shu='shutdown now'
 
 #line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx
