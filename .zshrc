@@ -222,7 +222,7 @@ alias gc='git commit -m'
 alias gp='git push'
 
 # for files
-alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
+alias wh='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
 alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
 alias do='n $HOME/Documents/knowledge-base/optimization/do,dont-do.md'
 alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
@@ -249,8 +249,9 @@ alias nz='n $HOME/.zshrc'
 alias nx='n $HOME/.xinitrc'
 
 alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
-alias mv='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-alias ma='time mpv --no-video'
+alias vm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+alias vm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
+alias am='time mpv --no-video'
 
 alias shu='shutdown now'
 
