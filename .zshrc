@@ -213,7 +213,7 @@ alias e=ranger
 
 
 # dot add <filename> -- for store dotfiles 
-alias dot='/usr/bin/git --git-dir=/home/prodper/.dotfiles/ --work-tree=/home/prodper'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 
 # standard git commands
 alias gs='git status'
@@ -224,11 +224,11 @@ alias gp='git push'
 # for files
 alias w='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
 alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
-alias do='n /home/prodper/Documents/knowledge-base/optimization/do,dont-do.md'
+alias do='n $HOME/Documents/knowledge-base/optimization/do,dont-do.md'
 alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
 alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
-alias c='n /home/prodper/Documents/knowledge-base/1.philosophy/conclusions.md'
-alias h='n /home/prodper/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
+alias c='n $HOME/Documents/knowledge-base/1.philosophy/conclusions.md'
+alias h='n $HOME/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
 alias nms='n $HOME/.vim/UltiSnips/markdown.snippets'
 
 # network connection aliases
