@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/prodper/.vim'
 let g:netrw_dirhist_8='/home/prodper/.config/dwm'
 let g:netrw_dirhist_7='/home/prodper/.config/slstatus'
 let g:netrw_dirhist_6='/home/prodper/Documents/knowledge-base/routine'

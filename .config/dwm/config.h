@@ -47,7 +47,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -79,12 +79,16 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *lock[] = {"slock", NULL};
 static const char *browser[] = {"firefox", NULL};
 static const char *messenger[] = {"telegram-desktop", NULL};
+static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
+//static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 // didn't work
 //static const char *fmcmd[] = { "st", "-title", "ranger", "-e", "ranger", NULL }; 
 
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
-	// start program in it's tag and go to this tag simultaneously 
+	// start program in it's tag and go to this tag simultaneously sselp (didn't work)
+	//{ mod4,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
+	//{ mod4,				XK_y,		spawn,		SHCMD("st sselp")},
 	{ mod4,                       	XK_f,	  	spawn,          {.v = browser } },
 	{ mod4,                  	XK_f,      	view,           {.ui = 1 << 1} },
 	//{ mod4,                       XK_r,	  	spawn,          {.v = fmcmd}},
@@ -139,6 +143,8 @@ static Key keys[] = {
 	{ ShiftMask, XF86XK_MonBrightnessUp,            spawn,          SHCMD("xbacklight -inc 3") },
 	{ 0, XF86XK_MonBrightnessDown,            	spawn,          SHCMD("xbacklight -dec 10")},
 	{ ShiftMask, XF86XK_MonBrightnessDown,          spawn,          SHCMD("xbacklight -dec 3")},
+	{ ShiftMask,    XK_Print, 			spawn,		{.v = screenshot}},
+	{0,    		XK_Print, 			spawn,		SHCMD("sleep 0.5; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/Pictures/Screenshots/'")}, 
 };
 
 /* button definitions */

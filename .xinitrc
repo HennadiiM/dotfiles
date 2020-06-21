@@ -51,10 +51,11 @@ fi
 
 # unique keyboard layout for each tag
 xxkb &
-feh --bg-scale $HOME/sandbox/wallpapers/terror.jpg &
+feh --bg-scale /home/prodper/sandbox/wallpapers/rubick2.jpg &
 
 # Launch slstatus
 slstatus &
+#timeshift-launcher &  
 
 # Launch dwmstatus
 #dwmstatus 2>&1 >/dev/null &

@@ -13,6 +13,7 @@ vnoremap <c-k> "+y
 nnoremap <c-a> <c-v>
 " in normal mode paste from clipboard using ctrl+v
 inoremap <c-v> <esc>"+pa
+"inoremap c<Tab> 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -78,7 +79,7 @@ Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
@@ -234,3 +235,29 @@ inoremap <c-r> <esc>:InstantRst<Enter>i
 "
 " highlight color name by this color
 Plugin 'ap/vim-css-color'
+
+
+" disable search highlighting at all
+"set hlsearch!
+" show or not show highlighting
+nnoremap <F3> :set hlsearch!<CR>
+
+
+" save folds when exiting and restore when open document
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
+
+"FOLDS:
+"------
+" Automatically save folds
+"augroup AutoSaveFolds
+"  autocmd!
+"  au BufWinLeave ?* mkview 1
+"  au BufWinEnter ?* silent loadview 1
+"augroup END
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
