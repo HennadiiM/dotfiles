@@ -1,0 +1,11 @@
+rename branches
+shell nvim neovim-config.md
+shell nv
+rename 2020-quitantion3000.pdf
+shell mkdir torrent
+open_with 
+rename Misfits.S01E01.720p.BluRay.x264-AVCHD.srt
+rename Misfits.S01E01.1080p.BluRay.x264-AVCHD.srt
+find mp
+find vi
+find nv
