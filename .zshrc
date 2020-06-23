@@ -214,6 +214,9 @@ alias e=ranger
 
 # dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
+alias ds='dot status'
+alias da='dot add'
+alias dc='dot commit -m'
 
 # standard git commands
 alias gs='git status'
@@ -225,9 +228,10 @@ alias sn='sudo nvim'
 
 
 alias sps='sudo pacman -S'
-alias spR='sudo pacman -R'
-alias spRs='sudo pacman -Rs'
-alias spRdd='sudo pacman -Rdd'
+alias spr='sudo pacman -R'
+alias sprs='sudo pacman -Rs'
+alias sprdd='sudo pacman -Rdd'
+alias psync='sudo pacman -Syy'
 
 alias msri='makepkg -sri'
 
@@ -256,6 +260,7 @@ alias smi='sudo make install'
 alias smci='sudo make clean install'
 
 alias nv='n $HOME/.vimrc'
+alias nnv='n $HOME/.config/nvim/init.vim'
 alias nz='n $HOME/.zshrc'
 alias nx='n $HOME/.xinitrc'
 
