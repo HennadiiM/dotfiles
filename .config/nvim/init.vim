@@ -11,8 +11,11 @@ nnoremap <c-a> <c-v>
 " in normal mode paste from clipboard using ctrl+v
 inoremap <c-v> <esc>"+pa
 nnoremap <F3> :set hlsearch!<CR>
+" save changes in vim config file and reload it
+nnoremap <Leader>nr :w<CR> :so $MYVIMRC<CR> 
+nnoremap <Leader>ne :e $MYVIMRC<CR>
 
-set lazyredraw " draw only when finished operation (macros,...)
+set lazyredraw " draw result only when operation is finished (macros,...)
 
 set relativenumber
 set nonumber
@@ -20,9 +23,9 @@ set nonumber
 "set nospell
 setlocal spell
 set spelllang=en,ru,uk
-setlocal spellfile=/home/prodper/.vim/spell/ru.utf-8.add
-setlocal spellfile+=/home/prodper/.vim/spell/en.utf-8.add
-setlocal spellfile+=/home/prodper/.vim/spell/uk.utf-8.add
+setlocal spellfile=/home/prodper/.local/share/nvim/site/spell/ru.utf-8.add
+setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/en.utf-8.add
+setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/uk.utf-8.add
 
 
 augroup remember_folds  "save Folds and coursore position on exit
@@ -30,6 +33,9 @@ augroup remember_folds  "save Folds and coursore position on exit
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
+
+
+
 
 
 "---------Plugins-----------
