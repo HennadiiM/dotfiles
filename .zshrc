@@ -218,8 +218,18 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 # standard git commands
 alias gs='git status'
 alias ga='git add .'
-alias gc='git commit -m'
+alias gco='git commit -m'
 alias gp='git push'
+alias gcl='git clone'
+alias sn='sudo nvim'
+
+
+alias sps='sudo pacman -S'
+alias spR='sudo pacman -R'
+alias spRs='sudo pacman -Rs'
+alias spRdd='sudo pacman -Rdd'
+
+alias msri='makepkg -sri'
 
 # for files
 alias wh='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
@@ -239,10 +249,11 @@ alias sspnm='systemctl stop NetworkManager'
 
 # dwm manipulations
 alias ndc='n $HOME/.config/dwm/config.h'
-alias dw='$HOME/.config/dwm'
+alias cdw='$HOME/.config/dwm'
 alias di='$HOME/.config/dwm && sudo make install'
 alias nc='n config.h'
 alias smi='sudo make install'
+alias smci='sudo make clean install'
 
 alias nv='n $HOME/.vimrc'
 alias nz='n $HOME/.zshrc'
@@ -257,3 +268,4 @@ alias shu='shutdown now'
 
 #line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx
+

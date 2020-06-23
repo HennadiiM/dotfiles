@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] =  "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -63,20 +63,20 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	//{ datetime, "%s",           "%F %T" },
+	//{ datetime,  "%s",            "%F %T" },
 	//{ temp, 	"Temp %s", 		"/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"}
-	{ netspeed_rx, "r:%sB/s ", "wlp0s20f3" },
-	//{ netspeed_tx, "t:%sB/s  ", "wlp0s20f3" },
-	{ cpu_perc, "%s%% ", NULL	      },
-	{ temp, 	"%s°C ", 		"/sys/class/thermal/thermal_zone0/temp"},
-	{ run_command, "%2s ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	//{ run_command, "%4s  ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ ram_used, "%sB ", NULL	      },
-	{battery_perc,        "%s%% ",              "BAT0"},
-	//{battery_state,       battery charging state,          "BAT0"},
-	{battery_remaining,   "%s ",         "BAT0"},
-	//{ cpu_perc, " %s%%  ", NULL	      },
-	//{ run_command, ":%4s  ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	//{ ram_perc, " %s%%  ", NULL	      },
-	{ datetime, "%s",           "%a %b %d %r" },
+	{ netspeed_rx,  "r:%sB/s  ",  "wlp0s20f3" },
+	//{ netspeed_tx,  "t:%sB/s   ",  "wlp0s20f3" },
+	{ cpu_perc,  "%s%%  ", NULL	      },
+	{ temp, 	" %s°C  ", 		"/sys/class/thermal/thermal_zone0/temp"},
+	{ run_command,  "%2s  ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	//{ run_command,  "%4s   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ ram_used,  "%sB  ", NULL	      },
+	{battery_perc,         " %s%%  ",               "BAT0"},
+	//{battery_state,       battery charging state,           "BAT0"},
+	{battery_remaining,    "%s  ",          "BAT0"},
+	//{ cpu_perc,  " %s%%   ", NULL	      },
+	//{ run_command,  ":%4s   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	//{ ram_perc,  " %s%%   ", NULL	      },
+	{ datetime,  "%s",            "%a %b %d %r" },
 };
