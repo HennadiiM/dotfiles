@@ -52,9 +52,11 @@ fi
 # unique keyboard layout for each tag
 xxkb &
 feh --bg-scale /home/prodper/sandbox/wallpapers/rubick2.jpg &
-
-# Launch slstatus
+picom -f &
 slstatus &
+#xrandr --output eDP-1 --mode 1920x1080 &
+
+
 #timeshift-launcher &  
 
 # Launch dwmstatus
@@ -63,11 +65,13 @@ slstatus &
 while true; do
     dwm >/dev/null 2>&1
 done
-
-# any of 2 lines above doesn't work! No wallpaper appears.
-#xpmroot ~/Downloads/wallpaper.jpg &
-#xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
-
+#
+## any of 2 lines above doesn't work! No wallpaper appears.
+##xpmroot ~/Downloads/wallpaper.jpg &
+##xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
+#
 exec dwm
 
-#/bin/xmonad
+#exec startplasma-x11
+
+/bin/xmonad
