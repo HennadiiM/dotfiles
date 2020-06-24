@@ -2,6 +2,9 @@
 "    source ~/.vimrc
 
 set nocompatible "set compatible 'don't use .vimrc'. If there is .vimrc in $HOME, that nocompatible by default. But, 'better save than sorry'
+syntax on
+
+"set encoding=utf-8
 
 
 " copy to clipboard after selecting in visual mode
@@ -12,27 +15,29 @@ nnoremap <c-a> <c-v>
 inoremap <c-v> <esc>"+pa
 nnoremap <F3> :set hlsearch!<CR>
 " save changes in vim config file and reload it
-nnoremap <Leader>nr :w<CR> :so $MYVIMRC<CR> 
-nnoremap <Leader>ne :e $MYVIMRC<CR>
+nnoremap <Leader>nr 	:w<CR> :so $MYVIMRC<CR> 
+nnoremap <Leader>ne	:e $MYVIMRC<CR>
+nnoremap <Leader>u 	:UltiSnipsEdit<CR>
+
+" autocave when ctrl+o (jumping through files 
+nnoremap <c-o> 		:w<CR> <c-o>
+nnoremap gf		:w<CR> gf
+inoremap <c-[>		<c-[>:w<CR>
 
 set lazyredraw " draw result only when operation is finished (macros,...)
 
 set relativenumber
 set nonumber
 
-"set nospell
-setlocal spell
-set spelllang=en,ru,uk
+set nospell
+"setlocal spell spelllang=en,ru,uk
 setlocal spellfile=/home/prodper/.local/share/nvim/site/spell/ru.utf-8.add
 setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/en.utf-8.add
 setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/uk.utf-8.add
 
+"spell correction
+inoremap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-augroup remember_folds  "save Folds and coursore position on exit
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
 
 
 
@@ -40,7 +45,7 @@ augroup END
 
 "---------Plugins-----------
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'lyokha/vim-xkbswitch' " to use nvim with Russian
 Plug 'lervag/vimtex' "latex synchro
@@ -55,6 +60,12 @@ Plug 'ap/vim-css-color' "highlight color code by it's own color
 call plug#end()
 
 
+" ---------Settings for plugins---------
+"plugin 'lyokha/vim-xkbswitch'
+let g:xkbswitchEnabled = 1
+
+""set ttimeoutlen=0 "for powerline to remove delay after switching to normal move after typing in russian
+let g:xkbswitchNLayout = 'us'
 
 
 "map <C-n> :NERDTreeToggle<CR>
@@ -72,7 +83,7 @@ let g:tex_no_error=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 "RST to remove strange indent like that:
 "" * first row <Enter>
@@ -85,3 +96,23 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 "" in insert mode tap ctrl+r to launch InstantRst
 "inoremap <c-r> <esc>:InstantRst<Enter>i
 
+" -------------- Didn't work -----------
+" WTF? Lines below causes me problems with unicode!
+"augroup remember_folds  "save Folds and coursore position on exit
+"  autocmd!
+"  autocmd BufWinLeave * mkview
+"  autocmd BufWinEnter * silent! loadview
+"augroup END
+"
+" Tried to fix:
+"if has("multi_byte")
+"  if &termencoding == ""
+"    let &termencoding = &encoding
+"  endif
+"  set encoding=utf-8
+"  setglobal fileencoding=utf-8
+"  " Uncomment to have 'bomb' on by default for new files.
+"  " Note, this will not apply to the first, empty buffer created at Vim startup.
+"  setglobal bomb
+"  set fileencodings=ucs-bom,utf-8,latin1
+"endif

@@ -49,7 +49,7 @@ endif
 setlocal fillchars=
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -67,8 +67,8 @@ setlocal iminsert=0
 setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal indentexpr=GetVimIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\,0=\"\\\ 
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,#
 setlocal keywordprg=:help
@@ -100,10 +100,10 @@ setlocal shiftwidth=8
 setlocal signcolumn=auto
 setlocal nosmartindent
 setlocal softtabstop=0
-setlocal spell
+setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=~/.local/share/nvim/site/spell/ru.utf-8.add,~/.local/share/nvim/site/spell/en.utf-8.add,~/.local/share/nvim/site/spell/uk.utf-8.add
-setlocal spelllang=en,ru,uk
+setlocal spelllang=en
 setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
@@ -125,12 +125,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 16 - ((0 * winheight(0) + 19) / 38)
+let s:l = 102 - ((27 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+102
+normal! 015|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

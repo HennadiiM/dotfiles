@@ -54,8 +54,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -80,6 +80,8 @@ static const char *lock[] = {"slock", NULL};
 static const char *browser[] = {"firefox", NULL};
 static const char *messenger[] = {"telegram-desktop", NULL};
 static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
+static const char *torrent[] = {"qBittorrent", NULL};
+
 //static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 // didn't work
 //static const char *fmcmd[] = { "st", "-title", "ranger", "-e", "ranger", NULL }; 
@@ -96,6 +98,11 @@ static Key keys[] = {
 	{ mod4,                       	XK_r,	  	view,          {.ui = 1 << 2}},
 	{ mod4,                       	XK_t,	  	spawn,          {.v = messenger } },
 	{ mod4,                       	XK_t,	  	view,          	{.ui = 1 << 5}},
+	{ mod4,                       	XK_q,	  	spawn,          {.v = torrent } },
+	{ mod4,                       	XK_q,	  	view,          	{.ui = 1 << 8}},
+	{ mod4,                       	XK_w,	  	spawn,          SHCMD("st -e nmtui") },
+	{ mod4,                       	XK_w,	  	view,          	{.ui = 1 << 8}},
+
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
 	{ MODKEY,			XK_c, 	  	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,     	togglebar,      {0} },
@@ -109,8 +116,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,   	view,           {0} },
 	{ MODKEY, 		        XK_q,     	killclient,     {0} },
 	{ MODKEY,                       XK_t,     	setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,     	setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,     	setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,     	setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,     	setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space, 	setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space, 	togglefloating, {0} },
 	{ MODKEY,                       XK_0,     	view,           {.ui = ~0 } },
