@@ -234,6 +234,7 @@ alias spr='sudo pacman -R'
 alias sprs='sudo pacman -Rs'
 alias sprdd='sudo pacman -Rdd'
 alias psync='sudo pacman -Syy'
+alias pupd='sudo pacman -Syu'
 
 alias msri='makepkg -sri'
 
@@ -243,7 +244,7 @@ alias d='n $HOME/Documents/knowledge-base/routine/daily-notes.md'
 alias do='n $HOME/Documents/knowledge-base/optimization/do,dont-do.md'
 alias i='n $HOME/Documents/knowledge-base/ideas/ideas-newcoming.md'
 alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
-alias c='n $HOME/Documents/knowledge-base/1.philosophy/conclusions.md'
+alias c='n $HOME/Documents/knowledge-base/3.efficiency/conclusions.md'
 alias h='n $HOME/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
 alias nms='n $HOME/.vim/UltiSnips/markdown.snippets'
 
@@ -272,6 +273,7 @@ alias vm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a
 alias am='time mpv --no-video'
 
 alias shu='shutdown now'
+alias s='startx'
 
 #line below doesn't work. Maybe because aliases initializes after startx
 #alias s=startx
