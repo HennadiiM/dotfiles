@@ -35,6 +35,7 @@ fi
 
 #xrdb -merge .Xresources
 
+#setxkbmap -layout us,ru -option grp:caps_toggle
 setxkbmap -layout us,ru -variant ,ruu -option grp:caps_toggle
 
 # run xmodmap ONLY after setxkbmap. Else setxkbmap overwrite xmodmap settings
@@ -51,7 +52,7 @@ fi
 
 # unique keyboard layout for each tag
 xxkb &
-feh --bg-scale /home/prodper/sandbox/wallpapers/rubick2.jpg &
+feh --bg-scale /home/prodper/sandbox/wallpapers/rubick.jpg &
 picom -f &
 slstatus &
 #xrandr --output eDP-1 --mode 1920x1080 &

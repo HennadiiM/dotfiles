@@ -247,6 +247,7 @@ alias m='n $HOME/Documents/knowledge-base/ideas/most-important.md'
 alias c='n $HOME/Documents/knowledge-base/3.efficiency/conclusions.md'
 alias h='n $HOME/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
 alias nms='n $HOME/.vim/UltiSnips/markdown.snippets'
+alias k='n /home/prodper/Documents/knowledge-base/3.efficiency/keyboard.rst'
 
 # network connection aliases
 #alias senm='systemctl enable NetworkManager'
@@ -268,9 +269,11 @@ alias nz='n $HOME/.zshrc'
 alias nx='n $HOME/.xinitrc'
 
 alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
-alias vm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+alias yvm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+#alias pvm='prime-run mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
 alias vm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
-alias am='time mpv --no-video'
+alias yam='time mpv --no-video'
+alias yad='youtube-dl -f "bestaudio[ext=m4a]"'
 
 alias shu='shutdown now'
 alias s='startx'
