@@ -26,22 +26,24 @@ static const char *colors[][3]      = {
 
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "", "龜", "", "", "", "", "7", "", "" }; // ,,,,,,,
+//static const char *tags[] = { "", "龜", "", "", "", "", "7", "", "" }; // ,,,,,,,
+static const char *tags[] = { "", "龜", "", "", "", "", "7", "", "" }; //  , , , , , , , ,
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     		instance  	title 	tags mask  	isfloating  	isterminal	noswallow  	monitor */
+	/* class     		instance  	title 	    tags mask  	isfloating  	isterminal	noswallow  	monitor */
 	//{ "St",      		NULL,     	NULL,           1 << 0,		0,     		1,           	0,        -1 },
+	{ "St",   		    NULL,      	"ranger",   	1 << 0,     0,    		0,		        0, 	-1 },
 	{ "firefox", 		NULL,     	NULL,           1 << 1,		0,    		0,           	0,        -1 },
-	{ "St",   		NULL,      	"ranger",   	1 << 2,       	0,    		0,		0, 	-1 },
-	{ "mpv",   		NULL,      	NULL,		1 << 3,       	0,    		0,		0, 	-1 },
-	{ "Zathura", 		NULL,     	NULL,           1 << 4,		0,     		0,           	0,        -1 },
-	{ "TelegramDesktop", 	NULL,     	NULL,           1 << 5,		0,     		0,           	0,        -1 },
-	{ "qBittorrent",      	NULL,     	NULL,           1 << 8,		0,     		0,           	0,        -1 },
-
+	{ "Com.github.phase1geo.minder",NULL,    NULL,  1 << 2,       	0,    		0,		    0, 	-1 },
+	{ "Zathura", 		NULL,     	NULL,           1 << 3,		0,     		0,           	0,        -1 },
+	{ "mpv",   		    NULL,      	NULL,		    1 << 4,     0,    		0,		        0, 	       -1 },
+	{ "TelegramDesktop", 	NULL,     	NULL,       1 << 5,		0,     		0,           	0,        -1 },
+	{ "qBittorrent",    NULL,     	NULL,           1 << 8,		0,     		0,           	0,        -1 },
+	{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
 	{ NULL,      		NULL,     	"Event Tester", 0,     		1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 };
@@ -81,6 +83,7 @@ static const char *browser[] = {"firefox", NULL};
 static const char *messenger[] = {"telegram-desktop", NULL};
 static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 static const char *torrent[] = {"qBittorrent", NULL};
+static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
 
 //static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 // didn't work
@@ -91,11 +94,13 @@ static Key keys[] = {
 	// start program in it's tag and go to this tag simultaneously sselp (didn't work)
 	//{ mod4,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
 	//{ mod4,				XK_y,		spawn,		SHCMD("st sselp")},
+	{ mod4,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
+	{ mod4,                       	XK_r,	  	view,          {.ui = 1 << 0}},
 	{ mod4,                       	XK_f,	  	spawn,          {.v = browser } },
 	{ mod4,                  	XK_f,      	view,           {.ui = 1 << 1} },
 	//{ mod4,                       XK_r,	  	spawn,          {.v = fmcmd}},
-	{ mod4,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
-	{ mod4,                       	XK_r,	  	view,          {.ui = 1 << 2}},
+	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
+	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
 	{ mod4,                       	XK_t,	  	spawn,          {.v = messenger } },
 	{ mod4,                       	XK_t,	  	view,          	{.ui = 1 << 5}},
 	{ mod4,                       	XK_q,	  	spawn,          {.v = torrent } },
@@ -134,6 +139,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,     	                5)
 	TAGKEYS(                        XK_7,     	                6)
 	TAGKEYS(                        XK_8,     	                7)
+	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
+	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
+	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
+	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
+	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
+	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
 	TAGKEYS(                        XK_9,     	                8)
 	{ MODKEY|ShiftMask,             XK_q,     	quit,           {0} },
 	{ Mod4Mask,			XK_l,	  	spawn,	   {.v = lock }},
@@ -151,7 +162,7 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown,            	spawn,          SHCMD("xbacklight -dec 10")},
 	{ ShiftMask, XF86XK_MonBrightnessDown,          spawn,          SHCMD("xbacklight -dec 3")},
 	{ ShiftMask,    XK_Print, 			spawn,		{.v = screenshot}},
-	{0,    		XK_Print, 			spawn,		SHCMD("sleep 0.5; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/Pictures/Screenshots/'")}, 
+	{0,    		XK_Print, 			spawn,		SHCMD("sleep 1; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/Pictures/Screenshots/'")}, 
 };
 
 /* button definitions */

@@ -1,44 +1,70 @@
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after let &packpath = &runtimepath
 "    source ~/.vimrc
+"    for rst: * = - .
 
-set nocompatible "set compatible 'don't use .vimrc'. If there is .vimrc in $HOME, that nocompatible by default. But, 'better save than sorry'
-syntax on
-
-"set encoding=utf-8
+let tab=4
+execute "set tabstop=".tab
+"when indenting with '>'
+execute "set shiftwidth=".tab	   
+"4 spaces after tab pressed
+set expandtab
 
 
 
 " copy to clipboard after selecting in visual mode
-vnoremap <c-k> "+y
+vnoremap <c-k>       "+y
 " visual block can be created using ctrl+a combination
-nnoremap <c-a> <c-v>
+nmap <c-a> 		<c-v>
 " in normal mode paste from clipboard using ctrl+v
-inoremap <c-v> <esc>"+pa
-nnoremap <F3> :set hlsearch!<CR>
+inoremap <c-v> 		<esc>"+pa
+nmap <F3> 		   :set hlsearch!<CR>
+ino <F3>		         <esc>:set hlsearch!<CR>a
 
 " save changes in nvim config file and reload it
-nnoremap <Leader>nr 	:w<CR> :so $MYVIMRC<CR> 
-nnoremap <Leader>ne	:e $MYVIMRC<CR>
-nnoremap <Leader>u 	:UltiSnipsEdit<CR>
+nmap <Leader>nr 	:w<CR> :so $MYVIMRC<CR> 
+nmap <Leader>ne	:e $MYVIMRC<CR>
+nmap <Leader>u 	:UltiSnipsEdit<CR>
 
 " autocave when ctrl+o (jumping through files 
-nnoremap <c-o> 		:w<CR> <c-o>
-nnoremap gf		:w<CR> gf
-inoremap <c-[>		<c-[>:w<CR>
+nnoremap <c-o> 		        :w<CR><c-o>
+nmap gf		            :w<CR> gf
+inoremap <c-[>		    <c-[>:w<CR>
+
 
 " for rst (with blank line in the end)
-nnoremap <Leader>u*	yypVr*o<CR>
-nnoremap <Leader>u=	yypVr=o<CR>
-nnoremap <Leader>u-	yypVr-o<CR>
-nnoremap <Leader>u.	yypVr.o<CR>
+nmap <Leader>u*	yypVr*o<CR>
+nmap <Leader>u=	yypVr=o<CR>
+nmap <Leader>u-	yypVr-o<CR>
+nmap <Leader>u.	yypVr.o<CR>
 "no space line in the end
-nnoremap <Leader>un*	yypVr*j
-nnoremap <Leader>un=	yypVr=j
-nnoremap <Leader>un-	yypVr-j
-nnoremap <Leader>u.	yypVr.o<CR>
+nmap <Leader>un*	yypVr*j
+nmap <Leader>un=	yypVr=j
+nmap <Leader>un-	yypVr-j
+nmap <Leader>un.	yypVr.j
+
+"replace chars
+nmap <Leader>#	:%s/№/#/g<CR>
 
 "common comands
-nnoremap <Leader>ns	:set nospell<CR>
+nmap <Leader>ns	:set nospell<CR>
+nmap <Leader>ss	:set spell spelllang=en,ru<CR>
+
+"split to the right
+"cnoremap vsr		:set splitright<CR>vs  "it didn't work this way
+nmap <Leader>ntr		:set splitright<CR>:vsp 
+nmap <Leader>ntl		:set nosplitright<CR>:vsp 
+
+"generate mindmap
+nmap <Leader>m <Plug>(coc-markmap-create)
+" Create markmap from the selected lines
+vmap <Leader>m <Plug>(coc-markmap-create-v)
+
+"some examples of highlightning
+":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+":nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
+nmap <Leader>h :set cursorline!<CR> 
+
 
 set lazyredraw " draw result only when operation is finished (macros,...)
 
@@ -46,7 +72,7 @@ set relativenumber
 set nonumber
 
 "set nospell
-setlocal spell spelllang=en,ru,uk
+setlocal spell spelllang=en,ru
 setlocal spellfile=/home/prodper/.local/share/nvim/site/spell/ru.utf-8.add
 setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/en.utf-8.add
 setlocal spellfile+=/home/prodper/.local/share/nvim/site/spell/uk.utf-8.add
@@ -78,7 +104,10 @@ Plug 'lervag/vimtex' 		"latex synchro
 Plug 'SirVer/ultisnips' 	"snippets
 Plug 'ap/vim-css-color' 	"highlight color code by it's own color
 Plug 'Rykka/riv.vim' 		"rst
+Plug 'plasticboy/vim-markdown'	" advanced markdown
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "for markmap installation
 Plug 'dhruvasagar/vim-table-mode' 
+"Plug 'majutsushi/tagbar'    " tagbar
 "Plug 'Rykka/InstantRst' 	"rst preview
 "Plug 'preservim/nerdtree'
 "Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -102,7 +131,8 @@ let g:xkbswitchNLayout = 'us'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-set conceallevel=3
+set conceallevel=2
+let g:vim_markdown_conceall_code_blocks=1
 let g:tex_conceal='abdmg'
 let g:tex_no_error=1
 
@@ -123,7 +153,18 @@ let g:riv_disable_indent = 1
 "" in insert mode tap ctrl+r to launch InstantRst
 "inoremap <c-r> <esc>:InstantRst<Enter>i
 
+"vim-markdown (installed advanced plugin)
+let g:vim_markdown_math = 1
+let g:vim_markdown_new_list_item_indent = tab
+let g:vim_markdown_strikethrough = 0
 
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+map <Leader>ge <Plug>Markdown_EditUrlUnderCursor
+
+"table of contents
+nmap <Leader>toc      :set splitright<CR>:Toc<CR>
+nmap <Leader>itoc     :InsertToc<CR>
 
 
 
@@ -151,3 +192,13 @@ let g:riv_disable_indent = 1
 "  setglobal bomb
 "  set fileencodings=ucs-bom,utf-8,latin1
 "endif
+"
+"doesn't necessary?
+"set encoding=utf-8
+
+"didn't help to open files with no written extension with gf
+"set isfname-=:
+"
+"in nvim this by default
+"set nocompatible "set compatible 'don't use .vimrc'. If there is .vimrc in $HOME, that nocompatible by default. But, 'better save than sorry'
+"syntax on

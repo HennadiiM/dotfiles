@@ -1,12 +1,5 @@
-#let g:netrw_dirhistmax  =10
-#let g:netrw_dirhistcnt =0
-#let g:netrw_dirhist_0='/etc/tmpfiles.d'
-#let g:netrw_dirhist_9='/home/prodper/.vim'
-#let g:netrw_dirhist_8='/home/prodper/.config/dwm'
-#let g:netrw_dirhist_7='/home/prodper/.config/slstatus'
-#let g:netrw_dirhist_6='/home/prodper/Documents/knowledge-base/routine'
-#let g:netrw_dirhist_5='/home/prodper/.config/dwm'
-#let g:netrw_dirhist_4='/home/prodper/.vim'
-#let g:netrw_dirhist_3='/home/prodper/Documents/knowledge-base/ideas'
-#let g:netrw_dirhist_2='/home/prodper/.vim'
-#let g:netrw_dirhist_1='/home/prodper/Documents/knowledge-base/tools,progs/rst'
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/prodper/Documents/knowledge-base/4.school/startap/day-2'
+let g:netrw_dirhist_2='/home/prodper/Documents/knowledge-base/4.school/startap/day-1'
+let g:netrw_dirhist_1='/home/prodper/Documents/knowledge-base/4.school/startap/1-day'
