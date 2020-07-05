@@ -1,35 +1,50 @@
-rename branches
-shell nvim neovim-config.md
-shell nv
-rename 2020-quitantion3000.pdf
-shell mkdir torrent
-open_with 
-rename Misfits.S01E01.720p.BluRay.x264-AVCHD.srt
-rename Misfits.S01E01.1080p.BluRay.x264-AVCHD.srt
-find mp
-find vi
-rename dig-and-fix.md
-shell nvim talk to someone
-shell nvim talk-to-someone.md
-find nv
-shell markdown.snippets
-shell nvim markdown.snippets
-shell s
-rename scholars-are-so-scholars.md
-rename talk-to-someone.md
-shell nvim talk-don't-be-afraid.md
-shell nvim talk-no-fear.md
-shell nvim test.md
-rename testfasdfa.md
-rename testasdfas.md
-
-shell congrats.md
-shell nvim congrats.md
-rename 2.health,safety
-search vimin
-rename nvim.md
-rename 8.5,8.6
-rename 8.38.jpg
-shell nvim latex.md
-shell nvim написал-
-shell nvim said-in-group.md
+shell firefox 3.ogr-structure-evening-school.html
+rename 3.org-structure-evening-school.html
+rename 3.org-structure-evening-school.md
+shell firefox 
+shell nvim 3.org-structure-evening-school.html
+shell firefox 3.org-structure-evening-school.html
+rename 3.start-org-structure-evening-school.md
+rename 3.start-org-structure-evening-school.html
+rename 3.thoughts-start-org-structure.md
+rename 3.thoughts-middle-org-structure.md_
+rename 3.thoughts-middle-org-structure.md
+rename 3.middle-org-structure-evening-school.md
+rename 3.middle-org-structure-evening-school.png.png
+rename 3.Ген. Директор.xmind
+rename 3.middle-org-structure-evening-school.xmind
+rename 3.start-org-structure-evening-school.png
+rename 3.start-org-structure-evening-school.xmind
+rename 3.middle-org-structure-evening-school.png
+find si
+shell sxiv
+find sx
+shell nvim 4day.md
+shell 
+rename 1day
+rename 2day
+rename 3day
+rename 4day
+shell nvim mindmapping-soft
+rename mindmapping-soft.md
+shell nvim 4.find-cool-recruiter
+shell nvim 4.find-cool-recruiter.md
+shell mkdir 4-day
+rename 1-day
+rename 2-day
+rename 3-day
+shell mkdir 5day
+shell nvim 5-day.md
+shell mkdir 5-day
+rename 3day.md
+rename 2day.md
+rename 1day.md
+rename 5day.md
+search 
+find com.
+search com.
+rename srca
+rename pkgf
+shell 5.ди-hr-менеджер.md
+shell nvim 5.ди-hr-менеджер.md
+rename srcq
