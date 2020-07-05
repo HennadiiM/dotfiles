@@ -61,15 +61,15 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define ctrl ControlMask
-#define mod4 Mod4Mask
+#define MODKEY2 Mod1Mask
 
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                  KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|Mod4Mask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|MODKEY2,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|Mod4Mask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY|MODKEY2|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -92,21 +92,21 @@ static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
 	// start program in it's tag and go to this tag simultaneously sselp (didn't work)
-	//{ mod4,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
-	//{ mod4,				XK_y,		spawn,		SHCMD("st sselp")},
-	{ mod4,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
-	{ mod4,                       	XK_r,	  	view,          {.ui = 1 << 0}},
-	{ mod4,                       	XK_f,	  	spawn,          {.v = browser } },
-	{ mod4,                  	XK_f,      	view,           {.ui = 1 << 1} },
-	//{ mod4,                       XK_r,	  	spawn,          {.v = fmcmd}},
-	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
-	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
-	{ mod4,                       	XK_t,	  	spawn,          {.v = messenger } },
-	{ mod4,                       	XK_t,	  	view,          	{.ui = 1 << 5}},
-	{ mod4,                       	XK_q,	  	spawn,          {.v = torrent } },
-	{ mod4,                       	XK_q,	  	view,          	{.ui = 1 << 8}},
-	{ mod4,                       	XK_w,	  	spawn,          SHCMD("st -e nmtui") },
-	{ mod4,                       	XK_w,	  	view,          	{.ui = 1 << 8}},
+	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
+	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st sselp")},
+	{ MODKEY2,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
+	{ MODKEY2,                       	XK_r,	  	view,          {.ui = 1 << 0}},
+	{ MODKEY2,                       	XK_f,	  	spawn,          {.v = browser } },
+	{ MODKEY2,                  	XK_f,      	view,           {.ui = 1 << 1} },
+	//{ MODKEY2,                       XK_r,	  	spawn,          {.v = fmcmd}},
+	{ MODKEY2,                       	XK_m,	  	spawn,          {.v = mindmap } },
+	{ MODKEY2,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
+	{ MODKEY2,                       	XK_t,	  	spawn,          {.v = messenger } },
+	{ MODKEY2,                       	XK_t,	  	view,          	{.ui = 1 << 5}},
+	{ MODKEY2,                       	XK_q,	  	spawn,          {.v = torrent } },
+	{ MODKEY2,                       	XK_q,	  	view,          	{.ui = 1 << 8}},
+	{ MODKEY2,                       	XK_w,	  	spawn,          SHCMD("st -e nmtui") },
+	{ MODKEY2,                       	XK_w,	  	view,          	{.ui = 1 << 8}},
 
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
 	{ MODKEY,			XK_c, 	  	spawn,          {.v = termcmd } },
@@ -139,15 +139,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,     	                5)
 	TAGKEYS(                        XK_7,     	                6)
 	TAGKEYS(                        XK_8,     	                7)
-	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
-	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
-	{ mod4,                       	XK_m,	  	spawn,          {.v = mindmap } },
-	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
-	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
-	{ mod4,                       	XK_m,	  	view,          	{.ui = 1 << 2}},
 	TAGKEYS(                        XK_9,     	                8)
 	{ MODKEY|ShiftMask,             XK_q,     	quit,           {0} },
-	{ Mod4Mask,			XK_l,	  	spawn,	   {.v = lock }},
+	{ MODKEY2,			XK_l,	  	spawn,	   {.v = lock }},
 // Media keys
 	{ 0, XF86XK_AudioRaiseVolume,             	spawn,          SHCMD("amixer -q sset Master 10%+" )},
 	{ ShiftMask, XF86XK_AudioRaiseVolume,    	spawn,          SHCMD("amixer -q sset Master 3%+" )},
