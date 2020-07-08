@@ -23,7 +23,7 @@ ino <F3>		         <esc>:set hlsearch!<CR>a
 " save changes in nvim config file and reload it
 nmap <Leader>nr 	:w<CR> :so $MYVIMRC<CR> 
 nmap <Leader>ne	:e $MYVIMRC<CR>
-nmap <Leader>u 	:UltiSnipsEdit<CR>
+nmap <Leader>ue 	:UltiSnipsEdit<CR>
 
 " autocave when ctrl+o (jumping through files 
 nnoremap <c-o> 		        :w<CR><c-o>

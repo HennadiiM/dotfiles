@@ -1,16 +1,3 @@
-shell firefox 3.ogr-structure-evening-school.html
-rename 3.org-structure-evening-school.html
-rename 3.org-structure-evening-school.md
-shell firefox 
-shell nvim 3.org-structure-evening-school.html
-shell firefox 3.org-structure-evening-school.html
-rename 3.start-org-structure-evening-school.md
-rename 3.start-org-structure-evening-school.html
-rename 3.thoughts-start-org-structure.md
-rename 3.thoughts-middle-org-structure.md_
-rename 3.thoughts-middle-org-structure.md
-rename 3.middle-org-structure-evening-school.md
-rename 3.middle-org-structure-evening-school.png.png
 rename 3.Ген. Директор.xmind
 rename 3.middle-org-structure-evening-school.xmind
 rename 3.start-org-structure-evening-school.png
@@ -45,6 +32,19 @@ find com.
 search com.
 rename srca
 rename pkgf
-shell 5.ди-hr-менеджер.md
-shell nvim 5.ди-hr-менеджер.md
-rename srcq
+find com
+search c
+search com
+search minder
+search mind
+rename main-philosophy.md
+shell mkdir 6day
+shell touch 
+shell nvim 6day.md
+find loval
+find .lo
+find Tr
+delete
+shell mkdir 7-day
+shell mkdir 8day
+shell nvim 8day.md

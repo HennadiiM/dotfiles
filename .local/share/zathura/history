@@ -187,7 +187,7 @@ time=1593578923
 jumplist=24 0.5 0.61250000000000004 31 0.5 0.78750000000000009 27 0.5 0.6875 25 0.5 0.63749999999999996 
 
 [Jj6IJj0M70w0nZ2QOG/wjFKQXPTvy2VIQoQA1n1m7Zc=]
-page=39
+page=7
 offset=0
 zoom=0.60817231548938866
 rotate=0
@@ -195,8 +195,8 @@ pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.98721064814814807
-time=1593763853
+position-y=0.1872800925925926
+time=1594124872
 
 [/home/prodper/Documents/to-learn/business-maraphone/1-lesson/ПОЛЕЗНАЯ СТАТЬЯ - ОРЛЫ И УТКИ.pdf]
 page=2
@@ -274,7 +274,7 @@ position-y=0.94449121330106278
 time=1593629467
 
 [/home/prodper/Documents/to-learn/business-maraphone/2-day/ДЗ_-_День_2_.pdf]
-page=3
+page=0
 offset=0
 zoom=0.28583039826605255
 rotate=0
@@ -282,12 +282,12 @@ pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.60734017363851611
-time=1593667833
-jumplist=
+position-y=0.083741120757695339
+time=1594027107
+jumplist=3 0.5 0.60734017363851611 0 0.5 0.083741120757695339 
 
 [1BxWY9fRfT8brhdUYbJqcNBG8bKSeq7+/G4HKWRNY3g=]
-page=3
+page=0
 offset=0
 zoom=0.28583039826605255
 rotate=0
@@ -295,33 +295,33 @@ pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.60734017363851611
-time=1593667833
+position-y=0.083741120757695339
+time=1594027107
 
 [/home/prodper/Documents/to-learn/business-maraphone/2-day/ДЕНЬ 2 - БИЗНЕС-МОДЕЛЬ (1).pdf]
-page=1
+page=39
 offset=0
 zoom=0.59427028055754338
 rotate=0
 pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
-position-x=0.48827292110874199
-position-y=0.037476917067165418
-time=1593844461
-jumplist=24 0.5 0.61238458533582707 0 0.5 0.012500000000000002 
+position-x=0.5
+position-y=0.98750000000000004
+time=1594027452
+jumplist=24 0.5 0.61238458533582707 0 0.5 0.012500000000000002 1 0.48827292110874199 0.037476917067165418 0 0.5 0.012559482942304506 
 
 [OmxDHk8zKmA8bWxTaABOP9BGMI9osZpuOk42c3IwMak=]
-page=1
+page=39
 offset=0
 zoom=0.59427028055754338
 rotate=0
 pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
-position-x=0.48827292110874199
-position-y=0.037476917067165418
-time=1593844461
+position-x=0.5
+position-y=0.98750000000000004
+time=1594027452
 
 [/home/prodper/Documents/to-learn/business-maraphone/2-day/ИНСТРУКЦИЯ.pdf]
 page=2
@@ -885,7 +885,7 @@ position-y=0.83438243964714442
 time=1593869222
 
 [/home/prodper/Documents/to-learn/business-maraphone/5-day/ДЕНЬ 5 - ПАПКА СОТРУДНИКА.pdf]
-page=7
+page=24
 offset=0
 zoom=0.59409425263083804
 rotate=0
@@ -893,12 +893,12 @@ pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.25862068965517243
-time=1593961439
-jumplist=3 0.48799999999999999 0.12065812601977105 2 0.48799999999999999 0.086206896551724144 5 0.48799999999999999 0.18956058495586484 2 0.48799999999999999 0.086206896551724144 15 0.5 0.53448275862068961 2 0.48799999999999999 0.086206896551724144 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 17 0.5 0.60344827586206895 28 0.5 0.98275862068965514 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 2 0.5 0.086206896551724144 28 0.5 0.98275862068965514 16 0.5 0.56896551724137934 28 0.5 0.98275862068965514 19 0.51200000000000001 0.67241379310344829 0 0.5 0.017241379310344827 19 0.51200000000000001 0.67241379310344829 0 0.5 0.017241379310344827 19 0.51200000000000001 0.67241379310344829 14 0.5 0.48432550697188376 28 0.5 0.98275862068965514 16 0.5 0.56896551724137934 28 0.5 0.98275862068965514 7 0.5 0.25862068965517243 0 0.5 0.017241379310344827 7 0.5 0.25862068965517243 28 0.5 0.98275862068965514 27 0.5 0.94827586206896552 0 0.5 0.017241379310344827 27 0.5 0.94827586206896552 0 0.5 0.017241379310344827 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 
+position-y=0.84482758620689657
+time=1594041871
+jumplist=3 0.48799999999999999 0.12065812601977105 2 0.48799999999999999 0.086206896551724144 5 0.48799999999999999 0.18956058495586484 2 0.48799999999999999 0.086206896551724144 15 0.5 0.53448275862068961 2 0.48799999999999999 0.086206896551724144 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 17 0.5 0.60344827586206895 28 0.5 0.98275862068965514 26 0.5 0.91379310344827591 0 0.5 0.017241379310344827 2 0.5 0.086206896551724144 28 0.5 0.98275862068965514 16 0.5 0.56896551724137934 28 0.5 0.98275862068965514 19 0.51200000000000001 0.67241379310344829 0 0.5 0.017241379310344827 19 0.51200000000000001 0.67241379310344829 0 0.5 0.017241379310344827 19 0.51200000000000001 0.67241379310344829 14 0.5 0.48432550697188376 28 0.5 0.98275862068965514 16 0.5 0.56896551724137934 28 0.5 0.98275862068965514 7 0.5 0.25862068965517243 0 0.5 0.017241379310344827 7 0.5 0.25862068965517243 28 0.5 0.98275862068965514 27 0.5 0.94827586206896552 0 0.5 0.017241379310344827 27 0.5 0.94827586206896552 0 0.5 0.017241379310344827 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 27 0.5 0.94827586206896552 7 0.5 0.25862068965517243 28 0.5 0.98275862068965514 0 0.5 0.017241379310344827 5 0.5 0.18965517241379309 28 0.5 0.98275862068965514 27 0.5 0.94827586206896552 0 0.5 0.017241379310344827 11 0.5 0.39655172413793105 28 0.5 0.98267641968455077 16 0.5 0.56896551724137934 28 0.5 0.98267641968455077 25 0.5 0.87931034482758619 28 0.5 0.98267641968455077 
 
 [U0F7vC1MCQLX6J8DsNOJ68/gaCs7iPDH307S347XQmA=]
-page=7
+page=24
 offset=0
 zoom=0.59409425263083804
 rotate=0
@@ -906,8 +906,8 @@ pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.25862068965517243
-time=1593961439
+position-y=0.84482758620689657
+time=1594041871
 
 [/home/prodper/Documents/Hobbies,self-dev/method-slavov(T).djvu]
 page=97
@@ -946,3 +946,316 @@ position-x=0.5
 position-y=0.18087061948501321
 time=1593950376
 jumplist=7 0.5 0.97573931840132455 0 0.5 0.024268494663231506 
+
+[/home/prodper/Documents/to-learn/business-maraphone/1-day/ДЕНЬ 1 - ЛИДЕРСТВО-2.pdf]
+page=7
+offset=0
+zoom=0.60817231548938866
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.1872800925925926
+time=1594124872
+jumplist=39 0.5 0.98721064814814818 0 0.5 0.012280092592592592 38 0.5 0.96228009259259262 0 0.5 0.012280092592592592 39 0.5 0.98728009259259264 0 0.5 0.012280092592592592 
+
+[/home/prodper/Documents/to-learn/business-maraphone/5-day/Ассистент директора.pdf]
+page=2
+offset=0
+zoom=1.4714070838782307
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.87625408972201235
+time=1594062124
+jumplist=0 0.5 0.29439511653718092 0 0.5 0.16666666666666663 1 0.5 0.35816805847719241 0 0.5 0.065131982811540826 0 0.5 0.14877300997194021 0 0.23842209896224104 0.12374138464583941 
+
+[Io2fT+Bf+sT8YDa1dL8EXHOO1gi2x8/wlBxkbIZ4Pqw=]
+page=2
+offset=0
+zoom=1.4714070838782307
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.87625408972201235
+time=1594062124
+
+[/home/prodper/Downloads/5.ди-hr-менеджер(2).pdf]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.49973944762897338
+position-y=0.58597201767304885
+time=1594043644
+jumplist=0 0.5 0.5 0 0.5 0.19532400589101626 
+
+[gQQ3WvCceMvtIWkvCSBtJHZ99IKteEynAZKdRuC2rdY=]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.49973944762897338
+position-y=0.58597201767304885
+time=1594043644
+
+[/home/prodper/Downloads/5.пк-ассистента(1).pdf]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.49973944762897338
+position-y=0.19532400589101651
+time=1594043653
+jumplist=0 0.5 0.5 0 0.5 0.19532400589101626 
+
+[qmrvrCFPRcS8RfMI6VeCcFxV0Q82vylud8erOj+pK18=]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.49973944762897338
+position-y=0.19532400589101651
+time=1594043653
+
+[/home/prodper/Downloads/5.пк-переговорщика(3).pdf]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.50026055237102662
+position-y=0.78129602356406502
+time=1594043659
+jumplist=0 0.5 0.5 0 0.5 0.19532400589101626 
+
+[IY3k2nbr0OeDQJmVEJEHIKo2B8q8oDzcIf/nLK6UhvI=]
+page=0
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.50026055237102662
+position-y=0.78129602356406502
+time=1594043659
+
+[/home/prodper/Documents/to-learn/business-maraphone/6-day/Карточки.pdf]
+page=0
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.083333333333333329
+time=1594062124
+jumplist=
+
+[VuLf0A3vaz/va0CtzlG0Klov3/0pRr9m4gTE1I0C00g=]
+page=0
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.083333333333333329
+time=1594062124
+
+[/home/prodper/Documents/to-learn/business-maraphone/6-day/ДЕНЬ 6 - Адаптация сотрудника. 1_1 беседы.pdf]
+page=28
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.94999999999999996
+time=1594124873
+jumplist=3 0.5 0.11666666666666667 29 0.5 0.98333333333333328 28 0.49098621420996824 0.9500303420278936 0 0.5 0.016666666666666666 29 0.5 0.98333333333333328 28 0.5 0.94999999999999996 0 0.5 0.016666666666666666 28 0.5 0.94999999999999996 16 0.5 0.55000000000000004 28 0.5 0.94999999999999996 0 0.5 0.016666666666666666 28 0.5 0.94999999999999996 29 0.5 0.98333333333333328 
+
+[5pS0sQCfvsFtYp2RdhhG78D4ep0DZ55jzMDWMWH0qkk=]
+page=28
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.94999999999999996
+time=1594124873
+
+[/home/prodper/Documents/to-learn/business-maraphone/6-day/Велкамбук_LABA.pdf]
+page=19
+offset=0
+zoom=1.1948198198198199
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.97499999999999998
+time=1594116949
+jumplist=
+
+[NMXNTSxf0c4wrO+QZWvPRDh07/9PwElBYIyeBDj+ZXI=]
+page=19
+offset=0
+zoom=1.1948198198198199
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.97499999999999998
+time=1594116949
+
+[/home/prodper/Documents/to-learn/business-maraphone/6-day/Корпоративные ценности.pdf]
+page=8
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.94444444444444431
+time=1594114464
+jumplist=8 0.5 0.94444444444444431 0 0.5 0.055555555555555559 7 0.5 0.83333333333333337 8 0.5 0.94444444444444431 
+
+[LGJuuRR1tXGvekTUp4V57oFlJWH1QLSYQ3ZfNbGWNNw=]
+page=8
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.94444444444444431
+time=1594114464
+
+[/home/prodper/Documents/knowledge-base/4.school/startap/homework/6.corporative-values.pdf]
+page=0
+offset=0
+zoom=0.81302681992337167
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.071428571428571425
+time=1594128669
+jumplist=6 0.5 0.9285714285714286 0 0.5 0.071428571428571425 
+
+[QL1cLkXXr6sPLm9c9ExEIEbjGoXMddjMtuWxCrZV2E4=]
+page=0
+offset=0
+zoom=0.81302681992337167
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.071428571428571425
+time=1594128669
+
+[/home/prodper/Documents/to-learn/business-maraphone/7-day/23 способа мотивации .pdf]
+page=26
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.99276834155783966
+time=1594194502
+jumplist=
+
+[B1zJrYOZ+LBnuZJfJVXH02DLx2vKqJkC3eqbV/VKtJg=]
+page=26
+offset=0
+zoom=1.4713759479956665
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.99276834155783966
+time=1594194502
+
+[/home/prodper/Downloads/ДЕНЬ 7 - ПАПКА СОТРУДНИКА.pdf]
+page=30
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.9838709677419355
+time=1594194511
+jumplist=0 0.5 0.016129032258064516 30 0.5 0.9838709677419355 
+
+[aintVKLfwJLJoEszNez2+D2psyzU2ftDCt/iHy2vLAk=]
+page=30
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.9838709677419355
+time=1594194511
+
+[/home/prodper/Downloads/Telegram Desktop/ДЗ_-_День_7.pdf]
+page=4
+offset=0
+zoom=0.73588729341641834
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.67421594537532503
+time=1594219384
+jumplist=5 0.5 0.80473761699442647 0 0.5 0.027903429413002317 
+
+[AzS9+Z/oPmrR1jRaSLzrXUbZ3r9y0hg8+o7b/HVoTIY=]
+page=4
+offset=0
+zoom=0.73588729341641834
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.67421594537532503
+time=1594219384
