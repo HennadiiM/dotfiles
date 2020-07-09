@@ -33,6 +33,7 @@ linux-headers
 m4
 make
 mesa-demos
+minder-git
 mpv
 mtools
 neovim
@@ -52,6 +53,7 @@ powertop
 pulseaudio
 python-pyalsa
 python-pynvim
+python-ueberzug
 qbittorrent
 ranger
 scrot
@@ -64,13 +66,16 @@ the_silver_searcher
 thermald
 tlp
 ttf-font-awesome
+ttf-iosevka
 unzip
+vue
 webkit2gtk
 wget
 which
 wireless_tools
 wpa_supplicant
 xclip
+xmind
 xorg-bdftopcf
 xorg-docs
 xorg-font-util

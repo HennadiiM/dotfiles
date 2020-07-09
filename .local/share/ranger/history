@@ -46,5 +46,5 @@ find .lo
 find Tr
 delete
 shell mkdir 7-day
-shell mkdir 8day
-shell nvim 8day.md
+shell mkdir 8-day.md
+rename 8-day

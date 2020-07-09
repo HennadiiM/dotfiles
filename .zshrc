@@ -248,6 +248,7 @@ alias c='n $HOME/Documents/knowledge-base/3.efficiency/conclusions.md'
 alias h='n $HOME/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.md'
 alias nms='n $HOME/.vim/UltiSnips/markdown.snippets'
 alias k='n /home/prodper/Documents/knowledge-base/3.efficiency/keyboard.rst'
+alias chi='n /home/prodper/Documents/knowledge-base/3.efficiency/chill.md'
 
 # network connection aliases
 #alias senm='systemctl enable NetworkManager'
