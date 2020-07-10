@@ -1186,29 +1186,29 @@ position-y=0.071428571428571425
 time=1594128669
 
 [/home/prodper/Documents/to-learn/business-maraphone/7-day/23 способа мотивации .pdf]
-page=26
+page=2
 offset=0
-zoom=1.4713759479956665
+zoom=0.57479008866841019
 rotate=0
 pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.99276834155783966
-time=1594194502
-jumplist=
+position-y=0.084246449640753784
+time=1594320099
+jumplist=26 0.5 0.99276834155783966 0 0.5 0.007234222440408008 
 
 [B1zJrYOZ+LBnuZJfJVXH02DLx2vKqJkC3eqbV/VKtJg=]
-page=26
+page=2
 offset=0
-zoom=1.4713759479956665
+zoom=0.57479008866841019
 rotate=0
 pages-per-row=1
 first-page-column=1:2
 page-right-to-left=false
 position-x=0.5
-position-y=0.99276834155783966
-time=1594194502
+position-y=0.084246449640753784
+time=1594320099
 
 [/home/prodper/Downloads/ДЕНЬ 7 - ПАПКА СОТРУДНИКА.pdf]
 page=30
@@ -1360,3 +1360,79 @@ position-x=0.5
 position-y=0.66129032258064513
 time=1594307041
 jumplist=21 0.5 0.69354838709677424 0 0.5 0.016205895830151213 
+
+[/home/prodper/Downloads/ДЕНЬ 9 - Увольнение сотрудников и решение конфликтов.pdf]
+page=0
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.014285714285714285
+time=1594320106
+jumplist=
+
+[C166kavd9NnbKVAt3Lqmp/5/erPF1Q/BohF31uOHhxQ=]
+page=33
+offset=0
+zoom=0.60824397477011083
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.95689153439153452
+time=1594369899
+
+[/home/prodper/Downloads/ДЕНЬ 9 - Регулярный менеджмент и основные показатели в бизнесе.pdf]
+page=0
+offset=0
+zoom=0.59747298771689017
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.014285714285714285
+time=1594320145
+jumplist=
+
+[/home/prodper/Documents/to-learn/business-maraphone/9-day/ДЕНЬ 9 - Регулярный менеджмент и основные показатели в бизнесе.pdf]
+page=33
+offset=0
+zoom=0.60824397477011083
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.95689153439153452
+time=1594369899
+jumplist=0 0.5 0.014285714285714285 34 0.5 0.98571428571428565 0 0.5 0.014285714285714285 32 0.5 0.92832010582010593 34 0.5 0.9854629629629631 
+
+[/home/prodper/Documents/to-learn/business-maraphone/9-day/ДЗ_-_День_9.pdf]
+page=5
+offset=0
+zoom=0.73588729341641834
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.967455984295442
+time=1594369833
+jumplist=2 0.5 0.4068513179150563 1 0.5 0.19922066764850269 2 0.5 0.3658873343151694 
+
+[EbhdVql0R3jSdPcoXZwFvkkV0mSrKNymg7ZGJeaVP3w=]
+page=5
+offset=0
+zoom=0.73588729341641834
+rotate=0
+pages-per-row=1
+first-page-column=1:2
+page-right-to-left=false
+position-x=0.5
+position-y=0.967455984295442
+time=1594369833

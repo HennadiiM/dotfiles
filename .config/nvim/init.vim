@@ -54,10 +54,6 @@ nmap <Leader>ss	:set spell spelllang=en,ru<CR>
 nmap <Leader>ntr		:set splitright<CR>:vsp 
 nmap <Leader>ntl		:set nosplitright<CR>:vsp 
 
-"generate mindmap
-nmap <Leader>m <Plug>(coc-markmap-create)
-" Create markmap from the selected lines
-vmap <Leader>m <Plug>(coc-markmap-create-v)
 
 "some examples of highlightning
 ":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
@@ -65,6 +61,9 @@ vmap <Leader>m <Plug>(coc-markmap-create-v)
 ":nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 nmap <Leader>h :set cursorline!<CR> 
 
+"run python script
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 set lazyredraw " draw result only when operation is finished (macros,...)
 
@@ -167,6 +166,10 @@ nmap <Leader>toc      :set splitright<CR>:Toc<CR>
 nmap <Leader>itoc     :InsertToc<CR>
 
 
+"generate mindmap
+nmap <Leader>m <Plug>(coc-markmap-create)
+" Create markmap from the selected lines
+vmap <Leader>m <Plug>(coc-markmap-create-v)
 
 
 

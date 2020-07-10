@@ -272,7 +272,7 @@ alias nx='n $HOME/.xinitrc'
 alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
 alias yvm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
 #alias pvm='prime-run mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-alias vm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
+alias yvm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
 alias yam='time mpv --no-video'
 alias yad='youtube-dl -f "bestaudio[ext=m4a]"'
 

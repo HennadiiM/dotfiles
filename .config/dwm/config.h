@@ -11,7 +11,9 @@ static const unsigned int snap      = 0;//32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "fontawesome:size=12", "monospace:size=10" };
+static const char *fonts[]          = { "fontawesome:size=12", "Iosevka Medium:size=12"};
+//static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
+//static const char *fonts[]          = { "fontawesome:size=11", "monospace:size=12" };
 static const char dmenufont[]       = "monospace:size=13";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#5c82ca";
@@ -37,15 +39,16 @@ static const Rule rules[] = {
 	/* class     		instance  	title 	    tags mask  	isfloating  	isterminal	noswallow  	monitor */
 	//{ "St",      		NULL,     	NULL,           1 << 0,		0,     		1,           	0,        -1 },
 	{ "St",   		    NULL,      	"ranger",   	1 << 0,     0,    		0,		        0, 	-1 },
+	{ "Emacs",   		NULL,   NULL,   	        1 << 0,     0,    		0,		        0, 	-1 },
 	{ "firefox", 		NULL,     	NULL,           1 << 1,		0,    		0,           	0,        -1 },
 	{ "Com.github.phase1geo.minder",NULL,    NULL,  1 << 2,       	0,    		0,		    0, 	-1 },
 	{ "Zathura", 		NULL,     	NULL,           1 << 3,		0,     		0,           	0,        -1 },
 	{ "mpv",   		    NULL,      	NULL,		    1 << 4,     0,    		0,		        0, 	       -1 },
 	{ "TelegramDesktop", 	NULL,     	NULL,       1 << 5,		0,     		0,           	0,        -1 },
 	{ "qBittorrent",    NULL,     	NULL,           1 << 8,		0,     		0,           	0,        -1 },
-	{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
 	{ NULL,      		NULL,     	"Event Tester", 0,     		1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
+	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
 };
 
 /* layout(s) */
@@ -84,6 +87,7 @@ static const char *messenger[] = {"telegram-desktop", NULL};
 static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 static const char *torrent[] = {"qBittorrent", NULL};
 static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
+static const char *editor[] = {"emacs", NULL};
 
 //static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 // didn't work
@@ -96,6 +100,8 @@ static Key keys[] = {
 	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st sselp")},
 	{ MODKEY2,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
 	{ MODKEY2,                       	XK_r,	  	view,          {.ui = 1 << 0}},
+	{ MODKEY2,                       	XK_e,	  	spawn,          {.v = editor } },
+	{ MODKEY2,                       	XK_e,	  	view,          {.ui = 1 << 0}},
 	{ MODKEY2,                       	XK_f,	  	spawn,          {.v = browser } },
 	{ MODKEY2,                  	XK_f,      	view,           {.ui = 1 << 1} },
 	//{ MODKEY2,                       XK_r,	  	spawn,          {.v = fmcmd}},

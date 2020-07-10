@@ -1,7 +1,3 @@
-rename 3.Ген. Директор.xmind
-rename 3.middle-org-structure-evening-school.xmind
-rename 3.start-org-structure-evening-school.png
-rename 3.start-org-structure-evening-school.xmind
 rename 3.middle-org-structure-evening-school.png
 find si
 shell sxiv
@@ -48,3 +44,7 @@ delete
 shell mkdir 7-day
 shell mkdir 8-day.md
 rename 8-day
+rename ДЕНЬ 9 - Регулярный менеджмент и основные показатели в бизнесе.pdf
+shell mkdir 9-day
+shell nvim learning-event.py
+rename 9.learning-event.py
