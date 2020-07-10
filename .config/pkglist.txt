@@ -11,6 +11,7 @@ cpupower
 ctags
 dialog
 efibootmgr
+emacs
 fakeroot
 feh
 firefox
@@ -20,6 +21,7 @@ git
 groff
 grub
 grub-btrfs
+gtk2
 gtk3
 htop
 hwinfo
@@ -56,6 +58,7 @@ python-pynvim
 python-ueberzug
 qbittorrent
 ranger
+ripgrep
 scrot
 snapper
 sof-firmware
