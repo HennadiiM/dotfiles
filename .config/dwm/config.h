@@ -112,6 +112,7 @@ static Key keys[] = {
 	{ MODKEY2,                       	XK_q,	  	spawn,          {.v = torrent } },
 	{ MODKEY2,                       	XK_q,	  	view,          	{.ui = 1 << 8}},
 	{ MODKEY2,                       	XK_w,	  	spawn,          SHCMD("st -e nmtui") },
+	{ MODKEY2|ShiftMask,			    XK_l,	  	spawn,	        {.v = lock }}, // + ShiftMask because of emacs org mode
 	{ MODKEY2,                       	XK_w,	  	view,          	{.ui = 1 << 8}},
 
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
@@ -147,7 +148,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,     	                7)
 	TAGKEYS(                        XK_9,     	                8)
 	{ MODKEY|ShiftMask,             XK_q,     	quit,           {0} },
-	{ MODKEY2,			XK_l,	  	spawn,	   {.v = lock }},
 // Media keys
 	{ 0, XF86XK_AudioRaiseVolume,             	spawn,          SHCMD("amixer -q sset Master 10%+" )},
 	{ ShiftMask, XF86XK_AudioRaiseVolume,    	spawn,          SHCMD("amixer -q sset Master 3%+" )},
