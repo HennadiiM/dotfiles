@@ -50,4 +50,5 @@
 ;(unpin! t)
 
 (package! org-super-agenda)
+;(package! org-fancy-priorities)
 ;(package! evil-xkbswitch)
