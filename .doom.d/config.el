@@ -33,7 +33,6 @@
           (progn
             (set-frame-font "Iosevka-15" nil t))))))
 (add-hook 'after-make-frame-functions #'rag-set-face)
-
 ;; set frame font when running emacs normally
 (when (member "Iosevka" (font-family-list))
   (progn
@@ -43,7 +42,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord-light)
+(setq doom-theme 'doom-nord)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -51,7 +50,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'visual)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -86,6 +85,10 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#191C25" "#A3BE8C"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#191C25" "#434C5E"))
  '(objed-cursor-color "#BF616A")
+ '(org-agenda-files
+   (quote
+    ("~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "~/Documents/knowledge-base/technology/emacs.org")))
+ '(org-log-into-drawer t)
  '(package-selected-packages (quote (reverse-im linum-relative use-package)))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
  '(rustic-ansi-faces
@@ -119,18 +122,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;(require 'linum-relative)
-
-
-;(use-package reverse-im
-
-;  :ensure t
-;  :custom
-;  (reverse-im-input-methods '("russian-computer"))
-;  :config
-;  (reverse-im-mode t))
-;
-; fix end of buffer situation
+;fix end of buffer situation
 ;(defun my-end-of-buffer-dwim (&rest _)
 ;  "If current line is empty, call `previous-line'."
 ;  (when (looking-at-p "^$")
@@ -147,6 +139,15 @@ instead."
 (advice-add #'end-of-buffer :after #'my-end-of-buffer-dwim)
 ;
 ;
-; change meta key to win(super)
+; change meta key to win(super) (Better idea to set Super for sustem, ctrl as alt and use Left alt for emacs)
 ;(setq  x-meta-keysym 'super
 ;       x-super-keysym 'meta)
+
+; start week from Monday
+(setq calendar-week-start-day 1)
+; org-mode conceall markup
+(setq org-hide-emphasis-markers t)
+; hide blocks at startup
+(setq org-startup-folded t)
+
+;

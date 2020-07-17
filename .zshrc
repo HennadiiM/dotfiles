@@ -26,6 +26,7 @@ WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider
 
 
 ## Keybindings section
+# set -o vi -- for vim mode in bash
 bindkey -v 							# -e for emax bindings (?!), -v for vim bindings
 bindkey '^[[7~' beginning-of-line                               # Home key
 bindkey '^[[H' beginning-of-line                                # Home key
@@ -205,6 +206,12 @@ export LC_ALL="en_US.UTF-8"
 #exec '$HOME/.profile'
 #[[ -s $HOME/.profile ]]
 
+# _fix_cursor() {
+#   echo -ne '\e[5 q'
+#}
+#
+#precmd_functions+=(_fix_cursor)
+
 				# aliases
 
 alias n=nvim
@@ -270,15 +277,24 @@ alias nz='n $HOME/.zshrc'
 alias nx='n $HOME/.xinitrc'
 
 alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
+alias es='~/.emacs.d/bin/doom sync'
+
+
 alias yvm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
 #alias pvm='prime-run mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
 alias yvm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
 alias yam='time mpv --no-video'
 alias yad='youtube-dl -f "bestaudio[ext=m4a]"'
 
+alias ex='exit'
 alias shu='shutdown now'
 alias s='startx'
 
-#line below doesn't work. Maybe because aliases initializes after startx
-#alias s=startx
+
+# custom bash commands
+#echo "hello, world"
+#yvm() {
+#    mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]" "$1"
+#    #echo "hello world"
+#}
 
