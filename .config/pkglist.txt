@@ -12,11 +12,13 @@ ctags
 dialog
 efibootmgr
 emacs
+extundelete
 fakeroot
 feh
 firefox
 flex
 gcc
+gdb
 git
 groff
 grub
@@ -25,7 +27,9 @@ gtk2
 gtk3
 htop
 hwinfo
+i7z
 intel-ucode
+libmtp
 libreoffice-still
 libtool
 libva-intel-driver
@@ -35,9 +39,10 @@ linux-headers
 m4
 make
 mesa-demos
-minder-git
+minder
 mpv
 mtools
+mtpfs
 neovim
 network-manager-applet
 networkmanager
@@ -55,11 +60,11 @@ powertop
 pulseaudio
 python-pyalsa
 python-pynvim
-python-ueberzug
 qbittorrent
 ranger
 ripgrep
 scrot
+simple-mtpfs
 snapper
 sof-firmware
 sudo
@@ -70,6 +75,7 @@ thermald
 tlp
 ttf-font-awesome
 ttf-iosevka
+ueberzug
 unzip
 vue
 webkit2gtk
