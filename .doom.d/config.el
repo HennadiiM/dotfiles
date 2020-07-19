@@ -23,6 +23,7 @@
 ;;(setq doom-font (font-spec :family "iosevka" :size 12 :weight 'regular)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
+
 ;; set Iosevka font only if it available
 (defun rag-set-face (frame)
   "Configure faces on frame creation"
@@ -150,4 +151,11 @@ instead."
 ; hide blocks at startup
 (setq org-startup-folded t)
 
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "PROG(p)" |  "DONE(d)" "KILL(k)")
+        ))
+
+;(setq org-todo-keyword-faces
+;      '(("TODO" . org-warning) ("STARTED" . "yellow")
+;        ("CANCELED" . (:foreground "blue" :weight bold))))
 ;
