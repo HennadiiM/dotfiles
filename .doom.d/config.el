@@ -204,7 +204,7 @@
   )
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "PROG(p)" "|"  "DONE(d)" "KILL(k)")
+          (sequence "TODO(t)" "PROG(p)" "REV1(1)" "REV2(2)" "REV3(3)" "|" "KILL(k)" "DONE(d)" )
           )
   )
   ;(define-key evil-normal-state-map (kbd "s") 'evil-substitute) ;didn't help

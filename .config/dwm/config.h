@@ -93,12 +93,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
-static const char *browser[] = {"firefox", NULL};
-static const char *messenger[] = {"telegram-desktop", NULL};
 static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/puc-mus/Screenshots/", NULL};
-static const char *torrent[] = {"qBittorrent", NULL};
-static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
-static const char *editor[] = {"emacs", NULL};
+// because I launch them by different way
+//static const char *browser[] = {"firefox", NULL};
+//static const char *messenger[] = {"telegram-desktop", NULL};
+//static const char *torrent[] = {"qBittorrent", NULL};
+//static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
+//static const char *editor[] = {"emacs", NULL};
 
 //static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
 // didn't work
@@ -109,38 +110,48 @@ static Key keys[] = {
 	// start program in it's tag and go to this tag simultaneously sselp (didn't work)
 	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
 	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st sselp")},
-	{ MODKEY2,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
-	{ MODKEY2,                       	XK_r,	  	view,          {.ui = 1 << ranger_tag}},
-	{ MODKEY2,                       	XK_e,	  	spawn,          {.v = editor } },
-	{ MODKEY2,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
-	{ MODKEY2,                       	XK_f,	  	spawn,          {.v = browser } },
-	{ MODKEY2,                  	XK_f,      	view,           {.ui = 1 << 1} },
+    // file manager
+	{ MODKEY,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
+	{ MODKEY,                       	XK_r,	  	view,          {.ui = 1 << ranger_tag}},
+    // editor
+	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
+	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
+    // browser
+	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("wise-launch firefox") },
+	{ MODKEY,                  	        XK_f,      	view,           {.ui = 1 << 1} },
 	//{ MODKEY2,                       XK_r,	  	spawn,          {.v = fmcmd}},
-	{ MODKEY2,                       	XK_m,	  	spawn,          {.v = mindmap } },
-	{ MODKEY2,                       	XK_m,	  	view,          	{.ui = 1 << minder_tag}},
-	{ MODKEY2,                       	XK_t,	  	spawn,          {.v = messenger } },
-	{ MODKEY2,                       	XK_t,	  	view,          	{.ui = 1 << TelegramDesktop_tag}},
-	{ MODKEY2,                       	XK_q,	  	spawn,          {.v = torrent } },
+    // minder
+	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
+	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << minder_tag}},
+    // mpv
+	{ MODKEY,                       	XK_m,	  	view,          	{.ui = 1 << mpv_tag}},
+    // messenger 
+	{ MODKEY,                       	XK_t,	  	spawn,          SHCMD("wise-launch telegram-desktop") },
+	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << TelegramDesktop_tag}},
+    // torrent
+	{ MODKEY2,                       	XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
 	{ MODKEY2,                       	XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
+    // network manager
 	{ MODKEY2,                       	XK_n,	  	spawn,          SHCMD("st -e nmtui") },
 	{ MODKEY2,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
+    // screen lock
 	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
 
+	{ MODKEY,                       XK_h,     	togglebar,      {0} },
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
-	{ MODKEY,			XK_c, 	  	spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,     	togglebar,      {0} },
+	{ MODKEY,			            XK_c, 	  	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_j,     	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,     	focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,     	incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,     	incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,     	setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,     	setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_h,     	setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,     	setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return,	zoom,           {0} },
 	{ MODKEY,                       XK_Tab,   	view,           {0} },
-	{ MODKEY, 		        XK_q,     	killclient,     {0} },
-	{ MODKEY,                       XK_t,     	setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,     	setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,     	setlayout,      {.v = &layouts[2]} },
+	{ MODKEY, 		                XK_q,     	killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_t,     	setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,     	setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_f,     	setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space, 	setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space, 	togglefloating, {0} },
 	{ MODKEY,                       XK_0,     	view,           {.ui = ~0 } },

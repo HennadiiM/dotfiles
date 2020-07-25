@@ -265,7 +265,7 @@ alias sspnm='systemctl stop NetworkManager'
 
 # dwm manipulations
 alias ndc='n $HOME/.config/dwm/config.h'
-alias cdw='$HOME/.config/dwm'
+alias cdwm='$HOME/.config/dwm'
 alias di='$HOME/.config/dwm && sudo make install'
 alias nc='n config.h'
 alias smi='sudo make install'
