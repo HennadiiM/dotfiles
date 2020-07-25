@@ -14,7 +14,7 @@ set expandtab
 " copy to clipboard after selecting in visual mode
 vnoremap <c-k>       "+y
 " visual block can be created using ctrl+a combination
-nmap <c-a> 		<c-v>
+"nmap <c-a> 		<c-v> USE <c-q> instead
 " in normal mode paste from clipboard using ctrl+v
 inoremap <c-v> 		<esc>"+pa
 nmap <F3> 		   :set hlsearch!<CR>

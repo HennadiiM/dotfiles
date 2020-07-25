@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/prodper/.emacs.d/modules/lang/org'
 let g:netrw_dirhist_8='/home/prodper/Documents/knowledge-base/4.school/startap/homework'
 let g:netrw_dirhist_7='/home/prodper/Documents/knowledge-base/4.school/startap'
 let g:netrw_dirhist_6='/home/prodper/Documents/knowledge-base/1.philosophy/moved-from-notion'

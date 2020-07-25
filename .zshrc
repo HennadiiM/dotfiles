@@ -280,11 +280,13 @@ alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
 alias es='~/.emacs.d/bin/doom sync'
 
 
-alias yvm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-#alias pvm='prime-run mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-alias yvm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
-alias yam='time mpv --no-video'
-alias yad='youtube-dl -f "bestaudio[ext=m4a]"'
+alias yvm='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
+alias yvm7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
+alias yam='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
+alias yad='youtube-dl -f "bestaudio[ext=webm]"'
+alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]"'
+alias yvd7='youtube-dl -f "bestvideo[ext=webm][height<=720]+bestaudio[ext=webm]"'
+alias yvdt='youtube-dl -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]"'
 
 alias ex='exit'
 alias shu='shutdown now'

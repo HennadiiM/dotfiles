@@ -43,7 +43,7 @@
        ;;tabs              ; an tab bar for Emacs
        ;;treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
-       vc-gutter         ; vcs diff in the fringe
+       ;vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
@@ -93,7 +93,7 @@
        lookup              ; navigate your code and its documentation
        ;;lsp
        ;;macos             ; MacOS-specific commands
-       magit             ; a git porcelain for Emacs
+       ;magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements
@@ -162,6 +162,8 @@
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
        ;;yaml              ; JSON, but readable
+
+
 
        :email
        ;;(mu4e +gmail)

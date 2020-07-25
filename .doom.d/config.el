@@ -1,10 +1,19 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+(setq org-cycle-separator-lines 2) ; 0 - никак не достичь свободной линии. Но, более интуитивно работать с хедингами (?) Поменял на 2 и не ощутил "более удобной работы"
+
+
 (setq default-input-method 'russian-computer)
 
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+
+(desktop-save-mode 0) ;trying set marks saving work
+;(add-to-list 'desktop-locals-to-save 'evil-markers-alist)
+;(cl-pushnew 'evil-markers-alist 'desktop-locals-to-save)
+;
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "John Doe"
@@ -47,7 +56,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Documents/knowledge-base/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -123,6 +132,83 @@
  ;; If there is more than one, they won't work right.
  )
 
+;(require 'org)
+;(define-key org-mode-map (kbd "s") nil)
+
+; 2 lines below to resolve conflicts, but didn't help
+;(with-eval-after-load 'org
+;  (define-key evil-normal-state-map (kbd "s") 'evil-substitute))
+;
+; line below to resolve conflicts, but didn't help
+;(add-hook 'org-mode-hook (lambda () (define-key evil-normal-state-map (kbd "s") 'evil-substitute)))
+
+(global-set-key (kbd "C-c c") 'org-capture) ;не сработало
+
+(after! org
+                                        ; custom templates
+  (setq org-capture-templates
+        '(
+          ;("d" "Demo template" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* DEMO TEXT %?")
+
+          ;("p" "Prompt us for input" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* %^{Write here:} %?")
+
+          ;("o" "Select your option" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* %^{Select option|one|two|three} %?")
+
+          ;("f" "template with date stamp" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* %^{Select option|one|two|three}\n SCHEDULED: %t\n %?")
+
+          ;("t" "time based templates") ;check the documentation
+          ;("tc" "current time template" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %?")
+
+          ;("ts" "template with date and selected area" entry ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
+          ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %i\n %?")
+
+
+          ("u" "thoughts for upgrading" item ;check the documentation
+           (file+olp "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary" "Thoughts for upgrading") ;file and heading
+           "%U\n - %?\n ")
+
+          ;("u" "thoughts for upgrading" item ;check the documentation
+          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Thoughts for upgrading") ;file and heading
+          ; "%U\n %?\n ")
+          ; что я хочу от темплейта?
+          ; 1. Я хочу, чтобы он закидывал в Diary log subtree - другой аргумент, вместо file+headline: file+olp?
+          ; 2. чтобы указывал время записи
+          ; 3. начинал маркированный список
+          ; как назвать? Log? Thuoghts? Done? Experience? I'm better? =Upgrade=? More power?
+          ;
+          ; пара итераций достижения результата
+          ; 1) отправляю как сабтри
+          ; 2) пробую отправить не как сабтри (как часть списка,...)
+          ;
+          ; улучшение:
+          ; 1) наблюдение (обсерв)
+          ; 2) improvments
+          ; 3) idea (to test)
+
+        ;("r" "Dream" entry
+        ;   (file+headline +org-capture-todo-file "Dream")
+        ;   "* TODO %?")
+
+          )
+  )
+  (setq org-todo-keywords
+        '(
+          (sequence "TODO(t)" "PROG(p)" "|"  "DONE(d)" "KILL(k)")
+          )
+  )
+  ;(define-key evil-normal-state-map (kbd "s") 'evil-substitute) ;didn't help
+)
 ;fix end of buffer situation
 ;(defun my-end-of-buffer-dwim (&rest _)
 ;  "If current line is empty, call `previous-line'."
@@ -144,18 +230,22 @@ instead."
 ;(setq  x-meta-keysym 'super
 ;       x-super-keysym 'meta)
 
-; start week from Monday
-(setq calendar-week-start-day 1)
-; org-mode conceall markup
-(setq org-hide-emphasis-markers t)
-; hide blocks at startup
-(setq org-startup-folded t)
+(setq calendar-week-start-day 1) ; start week from Monday
+(setq org-hide-emphasis-markers t) ; org-mode conceall markup
+(setq org-startup-folded t) ; fold everything on startup
 
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "PROG(p)" |  "DONE(d)" "KILL(k)")
-        ))
-
+;(after! org
+;  (setq org-todo-keywords
+;        '((sequence "TODO(t)" "PROG(p)" |  "DONE(d)" "KILL(k)")
+;          )))
 ;(setq org-todo-keyword-faces
 ;      '(("TODO" . org-warning) ("STARTED" . "yellow")
 ;        ("CANCELED" . (:foreground "blue" :weight bold))))
 ;
+
+                                        ; custom capture templates
+;(after! org
+;  (add-to-list 'org-capture-templates
+;      '(("d", "Demo template" entry ;check the documentation
+;         (file+headline "demo.org" "Our first heading") ;file and heading
+;         "* DEMO TEXT %?"))
