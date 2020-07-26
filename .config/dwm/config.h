@@ -29,16 +29,16 @@ static const char *colors[][3]      = {
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 //static const char *tags[] = { "", "龜", "", "", "", "", "7", "", "" }; // ,,,,,,,
-static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //  , , , , , , , ,,,,,,,, ,  ,
+static const char *tags[] = { "", "", "",/*3*/ "", "", "", "",/*6*/ "", "" }; //  , , , , , , , ,,,,,,,, ,  ,
 
 /* programs positions in tags first number = tag number (if tags numbers start from 0)*/
-static const int ranger_tag = 0;
 static const int Emacs_tag = 0;
 static const int firefox_tag = 1;
 static const int Zathura_tag = 2;
 static const int mpv_tag = 3;
-static const int minder_tag = 4;
-static const int TelegramDesktop_tag = 5 ;
+static const int ranger_tag = 4;
+static const int minder_tag = 5;
+static const int TelegramDesktop_tag = 6 ;
 static const int qBittorrent_tag = 8;
 
 
@@ -93,7 +93,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
-static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/puc-mus/Screenshots/", NULL};
+static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/pic-mus/Screenshots/", NULL};
 // because I launch them by different way
 //static const char *browser[] = {"firefox", NULL};
 //static const char *messenger[] = {"telegram-desktop", NULL};
@@ -111,31 +111,32 @@ static Key keys[] = {
 	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st -e mpv --ytdl-format='bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]' 'https://www.youtube.com/watch?v=mBI5rHVHm1M'")},
 	//{ MODKEY2,				XK_y,		spawn,		SHCMD("st sselp")},
     // file manager
-	{ MODKEY,                       	XK_r,	  	spawn,          SHCMD("st -e ranger")},
-	{ MODKEY,                       	XK_r,	  	view,          {.ui = 1 << ranger_tag}},
+	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
+	{ MODKEY,                       	XK_f,	  	view,          {.ui = 1 << ranger_tag}},
     // editor
 	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
 	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
     // browser
-	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("wise-launch firefox") },
-	{ MODKEY,                  	        XK_f,      	view,           {.ui = 1 << 1} },
-	//{ MODKEY2,                       XK_r,	  	spawn,          {.v = fmcmd}},
+	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch firefox") },
+	{ MODKEY,                  	        XK_w,      	view,           {.ui = 1 << 1} },
     // minder
 	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
 	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << minder_tag}},
     // mpv
 	{ MODKEY,                       	XK_m,	  	view,          	{.ui = 1 << mpv_tag}},
+    // zathura
+	{ MODKEY,                       	XK_r,	  	view,          	{.ui = 1 << Zathura_tag}},
     // messenger 
 	{ MODKEY,                       	XK_t,	  	spawn,          SHCMD("wise-launch telegram-desktop") },
 	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << TelegramDesktop_tag}},
     // torrent
-	{ MODKEY2,                       	XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
-	{ MODKEY2,                       	XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
+	{ MODKEY|ShiftMask,                 XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
+	{ MODKEY|ShiftMask,                 XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
     // network manager
 	{ MODKEY2,                       	XK_n,	  	spawn,          SHCMD("st -e nmtui") },
 	{ MODKEY2,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
     // screen lock
-	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
+	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
 
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
@@ -169,7 +170,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,     	                6)
 	TAGKEYS(                        XK_8,     	                7)
 	TAGKEYS(                        XK_9,     	                8)
-	{ MODKEY|ShiftMask,             XK_q,     	quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,     	quit,           {0} },
 // Media keys
 	{ 0, XF86XK_AudioRaiseVolume,             	spawn,          SHCMD("amixer -q sset Master 10%+" )},
 	{ ShiftMask, XF86XK_AudioRaiseVolume,    	spawn,          SHCMD("amixer -q sset Master 3%+" )},
