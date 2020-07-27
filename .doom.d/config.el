@@ -204,7 +204,16 @@
   )
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "PROG(p)" "REV1(1)" "REV2(2)" "REV3(3)" "|" "KILL(k)" "DONE(d)" )
+          (sequence "TODO(t)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)" )
+          (sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" )
+          )
+        )
+  (setq org-todo-keyword-faces
+        '(
+          ("NOW!" . "red")
+          ("TODO" . org-warning)
+          ;("NOW!" . org-warning) ("STARTED" . "red")
+          ;("CANCELED" . (:foreground "blue" :weight bold))
           )
   )
   ;(define-key evil-normal-state-map (kbd "s") 'evil-substitute) ;didn't help

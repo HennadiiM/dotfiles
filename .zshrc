@@ -222,7 +222,7 @@ alias e=ranger
 # dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 alias ds='dot status'
-alias da='dot add'
+alias doa='dot add'
 alias dc='dot commit -m'
 alias dp='dot push'
 
