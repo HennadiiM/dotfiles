@@ -15,11 +15,15 @@ static const char *fonts[]          = { "fontawesome:size=13", "Iosevka Medium:s
 //static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
 //static const char *fonts[]          = { "fontawesome:size=11", "monospace:size=12" };
 static const char dmenufont[]       = "Iosevka Medium:size=13";
-static const char col_gray1[]       = "#222222";
+// nord colors ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
+static const char col_gray1[]       = "#2e3440"; 
 static const char col_gray2[]       = "#5c82ca";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#5c82ca";
+//static const char col_gray3[]       = "#bbbbbb";
+//static const char col_gray4[]       = "#eeeeee";
+//static const char col_cyan[]        = "#5c82ca";
+static const char col_gray3[]       = "#eceff4";
+static const char col_gray4[]       = "#2e3440";
+static const char col_cyan[]        = "#81A1C1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -185,7 +189,7 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown,            	spawn,          SHCMD("xbacklight -dec 10")},
 	{ ShiftMask, XF86XK_MonBrightnessDown,          spawn,          SHCMD("xbacklight -dec 3")},
 	{ ShiftMask,    XK_Print, 			spawn,		{.v = screenshot}},
-	{0,    		XK_Print, 			spawn,		SHCMD("sleep 1; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/Pictures/Screenshots/'")}, 
+	{0,    		XK_Print, 			spawn,		SHCMD("sleep 1; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/pic-mus/Screenshots/'")}, 
 };
 
 /* button definitions */
