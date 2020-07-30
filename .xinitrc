@@ -25,8 +25,14 @@ fi
 
 # start some nice programs
 
+#if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+# for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+#  [ -x "$f" ] && . "$f"
+# done
+# unset f
+#fi
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+ for f in /etc/X11/xinit/xinitrc.d/*; do
   [ -x "$f" ] && . "$f"
  done
  unset f
@@ -55,6 +61,7 @@ xxkb &
 feh --bg-scale /home/prodper/sandbox/wallpapers/rubick.jpg &
 picom -f &
 slstatus &
+low-battery &
 #xrandr --output eDP-1 --mode 1920x1080 &
 
 

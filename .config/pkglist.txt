@@ -1,3 +1,4 @@
+acpi
 acpilight
 alsa-utils
 audacity
@@ -47,6 +48,7 @@ neovim
 network-manager-applet
 networkmanager
 nodejs
+notification-daemon
 npm
 ntfs-3g
 nvidia-prime
@@ -58,6 +60,8 @@ picom
 pkgconf
 powertop
 pulseaudio
+pulseaudio-alsa
+pulsemixer
 python-pyalsa
 python-pynvim
 qbittorrent

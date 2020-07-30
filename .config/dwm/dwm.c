@@ -790,7 +790,10 @@ drawbar(Monitor *m)
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+            // change central bar color if app is started
+			//drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+            // don't change central bar color even if app is started
+			drw_setscheme(drw, scheme[m == SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
