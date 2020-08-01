@@ -142,7 +142,11 @@
 ; line below to resolve conflicts, but didn't help
 ;(add-hook 'org-mode-hook (lambda () (define-key evil-normal-state-map (kbd "s") 'evil-substitute)))
 
-(global-set-key (kbd "C-c c") 'org-capture) ;не сработало
+(global-set-key (kbd "C-c c") 'org-capture) ;не сработало (наверно, все таки, сработало)
+
+;(global-set-key (kbd "H") 'org-brain-add-child-headline) ;не сработало (наверно, все таки, сработало)
+;(define-key org-brain (kbd "h") nil) ;не сработало (наверно, все таки, сработало)
+
 
 (after! org
                                         ; custom templates
@@ -174,10 +178,40 @@
           ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %i\n %?")
 
 
-          ("u" "thoughts for upgrading" item ;check the documentation
-           (file+olp "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary" "Thoughts for upgrading") ;file and heading
-           "%U\n - %?\n ")
+          ("u" "thoughts for upgrading") ;check the documentation
+          ("ur" "30 min review" item ;check the documentation
+           (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
+           "%U\n - это было здорово:%?\n - можно еще круче:\n - доп. идеи:\n ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
+          ("uc" "conclusions" item ;check the documentation
+           (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Conclusions" ) ;file and heading
+           "%U\n - это было здорово:%?\n - можно еще круче:\n - доп. идеи:\n ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+
+          ("ui" "ideas" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Ideas") ;file and heading
+           "* IDEA %?\n ")
+
+          ("ut" "todo" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Just do it!") ;file and heading
+           "* TODO %?\n ")
+
+          ("up" "important big idea = progect" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Remember about goals!") ;file and heading
+           "* PROJ %?\n ")
+         
+          ; что хочу?
+          ; 1. review с подпунктами
+          ; а) что было хорошо?
+          ; б) что можно делать еще круче?
+          ; в) + еще идеи (чтобы не забыть)
+          ; г) + в Thoughts for upgrading
+          ; + чтобы можно было перескакивать, не писать каждый раз "что было хорошо", что можно лучше
+          ; для этого в мануал, можно ли 2 раза юзать "%?" ?
+          ;
+          ; 2. идеи:
+          ; а) ideas heading
+          ; б) headings
+          ;
           ;("u" "thoughts for upgrading" item ;check the documentation
           ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Thoughts for upgrading") ;file and heading
           ; "%U\n %?\n ")
@@ -204,14 +238,16 @@
   )
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)" )
+          (sequence "IDEA(i@)" "PROJ(p@)" "TODO(t)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)")
           (sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" )
+          (sequence  "*(*)" "|" "DONE(d)" )
           )
         )
   (setq org-todo-keyword-faces
         '(
           ("NOW!" . "red")
           ("TODO" . org-warning)
+          ("*" . org-done)
           ;("NOW!" . org-warning) ("STARTED" . "red")
           ;("CANCELED" . (:foreground "blue" :weight bold))
           )
@@ -243,18 +279,4 @@ instead."
 (setq org-hide-emphasis-markers t) ; org-mode conceall markup
 (setq org-startup-folded t) ; fold everything on startup
 
-;(after! org
-;  (setq org-todo-keywords
-;        '((sequence "TODO(t)" "PROG(p)" |  "DONE(d)" "KILL(k)")
-;          )))
-;(setq org-todo-keyword-faces
-;      '(("TODO" . org-warning) ("STARTED" . "yellow")
-;        ("CANCELED" . (:foreground "blue" :weight bold))))
-;
-
-                                        ; custom capture templates
-;(after! org
-;  (add-to-list 'org-capture-templates
-;      '(("d", "Demo template" entry ;check the documentation
-;         (file+headline "demo.org" "Our first heading") ;file and heading
-;         "* DEMO TEXT %?"))
+;(define-key my-mode-map [remap kill-line] 'my-kill-line)
