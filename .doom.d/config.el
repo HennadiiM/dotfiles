@@ -178,26 +178,34 @@
           ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %i\n %?")
 
 
-          ("u" "thoughts for upgrading") ;check the documentation
-          ("ur" "30 min review" item ;check the documentation
+          ;("u" "thoughts for upgrading") ;check the documentation
+          ("r" "30 min review" item ;check the documentation
            (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
-           "%U\n - это было здорово:%?\n - можно еще круче:\n - доп. идеи:\n ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           "%U\n - это было здорово:\n\t - %?   \n - можно еще круче:\n   \t -   \n - доп. идеи:\n   \t - ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
-          ("uc" "conclusions" item ;check the documentation
-           (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Conclusions" ) ;file and heading
-           "%U\n - это было здорово:%?\n - можно еще круче:\n - доп. идеи:\n ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+          ("h" "hierarchy of issues (level up)" item ; одновременно это более подробный отчет о проделанной работе
+           (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
+           "%U\n - [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
-          ("ui" "ideas" entry ;check the documentation
+          ("i" "ideas" entry ;check the documentation
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Ideas") ;file and heading
-           "* IDEA %?\n ")
+           "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("ut" "todo" entry ;check the documentation
+          ("a" "answers needed!" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this questions!") ;file and heading
+           "* QUEST %?\n:LOGBOOK:\n\n:END:\n")
+
+          ("c" "conclusions" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Conclusions" ) ;file and heading
+           "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+
+          ("t" "todo" entry ;check the documentation
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Just do it!") ;file and heading
-           "* TODO %?\n ")
+           "* TODO %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("up" "important big idea = progect" entry ;check the documentation
+          ("p" "important big idea = progect" entry ;check the documentation
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Remember about goals!") ;file and heading
-           "* PROJ %?\n ")
+           "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
          
           ; что хочу?
           ; 1. review с подпунктами
@@ -238,9 +246,9 @@
   )
   (setq org-todo-keywords
         '(
-          (sequence "IDEA(i@)" "PROJ(p@)" "TODO(t)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)")
+          (sequence "TODO(t)" "PROJ(p@)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)")
           (sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" )
-          (sequence  "*(*)" "|" "DONE(d)" )
+          (sequence  "QUEST" "*(*)" "IDEA(i@)" "|" "KILL(k)" )
           )
         )
   (setq org-todo-keyword-faces

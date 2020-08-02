@@ -137,8 +137,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,                 XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
 	{ MODKEY|ShiftMask,                 XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
     // network manager
-	{ MODKEY2,                       	XK_n,	  	spawn,          SHCMD("st -e nmtui") },
-	{ MODKEY2,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
+	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
+	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
     // screen lock
 	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
 
