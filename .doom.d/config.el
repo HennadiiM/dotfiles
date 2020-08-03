@@ -191,9 +191,14 @@
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Ideas") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("a" "answers needed!" entry ;check the documentation
+          ("a" "answers needed!") ;check the documentation
+          ("ag" "answer to Gleb" entry ;check the documentation
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this questions!") ;file and heading
-           "* QUEST %?\n:LOGBOOK:\n\n:END:\n")
+           "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
+
+          ("ao" "answers to other people, sources" entry ;check the documentation
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this questions!") ;file and heading
+           "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ("c" "conclusions" entry ;check the documentation
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Conclusions" ) ;file and heading
@@ -207,40 +212,6 @@
            (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Remember about goals!") ;file and heading
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
          
-          ; что хочу?
-          ; 1. review с подпунктами
-          ; а) что было хорошо?
-          ; б) что можно делать еще круче?
-          ; в) + еще идеи (чтобы не забыть)
-          ; г) + в Thoughts for upgrading
-          ; + чтобы можно было перескакивать, не писать каждый раз "что было хорошо", что можно лучше
-          ; для этого в мануал, можно ли 2 раза юзать "%?" ?
-          ;
-          ; 2. идеи:
-          ; а) ideas heading
-          ; б) headings
-          ;
-          ;("u" "thoughts for upgrading" item ;check the documentation
-          ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Thoughts for upgrading") ;file and heading
-          ; "%U\n %?\n ")
-          ; что я хочу от темплейта?
-          ; 1. Я хочу, чтобы он закидывал в Diary log subtree - другой аргумент, вместо file+headline: file+olp?
-          ; 2. чтобы указывал время записи
-          ; 3. начинал маркированный список
-          ; как назвать? Log? Thuoghts? Done? Experience? I'm better? =Upgrade=? More power?
-          ;
-          ; пара итераций достижения результата
-          ; 1) отправляю как сабтри
-          ; 2) пробую отправить не как сабтри (как часть списка,...)
-          ;
-          ; улучшение:
-          ; 1) наблюдение (обсерв)
-          ; 2) improvments
-          ; 3) idea (to test)
-
-        ;("r" "Dream" entry
-        ;   (file+headline +org-capture-todo-file "Dream")
-        ;   "* TODO %?")
 
           )
   )
@@ -248,12 +219,14 @@
         '(
           (sequence "TODO(t)" "PROJ(p@)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)")
           (sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" )
-          (sequence  "QUEST" "*(*)" "IDEA(i@)" "|" "KILL(k)" )
+          (sequence  "ANS!(a@)" "*(*)" "IDEA(i@)" "|" "KILL(k)" )
+          (sequence  "BIRTH(B)" "|" "CONGRATULATED(C)" "FORGOT(F)")
           )
         )
   (setq org-todo-keyword-faces
         '(
           ("NOW!" . "red")
+          ("BIRTH" . "red")
           ("TODO" . org-warning)
           ("*" . org-done)
           ;("NOW!" . org-warning) ("STARTED" . "red")
