@@ -143,6 +143,7 @@
 ;(add-hook 'org-mode-hook (lambda () (define-key evil-normal-state-map (kbd "s") 'evil-substitute)))
 
 (global-set-key (kbd "C-c c") 'org-capture) ;не сработало (наверно, все таки, сработало)
+(global-set-key (kbd "C-c b") 'org-roam) ;не сработало (наверно, все таки, сработало)
 
 ;(global-set-key (kbd "H") 'org-brain-add-child-headline) ;не сработало (наверно, все таки, сработало)
 ;(define-key org-brain (kbd "h") nil) ;не сработало (наверно, все таки, сработало)
@@ -181,35 +182,35 @@
           ;("u" "thoughts for upgrading") ;check the documentation
           ("r" "30 min review" item ;check the documentation
            (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
-           "%U\n - это было здорово:\n\t - %?   \n - можно еще круче:\n   \t -   \n - доп. идеи:\n   \t - ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           "%U\n- ход дел:\n\t - [ ] %?\n - это было здорово:\n\t - .\n - можно еще круче:\n   \t - .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("h" "hierarchy of issues (level up)" item ; одновременно это более подробный отчет о проделанной работе
            (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
            "%U\n - [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Ideas") ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "=Ideas=.") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
           ("a" "answers needed!") ;check the documentation
           ("ag" "answer to Gleb" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this questions!") ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this =questions=!") ;file and heading
            "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
 
           ("ao" "answers to other people, sources" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this questions!") ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Answer to this =questions=!") ;file and heading
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ("c" "conclusions" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Conclusions" ) ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "=Conclusions=" ) ;file and heading
            "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Just do it!") ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Just =do= it!") ;file and heading
            "* TODO %?\n:LOGBOOK:\n\n:END:\n")
 
           ("p" "important big idea = progect" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Remember about goals!") ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Remember about =goals=!") ;file and heading
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
          
 
@@ -217,24 +218,62 @@
   )
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "PROJ(p@)" "BEGIN(b@)" "MIDD(m@)" "FINISH(f@)" "|" "KILL(k)" "DONE(d)")
+          (sequence "TODO(t)" "PROJ(p@)" "BEGIN(b@)" "MIDD(m@)" "END(e@)" "|" "KILL(k)" "DONE(d)")
           (sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" )
-          (sequence  "ANS!(a@)" "*(*)" "IDEA(i@)" "|" "KILL(k)" )
-          (sequence  "BIRTH(B)" "|" "CONGRATULATED(C)" "FORGOT(F)")
+          (sequence  "ANS!(a@)" "*(*)" "IDEA(i@)" "LATER(l)" "|" "KILL(k)" )
+          (sequence  "BIRTHDAY(B)" "|" "CONGRATULATED(C)" "FORGOT(F)")
+          (sequence  "TECH(T)" "HEALTH(H)" "EARN(E)" "|")
           )
         )
   (setq org-todo-keyword-faces
         '(
-          ("NOW!" . "red")
-          ("BIRTH" . "red")
+          ("NOW!" . "#BF616A")
+          ("BIRTHDAY" . "#BF616A")
+          ("HEALTH" . "#81A1C1")
+          ("EARN" . "#81A1C1")
           ("TODO" . org-warning)
           ("*" . org-done)
+          ("LATER" . org-done)
           ;("NOW!" . org-warning) ("STARTED" . "red")
           ;("CANCELED" . (:foreground "blue" :weight bold))
           )
   )
   ;(define-key evil-normal-state-map (kbd "s") 'evil-substitute) ;didn't help
+  ;Org-roam server graph
+  ;(require 'simple-httpd)
+  ;(setq httpd-root "var/www")
+  ;(httpd-start)
+
+;  (use-package org-roam-server
+;    :ensure nill
+;    :load-path "~/Documents/knowledge-base/org-roam-server")
+(require 'org-roam-protocol)
+ 
+  (use-package org-roam-server
+    :ensure t
+    :config
+    (setq org-roam-server-host "127.0.0.1"
+          org-roam-server-port 8080
+          org-roam-server-export-inline-images t
+          org-roam-server-authenticate nil
+          org-roam-server-network-poll t
+          org-roam-server-network-arrows nil
+          org-roam-server-network-label-truncate t
+          org-roam-server-network-label-truncate-length 60
+          org-roam-server-network-label-wrap-length 20))
+
 )
+
+;(after! org-roam
+;        (map! :leader
+;            :prefix "n"
+;            :desc "org-roam" "l" #'org-roam
+;            :desc "org-roam-insert" "i" #'org-roam-insert
+;            :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer
+;            :desc "org-roam-find-file" "f" #'org-roam-find-file
+;            :desc "org-roam-show-graph" "g" #'org-roam-show-graph
+;            ;:desc "org-roam-insert" "i" #'org-roam-insert
+;            :desc "org-roam-capture" "c" #'org-roam-capture))
 ;fix end of buffer situation
 ;(defun my-end-of-buffer-dwim (&rest _)
 ;  "If current line is empty, call `previous-line'."

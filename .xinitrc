@@ -62,6 +62,7 @@ feh --bg-scale /home/prodper/sandbox/wallpapers/rubick.jpg &
 picom -f &
 slstatus &
 low-battery &
+#redshift &
 #xrandr --output eDP-1 --mode 1920x1080 &
 
 

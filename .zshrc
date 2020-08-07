@@ -280,13 +280,18 @@ alias fw='feh --bg-scale $HOME/sandbox/wallpapers/$1'
 alias es='~/.emacs.d/bin/doom sync'
 
 
-alias yvm='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
-alias yvm7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
-alias yam='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
+alias yvw='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
+alias yvw7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
+alias yaw='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
 alias yad='youtube-dl -f "bestaudio[ext=webm]"'
 alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]"'
 alias yvd7='youtube-dl -f "bestvideo[ext=webm][height<=720]+bestaudio[ext=webm]"'
-alias yvdt='youtube-dl -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]"'
+alias yvdt='youtube-dl -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]"' # ??? For cases when webm is apsent?
+
+alias yadp='youtube-dl -f "bestaudio[ext=webm]" -i'
+alias yvdp='youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]" -i'
+alias yvdp7='youtube-dl -f "bestvideo[ext=webm][height<=720]+bestaudio[ext=webm]" -i'
+
 
 alias ex='exit'
 alias shu='shutdown now'

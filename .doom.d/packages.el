@@ -49,6 +49,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-super-agenda)
+(package! org-super-agenda) ;???
+(package! rainbow-mode)
+(package! simple-httpd)
+(package! org-roam-server)
+(unpin! org-roam)
 ;(package! org-fancy-priorities)
 ;(package! evil-xkbswitch)

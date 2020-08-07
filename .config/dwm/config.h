@@ -15,7 +15,7 @@ static const char *fonts[]          = { "fontawesome:size=13", "Iosevka Medium:s
 //static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
 //static const char *fonts[]          = { "fontawesome:size=11", "monospace:size=12" };
 static const char dmenufont[]       = "Iosevka Medium:size=13";
-// nord colors ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
+// nord colors ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "" "#B48EAD" "#88C0D0" "#ECEFF4"])
 static const char col_gray1[]       = "#2e3440"; 
 static const char col_gray2[]       = "#5c82ca";
 //static const char col_gray3[]       = "#bbbbbb";
@@ -37,7 +37,7 @@ static const char *tags[] = { "", "", "",/*3*/ "", "", "", "�
 
 /* programs positions in tags first number = tag number (if tags numbers start from 0)*/
 static const int Emacs_tag = 0;
-static const int firefox_tag = 1;
+static const int brave_tag = 1;
 static const int Zathura_tag = 2;
 static const int mpv_tag = 3;
 static const int ranger_tag = 4;
@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1 },
 	{ "St",   		                NULL,      	"ranger",   	1 << ranger_tag,            0,    		0,		        0, 	-1 },
 	{ "Emacs",   		            NULL,       NULL,   	    1 << Emacs_tag,             0,    		0,		        0, 	-1 },
-	{ "firefox", 		            NULL,     	NULL,           1 << firefox_tag,		    0,    		0,           	0,        -1 },
+	{ "Brave", 		                NULL,     	NULL,           1 << brave_tag,		    0,    		0,           	0,        -1 },
 	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << minder_tag,            0,    		0,		    0, 	-1 },
 	{ "Zathura", 		            NULL,     	NULL,           1 << Zathura_tag,		    0,     		0,           	0,        -1 },
 	{ "mpv",   		                NULL,      	NULL,		    1 << mpv_tag,                 0,    		0,		        0, 	       -1 },
@@ -99,7 +99,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
 static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/pic-mus/Screenshots/", NULL};
 // because I launch them by different way
-//static const char *browser[] = {"firefox", NULL};
+//static const char *browser[] = {"brave", NULL};
 //static const char *messenger[] = {"telegram-desktop", NULL};
 //static const char *torrent[] = {"qBittorrent", NULL};
 //static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
@@ -117,12 +117,19 @@ static Key keys[] = {
     // file manager
 	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
 	{ MODKEY,                       	XK_f,	  	view,          {.ui = 1 << ranger_tag}},
+    // force
+	{ MODKEY|MODKEY2,                   XK_f,	  	spawn,          SHCMD("st -e ranger")},
+	{ MODKEY|MODKEY2,                   XK_f,	  	view,          {.ui = 1 << ranger_tag}},
     // editor
 	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
 	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
+	//{ MODKEY|MODKEY2,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
     // browser
-	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch firefox") },
-	{ MODKEY,                  	        XK_w,      	view,           {.ui = 1 << 1} },
+	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
+	{ MODKEY,                  	        XK_w,      	view,           {.ui = 1 << brave_tag} },
+    // brain-viewer
+	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox 127.0.0.1:8080") },
+	{ MODKEY,                  	        XK_u,      	view,           {.ui = 1 << Emacs_tag} },
     // minder
 	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
 	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << minder_tag}},
@@ -136,6 +143,9 @@ static Key keys[] = {
     // torrent
 	{ MODKEY|ShiftMask,                 XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
 	{ MODKEY|ShiftMask,                 XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
+    //force
+	{ MODKEY|MODKEY2|ShiftMask,         XK_q,	  	spawn,          SHCMD("qbittorrent") },
+	{ MODKEY|MODKEY2|ShiftMask,         XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
     // network manager
 	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
 	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
