@@ -43,6 +43,7 @@ static const int mpv_tag = 3;
 static const int ranger_tag = 4;
 static const int minder_tag = 5;
 static const int TelegramDesktop_tag = 6 ;
+//static const int libreoffice_tag = 7 ;
 static const int qBittorrent_tag = 8;
 
 
@@ -97,7 +98,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
-static const char *screenshot[] = {"scrot", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/pic-mus/Screenshots/", NULL};
+static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
+static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
 // because I launch them by different way
 //static const char *browser[] = {"brave", NULL};
 //static const char *messenger[] = {"telegram-desktop", NULL};
@@ -150,7 +152,10 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
 	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
     // screen lock
-	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
+	{ MODKEY,			                XK_l,	  	spawn,	        {.v = screenlock }}, // + ShiftMask because of emacs org mode
+    // screenshot
+	{ MODKEY|ShiftMask,			        XK_s,	  	spawn,	        {.v = screenshot_clipboard }}, // + ShiftMask because of emacs org mode
+	{ MODKEY,			            XK_s,	  	spawn,	        {.v = screenshot_save }}, // + ShiftMask because of emacs org mode
 
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
 	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
@@ -198,8 +203,8 @@ static Key keys[] = {
 	{ ShiftMask, XF86XK_MonBrightnessUp,            spawn,          SHCMD("xbacklight -inc 3") },
 	{ 0, XF86XK_MonBrightnessDown,            	spawn,          SHCMD("xbacklight -dec 10")},
 	{ ShiftMask, XF86XK_MonBrightnessDown,          spawn,          SHCMD("xbacklight -dec 3")},
-	{ ShiftMask,    XK_Print, 			spawn,		{.v = screenshot}},
-	{0,    		XK_Print, 			spawn,		SHCMD("sleep 1; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/pic-mus/Screenshots/'")}, 
+	//{ ShiftMask,    XK_Print, 			spawn,		{.v = screenshot}},
+	//{0,    		XK_Print, 			spawn,		SHCMD("sleep 1; scrot -s -q 100 '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/pic-mus/Screenshots/'")}, 
 };
 
 /* button definitions */

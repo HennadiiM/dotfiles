@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+selection=$(hacksaw -g 3 -s 3 -c "#81A1C1")
+current=$(date +%F_%H-%M-%S)
+dir=~/pic-mus/Screenshots
+sleep 0.2
+shotgun -g "$selection" "$dir/$current.jpg"

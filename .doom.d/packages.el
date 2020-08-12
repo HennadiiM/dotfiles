@@ -49,10 +49,12 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(package! evil-snipe :disable t)
 (package! org-super-agenda) ;???
 (package! rainbow-mode)
 (package! simple-httpd)
 (package! org-roam-server)
+(package! org-fancy-priorities)
 (unpin! org-roam)
+(package! org-bullets)
 ;(package! org-fancy-priorities)
-;(package! evil-xkbswitch)
