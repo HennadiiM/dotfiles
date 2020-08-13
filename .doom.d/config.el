@@ -1,5 +1,6 @@
 ;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
+; available (efter leader): a d e j k l r u v x y z
+; not available (efter c-c): b r
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -221,7 +222,7 @@
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ("c" "conclusions" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "=Conclusions=" ) ;file and heading
+           (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "=Conclusions=." ) ;file and heading
            "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
@@ -297,23 +298,16 @@
 
 )
 
-;(after! org-roam
-;        (map! :leader
-;            :prefix "n"
-;            :desc "org-roam" "l" #'org-roam
-;            :desc "org-roam-insert" "i" #'org-roam-insert
-;            :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer
-;            :desc "org-roam-find-file" "f" #'org-roam-find-file
-;            :desc "org-roam-show-graph" "g" #'org-roam-show-graph
-;            ;:desc "org-roam-insert" "i" #'org-roam-insert
-;            :desc "org-roam-capture" "c" #'org-roam-capture))
-;fix end of buffer situation
-;(defun my-end-of-buffer-dwim (&rest _)
-;  "If current line is empty, call `previous-line'."
-;  (when (looking-at-p "^$")
-;    (previous-line)))
-;
-;(advice-add #'end-of-buffer :after #'my-end-of-buffer-dwim)
+(after! org-roam
+  (map!
+   :prefix "C-c"
+   :desc "org-roam" "r" #'org-roam
+   :desc "org-roam-find-file" "f" #'org-roam-find-file
+   :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
+   :desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; new file, incert in file, write in file;  j k l n
+   :desc "org-roam-new-tag(file)" "n" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
+   :desc "org-roam-show-graph" "g" #'org-roam-show-graph
+   :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer))
 
 (defun my-end-of-buffer-dwim (&rest _)
   "Go to beginning of line.
