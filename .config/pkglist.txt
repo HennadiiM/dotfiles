@@ -135,7 +135,6 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xxkb
 youtube-dl
 zathura
 zathura-djvu
