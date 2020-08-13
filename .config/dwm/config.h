@@ -130,7 +130,7 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
 	{ MODKEY,                  	        XK_w,      	view,           {.ui = 1 << brave_tag} },
     // brain-viewer
-	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox 127.0.0.1:8080") },
+	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox") },
 	{ MODKEY,                  	        XK_u,      	view,           {.ui = 1 << Emacs_tag} },
     // minder
 	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
