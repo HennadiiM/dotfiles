@@ -221,7 +221,7 @@ alias e=ranger
 
 # dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
-alias ds='pacman -Qqe > ~/.config/pkglist.txt && dot status'
+alias ds='pacman -Qqe > ~/.config/pkglist.txt && dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt" && dot status' #automatically update pkg list
 alias doa='dot add'
 alias dc='dot commit -m'
 alias dp='dot push'
@@ -233,6 +233,8 @@ alias dzshrc='dot add ~/.zshrc && dot commit -m'
 alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 alias dslstatus='dot add ~/.config/slstatus && dot commit -m'
 alias dxinit='dot add ~/.xinitrc && dot commit -m'
+
+alias gorg='cd ~/Documents/knowledge-base/ && git add . && git commit -m "more knowledge" && git push'
 
 # standard git commands
 alias gs='git status'
