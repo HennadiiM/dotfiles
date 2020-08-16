@@ -232,6 +232,7 @@ alias ddoom='dot add ~/.doom.d && dot commit -m'
 alias dzshrc='dot add ~/.zshrc && dot commit -m'
 alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 alias dslstatus='dot add ~/.config/slstatus && dot commit -m'
+alias dslock='dot add ~/.config/slock-1.4 && dot commit -m'
 alias dxinit='dot add ~/.xinitrc && dot commit -m'
 
 alias gorg='cd ~/Documents/knowledge-base/ && git add . && git commit -m "more knowledge" && git push'
