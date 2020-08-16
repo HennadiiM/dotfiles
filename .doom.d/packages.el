@@ -56,5 +56,6 @@
 (package! org-roam-server)
 (package! org-fancy-priorities)
 (unpin! org-roam)
+(package! undo-fu-mode :disable t)
 (package! org-bullets)
 ;(package! org-fancy-priorities)

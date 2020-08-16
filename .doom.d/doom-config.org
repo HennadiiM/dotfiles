@@ -1,10 +1,79 @@
+#+TITLE: Doom Config
+#+PROPERTY: header-args :tangle config.el
+
+* TOC :toc:
+- [[#about-this-config][About this config]]
+- [[#basic-definitions][Basic definitions]]
+- [[#look-and-feel][Look and feel]]
+- [[#autoloads][Autoloads]]
+- [[#key-bindings][key-bindings]]
+- [[#org][Org]]
+  - [[#customization][customization]]
+  - [[#templates-i-use][Templates I use]]
+  - [[#keywords][keywords]]
+  - [[#priorities-and-bullets][Priorities and bullets]]
+  - [[#anused-templates][Anused templates]]
+- [[#roam-org][Roam Org]]
+  - [[#server-org-roam][Server org-roam]]
+  - [[#my-own-thoughts][My own thoughts]]
+  - [[#deep-configuring][Deep configuring]]
+
+* About this config
+This is config for doom emacs (emacs distribution).
+Author: Hennadii Melanich
+Email: mhennadii@knu.ua
+* Basic definitions
++ Some functionality uses this to identify you, e.g. GPG configuration, email
+clients, file templates and snippets.
+
++ Place your private configuration here! Remember, you do not need to run 'doom
+sync' after modifying this file!
+
++ If you use `org' and don't want your org files in the default location below,
+change `org-directory'. It must be set before org loads!
+
++ I don't nee dir for notes
+;(setq org-default-notes-file (concat org-directory "/notes.org"))
+#+BEGIN_SRC elisp
 (setq user-full-name "Hennadii Melanich"
       user-mail-address "mhennadii@knu.ua")
 ;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq org-directory "~/Documents/knowledge-base/")
 (setq org-roam-directory "~/Documents/knowledge-base/roam")
+#+END_SRC
 
+* Look and feel
++ display-liny-numbers-type determinates the style of line numbers in effect. If set to `nil', line numbers are disabled. For relative line numbers, set this to `relative'.
+
++ Doom exposes five (optional) variables for controlling fonts in Doom. Here
+are the three important ones:
+
++ `doom-font'
++ `doom-variable-pitch-font'
++ `doom-big-font' -- used for `doom-big-font-mode'; use this for
+  presentations or streaming.
+
++ They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
+font string. You generally only need these two:
+
++ set Iosevka font only if it available
+
++ There are two ways to load a theme. Both assume the theme is installed and
+available. You can either set `doom-theme' or manually load a theme with the
+`load-theme' function. This is the default:
+
++ custom-set-variables was added by Custom.
+If you edit it by hand, you could mess it up, so be careful.
+Your init file should contain only one such instance.
+If there is more than one, they won't work right.
+
++ custom-set-faces was added by Custom.
+If you edit it by hand, you could mess it up, so be careful.
+Your init file should contain only one such instance.
+If there is more than one, they won't work right.
+
+#+BEGIN_SRC elisp
 (setq display-line-numbers-type 'visual)
 (setq default-input-method 'russian-computer) ; C-\ switch to completely russian support
 
@@ -79,15 +148,31 @@
  '(org-level-8 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
  '(org-document-title ((t (:inherit bold :foreground "#ECEFF4" :height 1.25))))
  )
+#+END_SRC
 
+
+* Autoloads
++ In vanilla emacs it may working:
+;(desktop-save-mode 0) trying set marks saving work
+;(add-to-list 'desktop-locals-to-save 'evil-markers-alist)
+;(cl-pushnew 'evil-markers-alist 'desktop-locals-to-save)
+#+BEGIN_SRC elisp
 (add-hook 'after-init-hook 'org-roam-mode)
 (add-hook 'after-init-hook 'org-roam-server-mode)
 (setq undo-fu-mode 'nil)
+#+END_SRC
 
+* key-bindings
+#+BEGIN_SRC elisp
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c r") 'org-roam)
 (global-set-key (kbd "C-c s") 'org-roam-server-mode)
+#+END_SRC
 
+* Org
+** customization
++ org-cycle-...: 0 - никак не достичь свободной линии. Но, более интуитивно работать с хедингами (?) Поменял на 2 и не ощутил "более удобной работы"
+#+BEGIN_SRC elisp
 (setq org-cycle-separator-lines 2)
 (setq calendar-week-start-day 1) ; start week from Monday
 (setq org-hide-emphasis-markers t) ; org-mode conceall markup
@@ -103,7 +188,9 @@
  (add-to-list 'org-latex-packages-alist
               '("AUTO" "polyglossia" t ("xelatex" "lualatex")))
  )
-
+#+END_SRC
+** Templates I use
+#+BEGIN_SRC elisp
 (after! org
   (setq org-capture-templates
         '(
@@ -142,7 +229,9 @@
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
-
+#+END_SRC
+** Todo keywords
+#+BEGIN_SRC elisp
 (after! org
   (setq org-todo-keywords
         '(
@@ -167,7 +256,9 @@
           ;("CANCELED" . (:foreground "blue" :weight bold))
           ))
 )
-
+#+END_SRC
+** Priorities and bullets
+#+BEGIN_SRC elisp
 (after! org
 (use-package! org-fancy-priorities
   :hook (org-mode . org-fancy-priorities-mode)
@@ -188,7 +279,10 @@
 (setq  org-bullets-bullet-list '("⁖"))
 
 )
+#+END_SRC
 
+** Anused templates
+#+BEGIN_SRC elisp
           ;("d" "Demo template" entry ;check the documentation
           ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
           ; "* DEMO TEXT %?")
@@ -213,7 +307,11 @@
           ;("ts" "template with date and selected area" entry ;check the documentation
           ; (file+headline "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
           ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %i\n %?")
+#+END_SRC
 
+
+* Roam Org
+#+BEGIN_SRC elisp
 (after! org-roam
   (map!
    :prefix "C-c"
@@ -236,6 +334,12 @@
                                      ))
   )
 
+#+END_SRC
+
+** Server org-roam
++ put it inside "after" for test
+
+#+BEGIN_SRC elisp
 (require 'org-roam-protocol)
 (after! org-roam
   (use-package org-roam-server
@@ -253,7 +357,31 @@
           org-roam-server-extra-edge-options (list (cons 'width 2))
           org-roam-server-network-label-wrap-length 20))
  )
+#+END_SRC
 
+** My own thoughts
++ available (efter leader): a d e j k l r u v x y z
++ not available (efter c-c): a b c f g i n r
+
+** Deep configuring
++ fix end of the buffer meme
++ Here are some additional functions/macros that could help you configure Doom:
+  - `load!' for loading external *.el files relative to this one
+  - `use-package!' for configuring packages
+  - `after!' for running code after a package has loaded
+  - `add-load-path!' for adding directories to the `load-path', relative to
+    this file. Emacs searches the `load-path' when you load packages with
+    `require' or `use-package'.
+  - `map!' for binding new keys
+
+To get information about any of these functions/macros, move the cursor over
+the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
+This will open documentation for it, including demos of how they are used.
+
+You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
+they are implemented.
+
+#+BEGIN_SRC elisp
 (defun my-end-of-buffer-dwim (&rest _)
   "Go to beginning of line.
 If current line is empty, go to beginning of previous one
@@ -261,6 +389,10 @@ instead."
   (beginning-of-line (and (looking-at-p "^$") 0)))
 (advice-add #'end-of-buffer :after #'my-end-of-buffer-dwim)
 
+#+END_SRC
+
+***  don't display Heading name in org roam buffer
+#+BEGIN_SRC elisp
 ;  (defun org-roam-buffer--insert-backlinks ()
 ;    "Insert the org-roam-buffer backlinks string for the current buffer."
 ;    (if-let* ((file-path (buffer-file-name org-roam-buffer--current))
@@ -288,7 +420,10 @@ instead."
 ;                           'file-from-point (plist-get props :point))
 ;                          "\n\n"))))))
 ;      (insert "\n\n* No backlinks!")))
+#+END_SRC
 
+*** autogen id's
+#+BEGIN_SRC elisp
 ;(require 'org-id)
 ;(setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
 
@@ -332,7 +467,10 @@ instead."
 ;    (message "Copied %s to clipboard" mytmpid)))
 ;
 ;(global-set-key (kbd "C-c l") 'my/copy-id-to-clipboard)
+#+END_SRC
 
+*** didn't work
+#+BEGIN_SRC elisp
                                         ; tried to fix evil 's' sityation in org-mode
 ;(require 'org)
 ;(define-key org-mode-map (kbd "s") nil)
@@ -351,3 +489,4 @@ instead."
 ; change meta key to win(super) (Better idea to set Super for sustem, ctrl as alt and use Left alt for emacs)
 ;(setq  x-meta-keysym 'super
 ;       x-super-keysym 'meta)
+#+END_SRC
