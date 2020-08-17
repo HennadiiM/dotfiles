@@ -1,4 +1,4 @@
-(setq user-full-name "Hennadii Melanich"
+(setq user-full-name "Melanich Hennadii"
       user-mail-address "mhennadii@knu.ua")
 ;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
@@ -82,11 +82,11 @@
 
 (add-hook 'after-init-hook 'org-roam-mode)
 (add-hook 'after-init-hook 'org-roam-server-mode)
-(setq undo-fu-mode 'nil)
+;(setq undo-fu-mode 'nil)
 
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c r") 'org-roam)
 (global-set-key (kbd "C-c s") 'org-roam-server-mode)
+(global-set-key (kbd "C-c u") (kbd "gg C-c C-c C-c C-v t SPC q r"))
 
 (setq org-cycle-separator-lines 2)
 (setq calendar-week-start-day 1) ; start week from Monday
@@ -94,7 +94,7 @@
 ;(setq org-startup-folded t) ; fold everything on startup
 
 ; reduce amount of garbage
-; (setq org-roam-db-gc-threshold most-positive-fixnum)
+;(setq org-roam-db-gc-threshold most-positive-fixnum)
 
 (after! org
                                         ; for presentations
@@ -110,14 +110,14 @@
           ;("u" "thoughts for upgrading") ;check the documentation
           ("r" "30 min review" item ;check the documentation
            (file+olp+datetree "~/Documents/knowledge-base/roam/20200816081408-2_min_diary.org" ) ;file and heading
-           "%U\n- ход дел:\n\t - [ ] %?\n - это было здорово:\n\t - .\n - можно еще круче:\n   \t - .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           "%U\n- [ ] %?\n- это было здорово:\n\t- .\n- можно еще круче:\n   \t- .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ;("h" "hierarchy of issues (level up)" item ; одновременно это более подробный отчет о проделанной работе
           ; (file+olp+datetree "~/Documents/knowledge-base/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
           ; "%U\n - [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
-           (file+headline "~/Documents/knowledge-base/roam/20200816090801-ideas.org" "=Ideas=.") ;file and heading
+           (file+headline "~/Documents/knowledge-base/roam/20200816090801-ideas.org") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
           ("a" "answers needed!") ;check the documentation
@@ -223,15 +223,20 @@
    :desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; new file, incert in file, write in file;  j k l n
    :desc "org-roam-new-tag(file)" "n" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
-   :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer)
+   :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
 
 
   (setq org-roam-title-sources '((title headline) alias))
 
   (setq org-roam-capture-templates '(
+;("d" "default" plain (function org-roam--capture-get-point)
+;     "%?"
+;     :file-name "%<%Y%m%d%H%M%S>-${slug}"
+;     :head "#+title: ${title}\n"
+;     :unnarrowed t)
                                      ("c" "clear alias area" plain (function org-roam--capture-get-point)
-                                      :file-name "%<%Y%m%d%H%M%S>-${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias: \"%?\"    \n\np:    \n\n\n- [ ] TODO:   \n\t- [ ]"
+                                      :file-name "${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias: \"%?\"    \n\nm:    \n\n\n- [ ] TODO:   \n\t- [ ]"
                                       :unnarrowed t)
                                      ))
   )
