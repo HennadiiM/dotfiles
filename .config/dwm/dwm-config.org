@@ -1,5 +1,25 @@
-#include <X11/XF86keysym.h>
+#+TITLE: Dwm Config
+#+PROPERTY: header-args :tangle config.h
 
+* TOC: :toc:
+- [[#libraries-importing][Libraries importing]]
+- [[#colors-fonts][Colors, fonts]]
+- [[#tagging][Tagging]]
+  - [[#tags-symbols][Tags symbols]]
+  - [[#own-tag-for-each-program][Own tag for each program]]
+- [[#windows-layouts-keys-definitions][Windows layouts, keys definitions]]
+- [[#keys-definitions][Keys definitions]]
+- [[#commands][Commands]]
+- [[#shortcuts][Shortcuts]]
+- [[#clickable-bottons-features][Clickable bottons features]]
+
+* Libraries importing
+#+BEGIN_SRC c
+#include <X11/XF86keysym.h>
+#+END_SRC
+
+* Colors, fonts
+#+BEGIN_SRC c
 static const unsigned int borderpx  = 0;        /* border pixel of Mod4Maskdows */
 static const unsigned int snap      = 0;//32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -18,7 +38,16 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
+#+END_SRC
 
+* Tagging
+** Tags symbols
+- more symbols I've used:
+  = , , , , , , , ,,,,,,,, ,  ,=
+- default names:
+  =static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };=
+- programs positions in tags first number = tag number (tags numbers start from 0)
+#+BEGIN_SRC c
 static const char *tags[] = { "", "", "",/*3*/ "", "", "", "",/*6*/ "", "" };
 
 static const int Emacs_tag = 0;
@@ -30,7 +59,14 @@ static const int minder_tag = 5;
 static const int TelegramDesktop_tag = 6 ;
 //static const int libreoffice_tag = 7 ;
 static const int qBittorrent_tag = 8;
+#+END_SRC
 
+** Own tag for each program
+- to find instances:
+- xprop(1):
+  	WM_CLASS(STRING) = instance, class
+  	WM_NAME(STRING) = title
+#+BEGIN_SRC c
 static const Rule rules[] = {
 	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor */
 	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1 },
@@ -46,7 +82,10 @@ static const Rule rules[] = {
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
 };
+#+END_SRC
 
+* Windows layouts, keys definitions
+#+BEGIN_SRC c
 static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
@@ -57,7 +96,10 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
+#+END_SRC
 
+* Keys definitions
+#+BEGIN_SRC c
 #define MODKEY Mod4Mask
 #define ctrl ControlMask
 #define MODKEY2 Mod1Mask
@@ -70,14 +112,43 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#+END_SRC
 
+* Commands
+- dont use it, because I launch them with =wise-launch= script (see below)
+  - static const char *browser[] = {"brave", NULL};
+  - static const char *messenger[] = {"telegram-desktop", NULL};
+  - static const char *torrent[] = {"qBittorrent", NULL};
+  - static const char *mindmap[] = {"com.github.phase1geo.minder", NULL};
+  - static const char *editor[] = {"emacs", NULL};
+- this don't use, because different way:
+  - static const char *screenshot_area[] = {"sleep 0.5","&", "scrot", "-s", "-q 100", "%Y-%m-%d-%H-%M-%S.jpg", "-e" "mv $f ~/Pictures/Screenshots/", NULL};
+- it didn't work:
+  - static const char *fmcmd[] = { "st", "-title", "ranger", "-e", "ranger", NULL };
+- list of keysums here: =/usr/include/X11/keysymdef.h=
+  - or here: https://www.oreilly.com/library/view/xlib-reference-manual/9780937175262/16_appendix-h.html
+   
+#+BEGIN_SRC c
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
 static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
 static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
+#+END_SRC
 
+* Shortcuts
+- previous settings for media keys bottons:
+  - { 0, XF86XK_AudioRaiseVolume,             	spawn,          SHCMD("amixer -q sset Master 10%+" )},
+  - { ShiftMask, XF86XK_AudioRaiseVolume,    	spawn,          SHCMD("amixer -q sset Master 3%+" )},
+  - { 0, XF86XK_AudioLowerVolume,             	spawn,          SHCMD("amixer -q sset Master 10%-" )},
+  - { ShiftMask, XF86XK_AudioLowerVolume,           spawn,          SHCMD("amixer -q sset Master 3%-" )},
+  - { 0, XF86XK_AudioMute,                    	spawn,          SHCMD("amixer -q sset Master toggle")},
+  - { 0, XF86XK_AudioPlay,                  	  spawn,          {.v = audioplay } },
+  - { 0, XF86XK_AudioPrev,                  	  spawn,          {.v = audioback } },
+  - { 0, XF86XK_AudioNext,                  	  spawn,          {.v = audionext } },
+	- start program in it's tag and go to this tag simultaneously
+#+BEGIN_SRC c
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
     // file manager
@@ -165,7 +236,12 @@ static Key keys[] = {
 	{ MODKEY,                      XK_d,        spawn,          SHCMD("xbacklight -dec 10")},
 	{ MODKEY|ShiftMask,             XK_d,        spawn,          SHCMD("xbacklight -dec 3")},
 };
+#+END_SRC
 
+* Clickable bottons features
+- button definitions
+- click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin
+#+BEGIN_SRC c
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
@@ -180,3 +256,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+#+END_SRC
