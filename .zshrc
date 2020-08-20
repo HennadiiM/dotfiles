@@ -234,8 +234,9 @@ alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 alias dslstatus='dot add ~/.config/slstatus && dot commit -m'
 alias dslock='dot add ~/.config/slock-1.4 && dot commit -m'
 alias dxinit='dot add ~/.xinitrc && dot commit -m'
+alias dscripts='dot add ~/soft/scripts/ && dot commit -m'
 
-alias gorg='cd ~/Documents/knowledge-base/ && git add . && git commit -m "more knowledge" && git push'
+alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
 
 # standard git commands
 alias gs='git status'
