@@ -29,6 +29,7 @@ static const int ranger_tag = 4;
 static const int minder_tag = 5;
 static const int TelegramDesktop_tag = 6 ;
 //static const int libreoffice_tag = 7 ;
+static const int slock_tag = 7;
 static const int qBittorrent_tag = 8;
 
 static const Rule rules[] = {
@@ -115,6 +116,8 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
 	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
     // screen lock
+	//{ MODKEY,                       	XK_l,	  	view,          	{.ui = 1 << slock_tag}},
+	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
 	{ MODKEY,			                XK_l,	  	spawn,	        {.v = screenlock }},
     // screenshot
 	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenshot_clipboard }},

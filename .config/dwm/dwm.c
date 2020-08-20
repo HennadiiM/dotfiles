@@ -216,6 +216,8 @@ static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
+// HennadiiM added
+//static void hidebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
@@ -1771,6 +1773,17 @@ togglebar(const Arg *arg)
 	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
 	arrange(selmon);
 }
+
+// HennadiiM added
+//void
+//hidebar(const Arg *arg)
+//{
+//	showbar = 0;
+//	selmon->showbar = !selmon->showbar;
+//	updatebarpos(selmon);
+//	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
+//	arrange(selmon);
+//}
 
 void
 togglefloating(const Arg *arg)
