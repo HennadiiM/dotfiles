@@ -230,11 +230,11 @@ alias dp='dot push'
 alias ddwm='dot add ~/.config/dwm && dot commit -m'
 alias ddoom='dot add ~/.doom.d && dot commit -m'
 alias dzshrc='dot add ~/.zshrc && dot commit -m'
-alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 alias dslstatus='dot add ~/.config/slstatus && dot commit -m'
 alias dslock='dot add ~/.config/slock-1.4 && dot commit -m'
 alias dxinit='dot add ~/.xinitrc && dot commit -m'
 alias dscripts='dot add ~/soft/scripts/ && dot commit -m'
+alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
 
@@ -279,10 +279,18 @@ alias sspnm='systemctl stop NetworkManager'
 alias ndc='n $HOME/.config/dwm/config.h'
 alias cdwm='$HOME/.config/dwm'
 alias di='$HOME/.config/dwm && sudo make install'
+
+# config manipulations
 alias nc='n config.h'
 alias smi='sudo make install'
 alias smci='sudo make clean install'
 
+# slock variations
+alias sbi='~/.config/slock-1.4 && smi' #blur
+alias sti='~/.config/slock-trol && smi' #trol
+alias sci='~/.config/slock-caps && smi' #caps
+
+# fast open in nvim
 alias nv='n $HOME/.config/nvim/init.vim'
 alias nvo='n $HOME/.vimrc'
 alias nz='n $HOME/.zshrc'
@@ -309,11 +317,4 @@ alias ex='exit'
 alias shu='shutdown now'
 alias s='startx'
 
-
-# custom bash commands
-#echo "hello, world"
-#yvm() {
-#    mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]" "$1"
-#    #echo "hello world"
-#}
 
