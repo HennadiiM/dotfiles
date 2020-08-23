@@ -109,7 +109,7 @@ If there is more than one, they won't work right.
  '(objed-cursor-color "#BF616A")
  '(org-agenda-files
    (quote
-    ("~/.org/roam/20200816100807-agenda.org")))
+    ("~/.org/roam/s:/agenda.org")))
  '(org-log-into-drawer t)
  '(package-selected-packages (quote (reverse-im linum-relative use-package)))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
@@ -158,6 +158,7 @@ If there is more than one, they won't work right.
 ;(cl-pushnew 'evil-markers-alist 'desktop-locals-to-save)
 #+BEGIN_SRC elisp
 (add-hook 'after-init-hook 'org-roam-server-mode)
+;(ranger-override-dired-mode t) ;doesn't work? Remove me?
 ;(setq undo-fu-mode 'nil)
 #+END_SRC
 
@@ -185,46 +186,59 @@ If there is more than one, they won't work right.
  (add-to-list 'org-latex-packages-alist
               '("AUTO" "babel" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
+              '("" "mathtext" t ("pdflatex")))
+ (add-to-list 'org-latex-packages-alist
               '("AUTO" "polyglossia" t ("xelatex" "lualatex")))
  )
-#+END_SRC
+
+;(defun append-to-list (list-var elements)
+;  "Append ELEMENTS to the end of LIST-VAR.
+;The return value is the new value of LIST-VAR."
+;  (unless (consp elements)
+;    (error "ELEMENTS must be a list"))
+;  (let ((list (symbol-value list-var)))
+;    (if list
+;        (setcdr (last list) elements)
+;      (set list-var elements)))
+;  (symbol-value list-var))
+;
+;(append-to-list 'org-latex-packages-alist
+;              '(("AUTO" "babel" t ("pdflatex"))
+;                ("" "mathtext" t ("pdflatex"))))
+
+  #+END_SRC
 ** Templates I use
 #+BEGIN_SRC elisp
 (after! org
   (setq org-capture-templates
         '(
-          ;("u" "thoughts for upgrading") ;check the documentation
           ("r" "30 min review" item ;check the documentation
-           (file+olp+datetree "~/.org/roam/20200816081408-2_min_diary.org" ) ;file and heading
-           "%U\n- [ ] %?\n- это было здорово:\n\t- .\n- можно еще круче:\n   \t- .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
-
-          ;("h" "hierarchy of issues (level up)" item ; одновременно это более подробный отчет о проделанной работе
-          ; (file+olp+datetree "~/.org/3.efficiency/hierarchy-of-issues.org" ) ;file and heading
-          ; "%U\n - [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
-
+           (file+olp+datetree "~/.org/roam/s:/20200816081408-2_min_diary.org" ) ;file and heading
+           "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+         
           ("i" "ideas" entry ;check the documentation
-           (file "~/.org/roam/20200816090801-ideas.org") ;file and heading
+           (file "~/.org/roam/s:/ideas.org") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
           ("a" "answers needed!") ;check the documentation
           ("ag" "answer to Gleb" entry ;check the documentation
-           (file "~/.org/roam/20200816090801-ideas.org") ;file and heading
+           (file "~/.org/roam/s:/questions_to_answer.org") ;file and heading
            "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
 
           ("ao" "answers to other people, sources" entry ;check the documentation
-           (file "~/.org/roam/20200816090801-ideas.org") ;file and heading
+           (file "~/.org/roam/s:/questions_to_answer.org") ;file and heading
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ("c" "conclusions" entry ;check the documentation
-           (file "~/.org/roam/20200816090801-ideas.org") ;file and heading
+           (file "~/.org/roam/s:/conclusions.org") ;file and heading
            "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
-           (file "~/.org/roam/20200816090801-ideas.org") ;file and heading
+           (file "~/.org/roam/s:/todo.org") ;file and heading
            "* TODO %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("p" "important big idea = progect" entry ;check the documentation
-           (file "~/.org/roam/20200816093423-goals.org") ;file and heading
+          ("g" "important big idea = goal" entry ;check the documentation
+           (file "~/.org/roam/s:/goals.org") ;file and heading
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
@@ -282,6 +296,10 @@ If there is more than one, they won't work right.
 
 ** Anused templates
 #+BEGIN_SRC elisp
+          ;("r" "30 min review" item ;check the documentation
+          ; (file+olp+datetree "~/.org/roam/s:/20200816081408-2_min_diary.org" ) ;file and heading
+          ; "%U\n- [ ] %?\n- это было здорово:\n\t- .\n- можно еще круче:\n   \t- .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+
           ;("d" "Demo template" entry ;check the documentation
           ; (file+headline "~/.org/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
           ; "* DEMO TEXT %?")
@@ -314,8 +332,8 @@ If there is more than one, they won't work right.
 (use-package! org-roam
 ;  :commands (org-roam-insert org-roam-find-file org-roam-switch-to-buffer org-roam)
   :hook
- ; (after-init . org-roam-mode)
-(add-hook 'after-init-hook 'org-roam-mode)
+  (after-init . org-roam-mode)
+;(add-hook 'after-init-hook 'org-roam-mode)
   :init
   (map!
    :prefix "C-c"
@@ -323,52 +341,55 @@ If there is more than one, they won't work right.
    :desc "org-roam" "r" #'org-roam
    :desc "org-roam-find-file" "f" #'org-roam-find-file
    :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
-   ;:desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; don't use it, use templates, they add info quicker
-   :desc "org-roam-new-tag(file)" "n" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
+   :desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; use default template?
+   :desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
    :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
 
 
-  (setq ;org-roam-db-gc-threshold gc-cons-threshold
+  (setq org-roam-directory (file-truename "~/.org/roam/")
+        org-roam-db-location "~/.org/roam/org-roam.db"
         org-roam-db-gc-threshold most-positive-fixnum
-        org-roam-title-sources '((title headline) alias)
-        org-roam-tag-sources '(prop)
-        org-roam-directory (file-truename "~/.org/roam/")
-        org-roam-db-location "/home/prodper/org-roam.db")
-;        org-roam-db-location "~/.org/roam/org-roam.db")
-  ;(setq org-roam-tag-sources '(directories global-prop))
+        org-roam-tag-sources '(all-directories prop))
 
   (setq org-roam-capture-templates '(
-                                     ;("g" "gear note for this mechanism" plain (function org-roam--capture-get-point)
-                                     ; :file-name "${slug}"
-                                     ; :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n- [ ] TODO:   \n\t- [ ]"
-                                     ; :unnarrowed t)
-
-                                     ;("s" "simple note" plain (function org-roam--capture-get-point)
-                                     ; :file-name "${slug}"
-                                     ; :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n\n\n- [ ] TODO:   \n\t- [ ]"
-                                     ; :unnarrowed t)
-
-                                     ;("e" "file explanation and additional info" plain (function org-roam--capture-get-point)
-                                     ; :file-name "${slug}"
-                                     ; :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\nm:   \n%a    \n\n\n- [ ] TODO:   \n\t- [ ]"
-                                     ; :unnarrowed t)
-                                    
-                                     ("g" "gear note for this mechanism" plain (function org-roam--capture-get-point)
-                                      :file-name "${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
+                                     ("k" "just knowledge") ;check the documentation
+                                     ("ks" "simple note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/k:/${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
                                       :unnarrowed t)
 
-                                     ("s" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "${slug}"
+                                     ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/k:/${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
+                                      :unnarrowed t)
+
+                                     ("ke" "file explanation and additional info" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/k:/${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ne:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
+                                      :unnarrowed t)
+
+                                     ("s" "skills!") ;check the documentation
+                                     ("ss" "simple note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/s:/${slug}"
                                       :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
                                       :unnarrowed t)
 
-                                     ("e" "file explanation and additional info" plain (function org-roam--capture-get-point)
-                                      :file-name "${slug}"
+                                     ("sm" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/s:/${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
+                                      :unnarrowed t)
+
+                                     ("se" "file explanation and additional info" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/s:/${slug}"
                                       :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ne:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
                                       :unnarrowed t)
 
+                                     ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
+                                     ("d" "default" plain (function org-roam--capture-get-point)
+                                      :file-name "${slug}"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
+                                      :unnarrowed t)
                                      ))
 )
 
@@ -391,19 +412,18 @@ If there is more than one, they won't work right.
           org-roam-server-export-inline-images t
           org-roam-server-authenticate nil
           org-roam-server-network-poll t ; if `nil', reload using Reload botton (useful when big network)
- ;         org-roam-server-network-arrows "middle"
+          org-roam-server-network-arrows "middle"
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
           ;org-roam-server-network-vis-options (json-encode (list (cons 'physics (list (cons 'enabled json-false)))))
           org-roam-server-extra-edge-options (list (cons 'width 2))
           org-roam-server-network-label-wrap-length 20))
-  (setq org-roam-server-network-arrows "middle")
-  (setq org-roam-server-network-vis-options
-      (json-encode
-       (list (cons 'edges
-        (list (cons 'arrows
-         (list (cons 'middle
-          (list (cons 'scaleFactor -1))))))))))
+;  (setq org-roam-server-network-vis-options  opposite direction
+;      (json-encode
+;       (list (cons 'edges
+;        (list (cons 'arrows
+;         (list (cons 'middle
+;          (list (cons 'scaleFactor -1))))))))))
  )
 #+END_SRC
 
