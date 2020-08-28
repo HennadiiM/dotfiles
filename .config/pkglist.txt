@@ -18,6 +18,7 @@ extundelete
 fakeroot
 feh
 firefox
+flameshot
 flex
 gcc
 gdb
@@ -71,6 +72,7 @@ python-pynvim
 qbittorrent
 ranger
 redshift
+reflector
 ripgrep
 scrot
 shotgun
@@ -86,6 +88,7 @@ tlp
 ttf-font-awesome
 ttf-iosevka
 ueberzug
+unrar
 unzip
 vue
 webkit2gtk
