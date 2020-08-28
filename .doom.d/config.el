@@ -40,7 +40,7 @@
  '(objed-cursor-color "#BF616A")
  '(org-agenda-files
    (quote
-    ("~/.org/roam/s:/agenda.org")))
+    ("~/.org/roam/k:/agenda.org")))
  '(org-log-into-drawer t)
  '(package-selected-packages (quote (reverse-im linum-relative use-package)))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
@@ -69,14 +69,14 @@
     (cons 360 "#4C566A")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
- '(org-level-1 ((t (:inherit bold :foreground "#ECEFF4" :height 1.13))))
- '(org-level-2 ((t (:inherit bold :foreground "#ECEFF4" :height 1.10))))
- '(org-level-3 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
- '(org-level-4 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
- '(org-level-5 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
- '(org-level-6 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
- '(org-level-7 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
- '(org-level-8 ((t (:inherit bold :foreground "#ECEFF4" :height 1.08))))
+ '(org-level-1 ((t (:foreground "#ECEFF4" :height 1.03)))) ; :inherit bold для жирного, там же где и foreground
+ '(org-level-2 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-3 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-4 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-5 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-6 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-7 ((t (:foreground "#ECEFF4" :height 1.02))))
+ '(org-level-8 ((t (:foreground "#ECEFF4" :height 1.02))))
  '(org-document-title ((t (:inherit bold :foreground "#ECEFF4" :height 1.25))))
  )
 
@@ -125,32 +125,32 @@
   (setq org-capture-templates
         '(
           ("r" "30 min review" item ;check the documentation
-           (file+olp+datetree "~/.org/roam/s:/20200816081408-2_min_diary.org" ) ;file and heading
+           (file+olp+datetree "~/.org/roam/k:/20200816081408-2_min_diary.org" ) ;file and heading
            "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
          
           ("i" "ideas" entry ;check the documentation
-           (file "~/.org/roam/s:/ideas.org") ;file and heading
+           (file "~/.org/roam/k:/ideas.org") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
           ("a" "answers needed!") ;check the documentation
           ("ag" "answer to Gleb" entry ;check the documentation
-           (file "~/.org/roam/s:/questions_to_answer.org") ;file and heading
+           (file "~/.org/roam/k:/questions_to_answer.org") ;file and heading
            "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
 
           ("ao" "answers to other people, sources" entry ;check the documentation
-           (file "~/.org/roam/s:/questions_to_answer.org") ;file and heading
+           (file "~/.org/roam/k:/questions_to_answer.org") ;file and heading
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ("c" "conclusions" entry ;check the documentation
-           (file "~/.org/roam/s:/conclusions.org") ;file and heading
+           (file "~/.org/roam/k:/conclusions.org") ;file and heading
            "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
-           (file "~/.org/roam/s:/todo.org") ;file and heading
+           (file "~/.org/roam/k:/todo.org") ;file and heading
            "* TODO %?\n:LOGBOOK:\n\n:END:\n")
 
           ("g" "important big idea = goal" entry ;check the documentation
-           (file "~/.org/roam/s:/goals.org") ;file and heading
+           (file "~/.org/roam/k:/goals.org") ;file and heading
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
@@ -202,7 +202,7 @@
 )
 
           ;("r" "30 min review" item ;check the documentation
-          ; (file+olp+datetree "~/.org/roam/s:/20200816081408-2_min_diary.org" ) ;file and heading
+          ; (file+olp+datetree "~/.org/roam/k:/20200816081408-2_min_diary.org" ) ;file and heading
           ; "%U\n- [ ] %?\n- это было здорово:\n\t- .\n- можно еще круче:\n   \t- .   \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ;("d" "Demo template" entry ;check the documentation
@@ -243,7 +243,7 @@
    :desc "org-roam-find-file" "f" #'org-roam-find-file
    :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
    :desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; use default template?
-   :desc "org-roam-new-tag(file)" "n" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
+   :desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
    :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
 
@@ -254,42 +254,37 @@
         org-roam-tag-sources '(all-directories prop))
 
   (setq org-roam-capture-templates '(
-                                     ("k" "just knowledge") ;check the documentation
+                                     ("i" "just info") ;check the documentation
+                                     ("is" "simple note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* Суть\n - [ ] \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ("im" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n - [ ] \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ("k" "knowledge!") ;check the documentation
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
+                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* Суть\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
+                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ke" "file explanation and additional info" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ne:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n - [ ] \n\n* Идеи"
-                                      :unnarrowed t)
-
-                                     ("s" "skills!") ;check the documentation
-                                     ("ss" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/s:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
-                                      :unnarrowed t)
-
-                                     ("sm" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/s:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
-                                      :unnarrowed t)
-
-                                     ("se" "file explanation and additional info" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/s:/${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ne:   \n%a    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
+                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
                                      ("d" "default" plain (function org-roam--capture-get-point)
-                                      :file-name "${slug}"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* TODO:   \n** Добавить контента\n\n* Суть\n\n* Идеи"
+                                      :file-name "${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n\n\n* Суть\n\n* TODO:"
                                       :unnarrowed t)
                                      ))
 )
@@ -303,7 +298,7 @@
           org-roam-server-port 8080
           org-roam-server-export-inline-images t
           org-roam-server-authenticate nil
-          org-roam-server-network-poll t ; if `nil', reload using Reload botton (useful when big network)
+          org-roam-server-network-poll nil ; if `nil', reload using Reload botton (useful when big network)
           org-roam-server-network-arrows "middle"
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
