@@ -76,6 +76,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
+static const char *screenshot_fancy[] = {"flameshot-save"};
 static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
 static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
 
@@ -122,6 +123,7 @@ static Key keys[] = {
     // screenshot
 	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenshot_clipboard }},
 	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenshot_save }},
+	{ MODKEY,			                XK_z,	  	spawn,	        {.v = screenshot_fancy }},
 
     //ordinary settings
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
