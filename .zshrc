@@ -321,4 +321,6 @@ alias ex='exit'
 alias shu='shutdown now'
 alias s='startx'
 
+alias mp='simple-mtpfs --device 1 ~/sandbox/phone'
+alias up='fusermount -u ~/sandbox/phone'
 
