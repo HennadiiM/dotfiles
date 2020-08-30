@@ -59,3 +59,8 @@
 (package! undo-fu-mode :disable t)
 (package! org-bullets)
 ;(package! org-fancy-priorities)
+;;
+;; in ~/.doom.d/packages.el
+(package! doom-snippets :ignore t)
+;; If you want to replace it with yasnippet's default snippets
+(package! yasnippet-snippets)

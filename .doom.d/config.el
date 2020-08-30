@@ -3,6 +3,8 @@
 ;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq org-directory "~/.org")
+(setq yas-snippet-dirs '("~/.doom.d/mysnippets"))
+                           ;"~/Downloads/interesting-snippets"))
 ;(setq org-roam-directory "~/.org/roam")
 
 (setq display-line-numbers-type 'visual)
@@ -40,7 +42,7 @@
  '(objed-cursor-color "#BF616A")
  '(org-agenda-files
    (quote
-    ("~/.org/roam/k:/agenda.org")))
+    ("~/.org/agenda.org")))
  '(org-log-into-drawer t)
  '(package-selected-packages (quote (reverse-im linum-relative use-package)))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
@@ -84,9 +86,10 @@
 ;(ranger-override-dired-mode t) ;doesn't work? Remove me?
 ;(setq undo-fu-mode 'nil)
 
-(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c j") 'org-capture)
 (global-set-key (kbd "C-c s") 'org-roam-server-mode)
 (global-set-key (kbd "C-c u") (kbd "gg C-c C-c C-c C-v t")) ; test, if no lags appears
+(global-set-key (kbd "C-c t") (kbd "SPC o a a a")) ; "todo"
 ;(global-set-key (kbd "C-c e") '(org-roam-mode org-roam))
 
 (setq org-cycle-separator-lines 2)
@@ -106,28 +109,17 @@
               '("AUTO" "polyglossia" t ("xelatex" "lualatex")))
  )
 
-;(defun append-to-list (list-var elements)
-;  "Append ELEMENTS to the end of LIST-VAR.
-;The return value is the new value of LIST-VAR."
-;  (unless (consp elements)
-;    (error "ELEMENTS must be a list"))
-;  (let ((list (symbol-value list-var)))
-;    (if list
-;        (setcdr (last list) elements)
-;      (set list-var elements)))
-;  (symbol-value list-var))
-;
-;(append-to-list 'org-latex-packages-alist
-;              '(("AUTO" "babel" t ("pdflatex"))
-;                ("" "mathtext" t ("pdflatex"))))
-
 (after! org
   (setq org-capture-templates
         '(
           ("r" "30 min review" item ;check the documentation
-           (file+olp+datetree "~/.org/roam/k:/20200816081408-2_min_diary.org" ) ;file and heading
-           "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           (file+olp+datetree "~/.org/2_min_diary.org" ) ;file and heading
+           "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
          
+          ("f" "fast thought" item ;check the documentation
+           (file+olp+datetree "~/.org/2_min_diary.org" ) ;file and heading
+           "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+
           ("i" "ideas" entry ;check the documentation
            (file "~/.org/roam/k:/ideas.org") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
@@ -242,8 +234,8 @@
    :desc "org-roam" "r" #'org-roam
    :desc "org-roam-find-file" "f" #'org-roam-find-file
    :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
-   :desc "org-roam-insert-info-in-file" "i" #'org-roam-insert ; use default template?
-   :desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't go to tag, just tag, don't go to file, don't write content
+   :desc "org-roam-add-link" "l" #'org-roam-insert ; use default template?
+   ;:desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't use, because no loop feedback
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
    :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
 
@@ -257,34 +249,34 @@
                                      ("i" "just info") ;check the documentation
                                      ("is" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* Суть\n - [ ] \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n - \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("im" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n - [ ] \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n - \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("k" "knowledge!") ;check the documentation
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:    \n\n\n* Суть\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ke" "file explanation and additional info" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Суть\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
                                      ("d" "default" plain (function org-roam--capture-get-point)
                                       :file-name "${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}    \n#+roam_alias:   \n#+roam_tags: %?    \n\ng:   \n\n\n* Суть\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* В файле описано\n\n* TODO:"
                                       :unnarrowed t)
                                      ))
 )
@@ -410,3 +402,32 @@ instead."
 ; change meta key to win(super) (Better idea to set Super for sustem, ctrl as alt and use Left alt for emacs)
 ;(setq  x-meta-keysym 'super
 ;       x-super-keysym 'meta)
+
+;(defun org-toggle-properties ()
+;  ;; toggle visibility of properties in current header if it exists
+;  (save-excursion
+;    (when (not (org-at-heading-p))
+;      (org-previous-visible-heading 1))
+;    (when (org-header-property-p)
+;      (let* ((a (re-search-forward "\n\\:" nil t)))
+;        (if (outline-invisible-p (point))
+;            (outline-show-entry)
+;          (org-cycle-hide-drawers 'all))))))
+;
+;(global-set-key (kbd "C-c t") 'org-toggle-properties)
+
+
+;(defun append-to-list (list-var elements)
+;  "Append ELEMENTS to the end of LIST-VAR.
+;The return value is the new value of LIST-VAR."
+;  (unless (consp elements)
+;    (error "ELEMENTS must be a list"))
+;  (let ((list (symbol-value list-var)))
+;    (if list
+;        (setcdr (last list) elements)
+;      (set list-var elements)))
+;  (symbol-value list-var))
+;
+;(append-to-list 'org-latex-packages-alist
+;              '(("AUTO" "babel" t ("pdflatex"))
+;                ("" "mathtext" t ("pdflatex"))))
