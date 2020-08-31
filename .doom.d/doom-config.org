@@ -380,6 +380,12 @@ If there is more than one, they won't work right.
                                      ))
 )
 
+(use-package mathpix.el
+  :straight (:host github :repo "jethrokuan/mathpix.el")
+  :custom ((mathpix-app-id "app-id")
+           (mathpix-app-key "app-key"))
+  :bind
+  ("C-x m" . mathpix-screenshot))
 #+END_SRC
 
 #+RESULTS:
