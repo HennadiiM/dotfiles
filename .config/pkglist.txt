@@ -59,6 +59,7 @@ nvidia-prime
 os-prober
 pamixer
 pandoc
+pass
 patch
 pavucontrol
 picom
