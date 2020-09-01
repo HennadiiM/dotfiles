@@ -2,6 +2,5 @@
 
 selection=$(hacksaw -g 3 -s 3 -c "#81A1C1")
 current=$(date +%F_%H-%M-%S)
-dir=$SCREENSHOT
-sleep 0.2
+dir=~/pic-mus/Screenshots
 shotgun -g "$selection" "$dir/$current.jpg"
