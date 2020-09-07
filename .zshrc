@@ -18,8 +18,8 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=500
+HISTSIZE=25000
+SAVEHIST=20000
 #export EDITOR=/usr/bin/nano
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
@@ -289,9 +289,9 @@ alias smi='sudo make install'
 alias smci='sudo make clean install'
 
 # slock variations
-alias sbi='~/.config/slock-1.4 && smi' #blur
-alias sti='~/.config/slock-trol && smi' #trol
-alias sci='~/.config/slock-caps && smi' #caps
+alias slb='~/.config/slock-1.4 && smi'
+alias slc='~/.config/slock-caps && smi'
+alias slt='~/.config/slock-trol && smi'
 
 # fast open in nvim
 alias nv='n $HOME/.config/nvim/init.vim'
@@ -321,6 +321,6 @@ alias ex='exit'
 alias shu='shutdown now'
 alias s='startx'
 
-alias mp='simple-mtpfs --device 1 ~/sandbox/phone'
-alias up='fusermount -u ~/sandbox/phone'
+alias pm='simple-mtpfs --device 1 ~/sandbox/phone' #phone mount
+alias pu='fusermount -u ~/sandbox/phone'
 
