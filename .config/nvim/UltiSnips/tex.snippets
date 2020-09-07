@@ -456,21 +456,21 @@ endsnippet
 
 context "math()"
 snippet // "Fraction" iA
-\\frac{$1}{$2}$0
+\\cfrac{$1}{$2}$0
 endsnippet
 
 snippet / "Fraction" i
-\\frac{${VISUAL}}{$1}$0
+\\cfrac{${VISUAL}}{$1}$0
 endsnippet
 
 context "math()"
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "symbol frac" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "symbol cfrac" wrA
+\\cfrac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 priority 1000
 context "math()"
-snippet '^.*\)/' "() frac" wrA
+snippet '^.*\)/' "() cfrac" wrA
 `!p
 stripped = match.string[:-1]
 depth = 0
@@ -480,7 +480,7 @@ while True:
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
 	i-=1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+snip.rv = stripped[0:i] + "\\cfrac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
@@ -590,7 +590,7 @@ snippet prod "product" w
 endsnippet
 
 snippet part "d/dx" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
+\cfrac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
 
