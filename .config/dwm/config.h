@@ -33,16 +33,16 @@ static const int slock_tag = 7;
 static const int qBittorrent_tag = 8;
 
 static const Rule rules[] = {
-	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor */
-	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1 },
-	{ "St",   		                NULL,      	"ranger",   	1 << ranger_tag,            0,    		0,		        0, 	-1 },
-	{ "Emacs",   		            NULL,       NULL,   	    1 << Emacs_tag,             0,    		0,		        0, 	-1 },
-	{ "Brave", 		                NULL,     	NULL,           1 << brave_tag,		    0,    		0,           	0,        -1 },
-	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << minder_tag,            0,    		0,		    0, 	-1 },
-	{ "Zathura", 		            NULL,     	NULL,           1 << Zathura_tag,		    0,     		0,           	0,        -1 },
-	{ "mpv",   		                NULL,      	NULL,		    1 << mpv_tag,                 0,    		0,		        0, 	       -1 },
-	{ "TelegramDesktop",            NULL,     	NULL,           1 << TelegramDesktop_tag,		        0,     		0,           	0,        -1 },
-	{ "qBittorrent",                NULL,     	NULL,           1 << qBittorrent_tag,		        0,     		0,           	0,        -1 },
+	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout */
+	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1, 0},
+	{ "St",   		                NULL,      	"ranger",   	1 << ranger_tag,            0,    		0,		        0, 	      -1 , -1},
+	{ "Emacs",   		            NULL,       NULL,   	    1 << Emacs_tag,             0,    		0,		        0, 	          -1 , -1},
+	{ "Brave", 		                NULL,     	NULL,           1 << brave_tag,		    0,    		0,           	0,            -1 , -1},
+	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << minder_tag,            0,    		0,		    0, 	              -1 , -1},
+	{ "Zathura", 		            NULL,     	NULL,           1 << Zathura_tag,		    0,     		0,           	0,            -1 , -1},
+	{ "mpv",   		                NULL,      	NULL,		    1 << mpv_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "TelegramDesktop",            NULL,     	NULL,           1 << TelegramDesktop_tag,		        0,     		0,           	0,-1 , -1},
+	{ "qBittorrent",                NULL,     	NULL,           1 << qBittorrent_tag,		        0,     		0,           	0,    -1 , -1},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
@@ -52,6 +52,12 @@ static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] *
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
+/* xkb frontend */
+static const Bool showxkb         = True; /* False means no xkb layout text */
+static const char *xkb_layouts [] = {
+    "en",
+    "ru",
+};
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[M]",      monocle }, /* first entry is default */
