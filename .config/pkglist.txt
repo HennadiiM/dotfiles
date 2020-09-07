@@ -1,5 +1,6 @@
 acpi
 acpilight
+aic94xx-firmware
 alsa-utils
 audacity
 autoconf
@@ -92,6 +93,7 @@ ueberzug
 unrar
 unzip
 vue
+wd719x-firmware
 webkit2gtk
 wget
 which
