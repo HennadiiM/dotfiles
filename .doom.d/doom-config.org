@@ -22,6 +22,7 @@
 This is config for doom emacs (emacs distribution).
 Author: Hennadii Melanich
 Email: mhennadii@knu.ua
+
 * Basic definitions
 + Some functionality uses this to identify you, e.g. GPG configuration, email
 clients, file templates and snippets.
@@ -94,7 +95,7 @@ If there is more than one, they won't work right.
     (set-frame-font "Iosevka-15" nil t)))
 
 
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord-light)
 
 
 (custom-set-variables
@@ -140,15 +141,15 @@ If there is more than one, they won't work right.
     (cons 360 "#4C566A")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
- '(org-level-1 ((t (:foreground "#ECEFF4" :height 1.03)))) ; :inherit bold для жирного, там же где и foreground
- '(org-level-2 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-3 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-4 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-5 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-6 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-7 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-level-8 ((t (:foreground "#ECEFF4" :height 1.02))))
- '(org-document-title ((t (:inherit bold :foreground "#ECEFF4" :height 1.25))))
+ '(org-level-1 ((t (:height 1.00)))) ; :inherit bold для жирного, там же где и foreground
+ '(org-level-2 ((t (:height 1.00))))
+ '(org-level-3 ((t (:height 1.00))))
+ '(org-level-4 ((t (:height 1.00))))
+ '(org-level-5 ((t (:height 1.00))))
+ '(org-level-6 ((t (:height 1.00))))
+ '(org-level-7 ((t (:height 1.00))))
+ '(org-level-8 ((t (:height 1.00)))) ;:foreground "#ECEFF4"
+ '(org-document-title ((t (:inherit bold :height 1.25)))) ;:foreground "#ECEFF4"
  )
 #+END_SRC
 
@@ -180,6 +181,9 @@ If there is more than one, they won't work right.
 (setq org-cycle-separator-lines 2)
 (setq calendar-week-start-day 1) ; start week from Monday
 (setq org-hide-emphasis-markers t) ; org-mode conceall markup
+(setq org-list-allow-alphabetical nil) ; dont use a., a), ...
+(require 'org)
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5)) ; increase latex formulas
 ;(setq org-startup-folded t) ; fold everything on startup
 
 ; reduce amount of garbage
@@ -200,11 +204,11 @@ If there is more than one, they won't work right.
   (setq org-capture-templates
         '(
           ("r" "30 min review" item ;check the documentation
-           (file+olp+datetree "~/.org/2_min_diary.org" ) ;file and heading
+           (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
          
           ("f" "fast thought" item ;check the documentation
-           (file+olp+datetree "~/.org/2_min_diary.org" ) ;file and heading
+           (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
@@ -345,47 +349,73 @@ If there is more than one, they won't work right.
         org-roam-tag-sources '(all-directories prop))
 
   (setq org-roam-capture-templates '(
+                                     ;-------------------- Info notes --------------------
                                      ("i" "just info") ;check the documentation
-                                     ("is" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n - \n\n* TODO:"
-                                      :unnarrowed t)
-
                                      ("im" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n - \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
+                                     ("is" "simple file" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ;----------------- Physics special -------------------
+
+                                     ("ia" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ("ic" "create a simple file about physics" plain (function org-roam--capture-get-point) ; I use ic instead of ib, because b is harder to type
+                                      :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ;-------------------- Knowledge notes --------------------
                                      ("k" "knowledge!") ;check the documentation
-                                     ("ks" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n\n* TODO:"
-                                      :unnarrowed t)
-
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
-                                     ("ke" "file explanation and additional info" plain (function org-roam--capture-get-point)
+                                     ("ks" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ("ke" "explanation file" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/p:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ;----------------- Physics special -------------------
+
+                                     ("ka" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :unnarrowed t)
+
+                                     ("kc" "create a simple file about physics" plain (function org-roam--capture-get-point)
+                                      :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
                                      ("d" "default" plain (function org-roam--capture-get-point)
                                       :file-name "${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* В файле описано\n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
                                      ))
 )
 
-(use-package mathpix.el
-  :straight (:host github :repo "jethrokuan/mathpix.el")
-  :custom ((mathpix-app-id "app-id")
-           (mathpix-app-key "app-key"))
-  :bind
-  ("C-x m" . mathpix-screenshot))
+;(use-package mathpix.el
+;  :straight (:host github :repo "jethrokuan/mathpix.el")
+;  :custom ((mathpix-app-id "app-id")
+;           (mathpix-app-key "app-key"))
+;  :bind
+;  ("C-x m" . mathpix-screenshot))
 #+END_SRC
 
 #+RESULTS:
@@ -409,8 +439,9 @@ If there is more than one, they won't work right.
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
           ;org-roam-server-network-vis-options (json-encode (list (cons 'physics (list (cons 'enabled json-false)))))
-          org-roam-server-extra-edge-options (list (cons 'width 2))
-          org-roam-server-network-label-wrap-length 20))
+          org-roam-server-extra-edge-options (list (cons 'width 0.5))
+          org-roam-server-network-label-wrap-length 20
+          org-roam-server-extra-node-options (list (cons 'shape "box") (cons 'opacity 0.2)))
 ;  (setq org-roam-server-network-vis-options  opposite direction
 ;      (json-encode
 ;       (list (cons 'edges
@@ -418,6 +449,7 @@ If there is more than one, they won't work right.
 ;         (list (cons 'middle
 ;          (list (cons 'scaleFactor -1))))))))))
  )
+  )
 #+END_SRC
 
 ** My own thoughts
@@ -564,7 +596,45 @@ instead."
 ;
 ;(global-set-key (kbd "C-c t") 'org-toggle-properties)
 
+(require 'org)
+(defun org-cycle-hide-drawers (state)
+  "Re-hide all drawers after a visibility state change."
+  (when (and (derived-mode-p 'org-mode)
+             (not (memq state '(overview folded contents))))
+    (save-excursion
+      (let* ((globalp (memq state '(contents all)))
+             (beg (if globalp
+                    (point-min)
+                    (point)))
+             (end (if globalp
+                    (point-max)
+                    (if (eq state 'children)
+                      (save-excursion
+                        (outline-next-heading)
+                        (point))
+                      (org-end-of-subtree t)))))
+        (goto-char beg)
+        (while (re-search-forward org-drawer-regexp end t)
+          (save-excursion
+            (beginning-of-line 1)
+            (when (looking-at org-drawer-regexp)
+              (let* ((start (1- (match-beginning 0)))
+                     (limit
+                       (save-excursion
+                         (outline-next-heading)
+                           (point)))
+                     (msg (format
+                            (concat
+                              "org-cycle-hide-drawers:  "
+                              "`:END:`"
+                              " line missing at position %s")
+                            (1+ start))))
+                (if (re-search-forward "^[ \t]*:END:" limit t)
+                  (outline-flag-region start (point-at-eol) t)
+                  (user-error msg))))))))))
 
+(org-cycle-hide-drawers 'children)
+(add-hook 'after-init-hook 'org-cycle-hide-drawers)
 ;(defun append-to-list (list-var elements)
 ;  "Append ELEMENTS to the end of LIST-VAR.
 ;The return value is the new value of LIST-VAR."
