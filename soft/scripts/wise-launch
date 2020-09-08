@@ -1,6 +1,13 @@
 #!/bin/bash
 
 #if program not(!) running, run it
+# usage: 
+# wise-launch firefox
+
+# idea behind: 
+# I use it on tiling wm to run a program if it's not
+# and just switch to tag with program if it's open (don't open new instance of it)
+
 if ! pgrep -x "$1" > /dev/null
 then
    "$1"
