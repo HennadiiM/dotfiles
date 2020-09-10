@@ -121,7 +121,7 @@ endsnippet
 
 context "math()"
 snippet gga "gamma" Ai
-\gamma 
+\gamma
 endsnippet
 
 context "math()"
@@ -146,7 +146,7 @@ endsnippet
 
 context "math()"
 snippet DDe "Delta" Ai
-\Delta 
+\Delta
 endsnippet
 
 context "math()"
@@ -227,7 +227,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} d${4:x}$0
 endsnippet
 
 context "math()"
@@ -297,7 +297,7 @@ snippet imp "implies" Ai
 endsnippet
 
 snippet sum "sum" wA
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{${1:n=1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
 snippet lim "limit" wA
@@ -402,7 +402,7 @@ endsnippet
 
 context "math()"
 snippet sq "\sqrt{}" iA
-\sqrt{${1:${VISUAL}}} $0
+\sqrt{${1:${VISUAL}}}$0
 endsnippet
 
 context "math()"
@@ -698,7 +698,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta|oint|iiint|iint|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta|oint|iiint|iint|int|sim)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -853,6 +853,24 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "dot" "dot" riA
+\dot{$1}$0
+endsnippet
+
+priority 50
+context "math()"
+snippet "ddot" "ddot" riA
+\ddot{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "dddot" "dddot" riA
+\dddot{$1}$0
 endsnippet
 
 snippet letw "let omega" iA
