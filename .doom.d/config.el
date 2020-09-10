@@ -9,6 +9,9 @@
 
 (setq display-line-numbers-type 'visual)
 (setq default-input-method 'russian-computer) ; C-\ switch to completely russian support
+(recentf-mode 1)
+(setq recentf-max-menu-items 1000)
+(setq recentf-max-saved-items 1000)
 
 (defun rag-set-face (frame)
   "Configure faces on frame creation"
@@ -97,7 +100,8 @@
 (setq org-hide-emphasis-markers t) ; org-mode conceall markup
 (setq org-list-allow-alphabetical nil) ; dont use a., a), ...
 (require 'org)
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5)) ; increase latex formulas
+
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2)) ; increase latex formulas
 ;(setq org-startup-folded t) ; fold everything on startup
 
 ; reduce amount of garbage
@@ -108,6 +112,8 @@
               '("AUTO" "babel" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
               '("" "mathtext" t ("pdflatex")))
+ (add-to-list 'org-latex-packages-alist
+              '("condensed,math" "anttor" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
               '("AUTO" "polyglossia" t ("xelatex" "lualatex")))
  )
@@ -309,13 +315,16 @@
                                       :unnarrowed t)
                                      ))
 )
+(use-package! mathpix.el
+  :commands (mathpix-screenshot)
+  :init
+  (map! "C-x m" #'mathpix-screenshot)
+  :config
+  (setq mathpix-app-id (password-store-get "mathpix/app-id")
+        mathpix-app-key (password-store-get "mathpix/app-key")))
 
-;(use-package mathpix.el
-;  :straight (:host github :repo "jethrokuan/mathpix.el")
-;  :custom ((mathpix-app-id "app-id")
-;           (mathpix-app-key "app-key"))
-;  :bind
-;  ("C-x m" . mathpix-screenshot))
+  (setq mathpix-app-id (password-store-get "mathpix/app-id")
+        mathpix-app-key (password-store-get "mathpix/app-key"))
 
 (require 'org-roam-protocol)
 (after! org-roam
@@ -327,7 +336,7 @@
           org-roam-server-export-inline-images t
           org-roam-server-authenticate nil
           org-roam-server-network-poll nil ; if `nil', reload using Reload botton (useful when big network)
-          org-roam-server-network-arrows "middle"
+          ;org-roam-server-network-arrows "middle"
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
           ;org-roam-server-network-vis-options (json-encode (list (cons 'physics (list (cons 'enabled json-false)))))
@@ -492,7 +501,6 @@ instead."
                   (user-error msg))))))))))
 
 (org-cycle-hide-drawers 'children)
-;(add-hook 'after-init-hook 'org-cycle-hide-drawers)
 ;(defun append-to-list (list-var elements)
 ;  "Append ELEMENTS to the end of LIST-VAR.
 ;The return value is the new value of LIST-VAR."
@@ -507,3 +515,18 @@ instead."
 ;(append-to-list 'org-latex-packages-alist
 ;              '(("AUTO" "babel" t ("pdflatex"))
 ;                ("" "mathtext" t ("pdflatex"))))
+
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("sfdefault,lining" "FiraSans" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("fakebold" "firamath-otf" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist  ; looks strange
+ ;             '("" "euler" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist  ; high and thin?
+ ;             '("condensed,math" "iwona" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("" "arev" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("sfdefault,lining" "FiraSans" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("fakebold" "firamath-otf" t ("pdflatex")))
