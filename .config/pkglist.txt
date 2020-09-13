@@ -70,6 +70,7 @@ powertop
 pulseaudio
 pulseaudio-alsa
 pulsemixer
+python-pip
 python-pyalsa
 python-pynvim
 qbittorrent
@@ -87,6 +88,7 @@ telegram-desktop
 texinfo
 the_silver_searcher
 thermald
+tk
 tlp
 ttf-font-awesome
 ttf-iosevka
