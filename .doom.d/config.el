@@ -20,12 +20,12 @@
       (progn
         (when (member "Iosevka" (font-family-list))
           (progn
-            (set-frame-font "Iosevka-15" nil t))))))
+            (set-frame-font "Iosevka-16" nil t))))))
 (add-hook 'after-make-frame-functions #'rag-set-face)
 ;; set frame font when running emacs normally
 (when (member "Iosevka" (font-family-list))
   (progn
-    (set-frame-font "Iosevka-15" nil t)))
+    (set-frame-font "Iosevka-16" nil t)))
 
 
 (setq doom-theme 'doom-nord-light)
@@ -101,7 +101,7 @@
 (setq org-list-allow-alphabetical nil) ; dont use a., a), ...
 (require 'org)
 
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 2)) ; increase latex formulas
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.05)) ; increase latex formulas
 ;(setq org-startup-folded t) ; fold everything on startup
 
 ; reduce amount of garbage
@@ -125,7 +125,7 @@
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
          
-          ("f" "fast thought" item ;check the documentation
+          ("c" "capture idea/thought" item ;check the documentation
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
@@ -142,9 +142,9 @@
            (file "~/.org/roam/k:/questions_to_answer.org") ;file and heading
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("c" "conclusions" entry ;check the documentation
-           (file "~/.org/roam/k:/conclusions.org") ;file and heading
-           "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+          ;("c" "conclusions" entry ;check the documentation
+          ; (file "~/.org/roam/k:/conclusions.org") ;file and heading
+          ; "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
            (file "~/.org/roam/k:/todo.org") ;file and heading
@@ -182,10 +182,17 @@
 )
 
 (after! org
+;(use-package! org-fancy-priorities
+;  :hook (org-mode . org-fancy-priorities-mode)
+;  :config
+;  (setq org-fancy-priorities-list '("●" "●" "●"))) ;only 3 available (4-th priority not abailable)
+
 (use-package! org-fancy-priorities
-  :hook (org-mode . org-fancy-priorities-mode)
+; :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("●" "●" "●"))) ;only 3 available (4-th priority not abailable)
+   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
 
 (setq org-priority-faces '(
                            (65 :foreground "#BF616A")
@@ -271,12 +278,12 @@
 
                                      ("ia" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ic" "create a simple file about physics" plain (function org-roam--capture-get-point) ; I use ic instead of ib, because b is harder to type
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;-------------------- Knowledge notes --------------------
@@ -300,12 +307,12 @@
 
                                      ("ka" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("kc" "create a simple file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?\n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
@@ -320,11 +327,12 @@
   :init
   (map! "C-x m" #'mathpix-screenshot)
   :config
-  (setq mathpix-app-id (password-store-get "mathpix/app-id")
+  (setq mathpix-screenshot-method "maim -u -s %s"
+        mathpix-app-id (password-store-get "mathpix/app-id")
         mathpix-app-key (password-store-get "mathpix/app-key")))
 
   (setq mathpix-app-id (password-store-get "mathpix/app-id")
-        mathpix-app-key (password-store-get "mathpix/app-key"))
+        )
 
 (require 'org-roam-protocol)
 (after! org-roam
@@ -516,16 +524,15 @@ instead."
 ;              '(("AUTO" "babel" t ("pdflatex"))
 ;                ("" "mathtext" t ("pdflatex"))))
 
- ;(add-to-list 'org-latex-packages-alist
- ;             '("sfdefault,lining" "FiraSans" t ("pdflatex")))
- ;(add-to-list 'org-latex-packages-alist
- ;             '("fakebold" "firamath-otf" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist   ; avesome in all cases except div, rot, "H" and "D". Try again later
+ ;             '("" "arev" t ("pdflatex")))
+
  ;(add-to-list 'org-latex-packages-alist  ; looks strange
  ;             '("" "euler" t ("pdflatex")))
- ;(add-to-list 'org-latex-packages-alist  ; high and thin?
+ ;(add-to-list 'org-latex-packages-alist  ; high and thin? If remove condensed - also
  ;             '("condensed,math" "iwona" t ("pdflatex")))
- ;(add-to-list 'org-latex-packages-alist
- ;             '("" "arev" t ("pdflatex")))
+
+
  ;(add-to-list 'org-latex-packages-alist
  ;             '("sfdefault,lining" "FiraSans" t ("pdflatex")))
  ;(add-to-list 'org-latex-packages-alist
