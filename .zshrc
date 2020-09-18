@@ -236,6 +236,9 @@ alias dslock='dot add ~/.config/slock-1.4 && dot commit -m'
 alias dxinit='dot add ~/.xinitrc && dot commit -m'
 alias dscripts='dot add ~/soft/scripts/ && dot commit -m'
 alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
+alias dnvim='dot add ~/.config/nvim/init.vim && dot commit -m'
+alias dulti='dot add ~/.config/nvim/UltiSnips/tex.snippets && dot commit -m'
+alias dzath='dot add ~/.config/zathura && dot commit -m'
 
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
 
@@ -253,8 +256,8 @@ alias sps='sudo pacman -S'
 alias spr='sudo pacman -R'
 alias sprs='sudo pacman -Rs'
 alias sprdd='sudo pacman -Rdd'
-alias psync='sudo pacman -Syy'
-alias pupd='sudo pacman -Syu'
+alias syy='sudo pacman -Syy'
+alias syu='sudo pacman -Syu'
 
 alias msri='makepkg -sri'
 
@@ -308,13 +311,14 @@ alias yvw='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=w
 alias yvw7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
 alias yaw='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
 alias yad='youtube-dl -f "bestaudio[ext=webm]"'
-alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]"'
-alias yvd7='youtube-dl -f "bestvideo[ext=webm][height<=720]+bestaudio[ext=webm]"'
-#alias yvdt='youtube-dl -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]"' # ??? For cases when webm is apsent?
+alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
+alias yvd7='youtube-dl -f "bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
+alias yvdm='youtube-dl -f "bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"' # ??? For cases when webm is apsent?
+alias yvdm7='youtube-dl -f "bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"' # ??? For cases when webm is apsent?
 
 alias yadp='youtube-dl -f "bestaudio[ext=webm]" -i'
-alias yvdp='youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]" -i'
-alias yvdp7='youtube-dl -f "bestvideo[ext=webm][height<=720]+bestaudio[ext=webm]" -i'
+alias yvdp='youtube-dl -f "bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]" -i'
+alias yvdp7='youtube-dl -f "bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]" -i'
 
 
 alias ex='exit'
