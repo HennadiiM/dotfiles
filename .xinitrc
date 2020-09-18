@@ -57,12 +57,34 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # unique keyboard layout for each tag
-xxkb &
-feh --bg-scale /home/prodper/sandbox/wallpapers/rubick.jpg &
+: '
+train-winter.jpg
+lake-forest.jpg
+sakura.jpg
+fire-water.jpg
+golden-brown.jpg
+lake-mountain.jpg
+woolf.jpg
+river-forest.jpg
+stones-forest.jpg
+leaves-purple.jpg
+lake-autumn.jpg
+fog-mountai.jpg
+leaves-red.jpg
+blue-moon.jpg
+fox-stone.jpg
+river-forest-red.jpg
+leaves-red-blue.jpg
+terror.jpg
+rubick.jpg
+'
+
+#xxkb &
+fw leaves-red-blue.jpg &
 picom -f &
 slstatus &
 low-battery &
-redshift &
+#redshift &
 #xrandr --output eDP-1 --mode 1920x1080 &
 
 
