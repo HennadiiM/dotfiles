@@ -149,6 +149,7 @@ zathura
 zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
+zoom
 zsh
 zsh-autosuggestions
 zsh-history-substring-search
