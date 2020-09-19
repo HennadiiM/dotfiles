@@ -56,39 +56,36 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-# unique keyboard layout for each tag
 : '
-train-winter.jpg
-lake-forest.jpg
-sakura.jpg
-fire-water.jpg
-golden-brown.jpg
-lake-mountain.jpg
-woolf.jpg
-river-forest.jpg
-stones-forest.jpg
-leaves-purple.jpg
-lake-autumn.jpg
-fog-mountai.jpg
-leaves-red.jpg
 blue-moon.jpg
+fire-water.jpg
+fog-mountai.jpg
 fox-stone.jpg
-river-forest-red.jpg
+golden-brown-road.jpg
+lake-autumn.jpg
+lake-leaves-purple.jpg
+lake-mountain.jpg
+lake-summer.jpg
 leaves-red-blue.jpg
-terror.jpg
+leaves-red.jpg
+river(center)-forest.jpg
+river-forest.jpg
 rubick.jpg
+sakura.jpg
+stones-forest.jpg
+terror.jpg
+train-winter.jpg
+woolf.jpg
 '
 
 #xxkb &
-fw leaves-red-blue.jpg &
+fw woolf.jpg &
 picom -f &
 slstatus &
 low-battery &
 #redshift &
 #xrandr --output eDP-1 --mode 1920x1080 &
 
-
-#timeshift-launcher &  
 
 # Launch dwmstatus
 #dwmstatus 2>&1 >/dev/null &
@@ -101,11 +98,11 @@ done
 ##xpmroot ~/Downloads/wallpaper.jpg &
 ##xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
 #
-exec dwm
-
-#exec startplasma-x11
-
-/bin/xmonad
+#exec dwm
+#
+##exec startplasma-x11
+#
+#/bin/xmonad
 
 #export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
 #export GNOME_SHELL_SESSION_MODE=classic
