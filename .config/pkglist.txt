@@ -10,6 +10,7 @@ binutils
 bison
 brave-bin
 cmake
+cmus
 cpupower
 ctags
 dialog
