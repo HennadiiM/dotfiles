@@ -182,17 +182,11 @@
 )
 
 (after! org
-;(use-package! org-fancy-priorities
-;  :hook (org-mode . org-fancy-priorities-mode)
-;  :config
-;  (setq org-fancy-priorities-list '("●" "●" "●"))) ;only 3 available (4-th priority not abailable)
-
 (use-package! org-fancy-priorities
-; :ensure t
-  :hook
-  (org-mode . org-fancy-priorities-mode)
+  :hook (org-mode . org-fancy-priorities-mode)
   :config
-   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+  (setq org-fancy-priorities-list '("ꔷ" "ꔷ" "ꔷ"))) ;only 3 available (4-th priority not abailable) ●⚫
+
 
 (setq org-priority-faces '(
                            (65 :foreground "#BF616A")
@@ -537,3 +531,11 @@ instead."
  ;             '("sfdefault,lining" "FiraSans" t ("pdflatex")))
  ;(add-to-list 'org-latex-packages-alist
  ;             '("fakebold" "firamath-otf" t ("pdflatex")))
+
+; I thought that I'll have 4 priorities
+;(use-package! org-fancy-priorities
+;; :ensure t
+;  :hook
+;  (org-mode . org-fancy-priorities-mode)
+;  :config
+;   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
