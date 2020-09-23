@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] =  "";
+static const char unknown_str[] =  "0";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -63,6 +63,18 @@ static const char unknown_str[] =  "";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+	{ wifi_perc,  " %s%%   •   ",  "wlp0s20f3" },
+	{ netspeed_rx,  " %sB/s   •   ",  "wlp0s20f3" }, //
+	{ cpu_perc,  " %s%%   •   ", NULL	      },
+	{ temp, 	" %s°C   •   ", 		"/sys/class/thermal/thermal_zone0/temp"},
+	{ run_command,  " %2s   •   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	//{ run_command,  "%4s   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ run_command,  " %s%%   •   ", "xbacklight -get"	      },
+	{battery_perc,         " %s%%   •   ",               "BAT0"},
+	{battery_remaining,    "%s  •   ",          "BAT0"},
+	{ ram_used,  " %sB   •   ", NULL	      },
+    { keymap, "%s   •   ", NULL},
+	{ datetime,  "%s",            "%a < %b < %d < %r" },
 	//{ netspeed_rx,  "r:%sB/s   :   ",  "wlp0s20f3" },
 	//{ cpu_perc,  " %s%%   :   ", NULL	      },
 	//{ temp, 	" %s°C   :   ", 		"/sys/class/thermal/thermal_zone0/temp"},
@@ -71,21 +83,7 @@ static const struct arg args[] = {
 	//{ run_command,  " %s%%   :   ", "xbacklight -get"	      },
 	//{battery_perc,         " %s%%   :   ",               "BAT0"},
 	//{battery_remaining,    "%s  :   ",          "BAT0"},
-	//////{ ram_perc,  " %s%%   ", NULL	      },
 	//{ ram_used,  " %sB   :   ", NULL	      },
     //{ keymap, "%s   :   ", NULL},
-	//{ datetime,  "%s",            "%a %b %d %r" },
-	{ netspeed_rx,  "r:%sB/s   :   ",  "wlp0s20f3" },
-	{ cpu_perc,  " %s%%   :   ", NULL	      },
-	{ temp, 	" %s°C   :   ", 		"/sys/class/thermal/thermal_zone0/temp"},
-	{ run_command,  " %2s   :   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	//{ run_command,  "%4s   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ run_command,  " %s%%   :   ", "xbacklight -get"	      },
-	{battery_perc,         " %s%%   :   ",               "BAT0"},
-	{battery_remaining,    "%s  :   ",          "BAT0"},
-	////{ ram_perc,  " %s%%   ", NULL	      },
-	{ ram_used,  " %sB   :   ", NULL	      },
-    { keymap, "%s   :   ", NULL},
-	{ datetime,  "%s",            "%a < %b < %d < %r" },
-	//{ datetime,  "%s",            "%a / %b / %d / %r" },
+	//{ datetime,  "%s",            "%a < %b < %d < %r" },
 };
