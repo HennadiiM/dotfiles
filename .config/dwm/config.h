@@ -1,5 +1,3 @@
-#include <X11/XF86keysym.h>
-
 static const unsigned int borderpx  = 0;        /* border pixel of Mod4Maskdows */
 static const unsigned int snap      = 0;//32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -19,30 +17,34 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-static const char *tags[] = { "", "", "",/*3*/ "", "", "", "",/*6*/ "", "" };
+static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" };
 
-static const int Emacs_tag = 0;
-static const int brave_tag = 1;
-static const int Zathura_tag = 2;
-static const int mpv_tag = 3;
-static const int ranger_tag = 4;
-static const int minder_tag = 5;
-static const int TelegramDesktop_tag = 6 ;
+static const int text_editor_tag = 0;
+static const int mindmap_tag = 0;
+static const int web_tag = 1;
+static const int reader_tag = 2;
+static const int video_audio_tag = 3;
+static const int file_browser_tag = 4;
+static const int recording_tag = 5;
+static const int messenger_tag = 6 ;
 //static const int libreoffice_tag = 7 ;
-static const int slock_tag = 7;
-static const int qBittorrent_tag = 8;
+//static const int slock_tag = 7; // idea was to lock and move to this tag to show wallpaper
+static const int torrent_tag = 7;
+static const int network_manager_tag = torrent_tag;
 
 static const Rule rules[] = {
 	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout */
 	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1, 0},
-	{ "St",   		                NULL,      	"ranger",   	1 << ranger_tag,            0,    		0,		        0, 	      -1 , -1},
-	{ "Emacs",   		            NULL,       NULL,   	    1 << Emacs_tag,             0,    		0,		        0, 	          -1 , -1},
-	{ "Brave", 		                NULL,     	NULL,           1 << brave_tag,		    0,    		0,           	0,            -1 , -1},
-	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << minder_tag,            0,    		0,		    0, 	              -1 , -1},
-	{ "Zathura", 		            NULL,     	NULL,           1 << Zathura_tag,		    0,     		0,           	0,            -1 , -1},
-	{ "mpv",   		                NULL,      	NULL,		    1 << mpv_tag,                 0,    		0,		        0,    -1 , -1},
-	{ "TelegramDesktop",            NULL,     	NULL,           1 << TelegramDesktop_tag,		        0,     		0,           	0,-1 , -1},
-	{ "qBittorrent",                NULL,     	NULL,           1 << qBittorrent_tag,		        0,     		0,           	0,    -1 , -1},
+	{ "Emacs",   		            NULL,       NULL,   	    1 << text_editor_tag,             0,    		0,		        0, 	          -1 , -1},
+	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << mindmap_tag,            0,    		0,		    0, 	              -1 , -1},
+	{ "Brave", 		                NULL,     	NULL,           1 << web_tag,		    0,    		0,           	0,            -1 , -1},
+	{ "Zathura", 		            NULL,     	NULL,           1 << reader_tag,		    0,     		0,           	0,            -1 , -1},
+	{ "mpv",   		                NULL,      	NULL,		    1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "St",   		                NULL,      	"ranger",   	1 << file_browser_tag,            0,    		0,		        0, 	      -1 , -1},
+	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , -1},
+	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , -1},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
@@ -88,40 +90,43 @@ static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
 
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
-    // file manager
-	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
-	{ MODKEY,                       	XK_f,	  	view,          {.ui = 1 << ranger_tag}},
-    // force
-	{ MODKEY|MODKEY2,                   XK_f,	  	spawn,          SHCMD("st -e ranger")},
-	{ MODKEY|MODKEY2,                   XK_f,	  	view,          {.ui = 1 << ranger_tag}},
     // editor
 	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
-	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << Emacs_tag}},
-    // browser
-	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
-	{ MODKEY,                  	    XK_w,      	view,           {.ui = 1 << brave_tag} },
-    // brain-viewer
-	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox") },
-	{ MODKEY,                  	    XK_u,      	view,           {.ui = 1 << Emacs_tag} },
+	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << text_editor_tag}},
     // minder
 	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
-	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << minder_tag}},
-    // mpv
-	{ MODKEY,                       	XK_m,	  	view,          	{.ui = 1 << mpv_tag}},
+	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << mindmap_tag}},
+    // browser
+	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
+	{ MODKEY,                  	    XK_w,      	view,           {.ui = 1 << web_tag} },
+    // brain-viewer
+	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox") },
+	{ MODKEY,                  	    XK_u,      	view,           {.ui = 1 << text_editor_tag} },
     // zathura
-	{ MODKEY,                       	XK_r,	  	view,          	{.ui = 1 << Zathura_tag}},
+	{ MODKEY,                       	XK_r,	  	view,          	{.ui = 1 << reader_tag}},
+    // mpv
+	{ MODKEY,                       	XK_m,	  	view,          	{.ui = 1 << video_audio_tag}},
+    // audio player
+	{ MODKEY,                       	XK_a,	  	spawn,          SHCMD("st -e wise-launch cmus")},
+	{ MODKEY,                       	XK_a,	  	view,          	{.ui = 1 << video_audio_tag}},
+    // file manager
+	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
+	{ MODKEY,                       	XK_f,	  	view,          {.ui = 1 << file_browser_tag}},
+    // force
+	{ MODKEY|ShiftMask,                   XK_f,	  	spawn,          SHCMD("st -e ranger")},
+	{ MODKEY|ShiftMask,                   XK_f,	  	view,          {.ui = 1 << file_browser_tag}},
+    // audacity
+	{ MODKEY|ShiftMask,                   XK_a,	  	spawn,          SHCMD("wise-launch audacity")},
+	{ MODKEY|ShiftMask,                   XK_a,	  	view,          {.ui = 1 << recording_tag}},
     // messenger
 	{ MODKEY,                       	XK_t,	  	spawn,          SHCMD("wise-launch telegram-desktop") },
-	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << TelegramDesktop_tag}},
+	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << messenger_tag}},
     // torrent
 	{ MODKEY|ShiftMask,                 XK_q,	  	spawn,          SHCMD("wise-launch qbittorrent") },
-	{ MODKEY|ShiftMask,                 XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
-    //force
-	{ MODKEY|MODKEY2|ShiftMask,         XK_q,	  	spawn,          SHCMD("qbittorrent") },
-	{ MODKEY|MODKEY2|ShiftMask,         XK_q,	  	view,          	{.ui = 1 << qBittorrent_tag}},
+	{ MODKEY|ShiftMask,                 XK_q,	  	view,          	{.ui = 1 << torrent_tag}},
     // network manager
 	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
-	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << 8}},
+	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << network_manager_tag}},
     // screen lock
 	//{ MODKEY,                       	XK_l,	  	view,          	{.ui = 1 << slock_tag}},
 	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
@@ -131,9 +136,13 @@ static Key keys[] = {
 	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenshot_save }},
 	{ MODKEY,			                XK_z,	  	spawn,	        {.v = screenshot_fancy }},
 
+    // audio control
+	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
+
     //ordinary settings
+	{ MODKEY, 		                XK_q,     	killclient,     {0} },
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
-	{ MODKEY,                       XK_a,     	spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,                       XK_d,     	spawn,          {.v = dmenucmd } },
 	{ MODKEY,			            XK_c, 	  	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_j,     	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,     	focusstack,     {.i = -1 } },
@@ -141,20 +150,21 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,     	setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return,	zoom,           {0} },
 	{ MODKEY,                       XK_Tab,   	view,           {0} },
-	{ MODKEY, 		                XK_q,     	killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,     	setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_m,     	setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,     	setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space, 	setlayout,      {0} },
-	//{ MODKEY|ShiftMask,             XK_space, 	togglefloating, {0} },
-	{ MODKEY,                       XK_0,     	view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,     	tag,            {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_space, 	togglefloating, {0} },
+
+	//{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << network_manager_tag}},
+	{ MODKEY|ctrl,        XK_t,     	setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ctrl,        XK_m,     	setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ctrl,        XK_f,     	setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ctrl,        XK_n, 	    setlayout,      {0} },
 	{ MODKEY,                       XK_parenleft, focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_parenright,focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_parenleft, tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_parenright,tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_plus,     	incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_minus,     	incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_0,     	view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,     	tag,            {.ui = ~0 } },
 	TAGKEYS(                        XK_1,     	                0)
 	TAGKEYS(                        XK_2,     	                1)
 	TAGKEYS(                        XK_3,     	                2)
@@ -164,17 +174,21 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,     	                6)
 	TAGKEYS(                        XK_8,     	                7)
 	TAGKEYS(                        XK_9,     	                8)
-	{ MODKEY|ShiftMask,             XK_r,     	quit,           {0} },
+	{ MODKEY|MODKEY2|ShiftMask,             XK_q,     	quit,           {0} },
 // Media keys
-	{ MODKEY,                     XK_period,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
-	{ MODKEY|ShiftMask,           XK_period,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
-	{ MODKEY,                     XK_comma,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
-	{ MODKEY|ShiftMask,           XK_comma,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
-	{ MODKEY|ShiftMask,           XK_space,   spawn,          SHCMD("amixer -q sset Master toggle")},
-	{ MODKEY,                      XK_i,        spawn,          SHCMD("xbacklight -inc 10") },
-	{ MODKEY|ShiftMask,            XK_i,        spawn,          SHCMD("xbacklight -inc 3") },
-	{ MODKEY,                      XK_d,        spawn,          SHCMD("xbacklight -dec 10")},
-	{ MODKEY|ShiftMask,             XK_d,        spawn,          SHCMD("xbacklight -dec 3")},
+	{ MODKEY|MODKEY2,                     XK_f,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
+	{ MODKEY|MODKEY2,                     XK_d,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
+	{ MODKEY|MODKEY2,                     XK_k,        spawn,          SHCMD("xbacklight -inc 10") },
+	{ MODKEY|MODKEY2,                     XK_j,        spawn,          SHCMD("xbacklight -dec 10")},
+	{ MODKEY|MODKEY2,           XK_m,   spawn,          SHCMD("amixer -q sset Master toggle")},
+	{ MODKEY|MODKEY2|ShiftMask,           XK_f,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
+	{ MODKEY|MODKEY2|ShiftMask,           XK_d,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
+	{ MODKEY|MODKEY2|ShiftMask,           XK_k,        spawn,          SHCMD("xbacklight -inc 3") },
+	{ MODKEY|MODKEY2|ShiftMask,           XK_j,        spawn,          SHCMD("xbacklight -dec 3")},
+	//{ MODKEY|MODKEY2,           XK_r,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
+	//{ MODKEY|MODKEY2,           XK_e,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
+	//{ MODKEY|MODKEY2,            XK_u,        spawn,          SHCMD("xbacklight -inc 3") },
+	//{ MODKEY|MODKEY2,             XK_i,        spawn,          SHCMD("xbacklight -dec 3")},
 };
 
 static Button buttons[] = {
