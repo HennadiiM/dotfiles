@@ -27,10 +27,17 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "fontawesome:size=13", "Iosevka Medium:size=12"};
 static const char dmenufont[]       = "Iosevka Medium:size=13";
 // nord colors ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "" "#B48EAD" "#88C0D0" "#ECEFF4"])
-static const char col_gray1[]       = "#2e3440";
+// dark mode
+//static const char col_gray1[]       = "#2e3440";
+//static const char col_gray3[]       = "#eceff4";
+//static const char col_gray4[]       = "#2e3440";
+
+// light mode
+static const char col_gray1[]       = "#eceff4";
+static const char col_gray3[]       = "#2e3440";
+static const char col_gray4[]       = "#eceff4";
+
 static const char col_gray2[]       = "#5c82ca";
-static const char col_gray3[]       = "#eceff4";
-static const char col_gray4[]       = "#2e3440";
 static const char col_cyan[]        = "#81A1C1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -146,6 +153,7 @@ static const char *screenlock[] = {"slock", NULL};
 static const char *screenshot_fancy[] = {"flameshot-save"};
 static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
 static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
+//static const char *system_monitor[] = {"shotgun_hacksaw"};
 #+END_SRC
 
 * Shortcuts
@@ -201,6 +209,9 @@ static Key keys[] = {
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
 
+    // audio control
+	{ MODKEY|ShiftMask,                 XK_m,	  	spawn,          SHCMD("st -e htop") },
+
     //ordinary settings
 	{ MODKEY, 		                XK_q,     	killclient,     {0} },
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
@@ -238,13 +249,13 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,     	                8)
 	{ MODKEY|MODKEY2|ShiftMask,             XK_q,     	quit,           {0} },
 // Media keys
-	{ MODKEY|MODKEY2,                     XK_f,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
-	{ MODKEY|MODKEY2,                     XK_d,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
+	{ MODKEY|MODKEY2,                     XK_d,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
+	{ MODKEY|MODKEY2,                     XK_f,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
 	{ MODKEY|MODKEY2,                     XK_k,        spawn,          SHCMD("xbacklight -inc 10") },
 	{ MODKEY|MODKEY2,                     XK_j,        spawn,          SHCMD("xbacklight -dec 10")},
 	{ MODKEY|MODKEY2,           XK_m,   spawn,          SHCMD("amixer -q sset Master toggle")},
-	{ MODKEY|MODKEY2|ShiftMask,           XK_f,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
-	{ MODKEY|MODKEY2|ShiftMask,           XK_d,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
+	{ MODKEY|MODKEY2|ShiftMask,           XK_d,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
+	{ MODKEY|MODKEY2|ShiftMask,           XK_f,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
 	{ MODKEY|MODKEY2|ShiftMask,           XK_k,        spawn,          SHCMD("xbacklight -inc 3") },
 	{ MODKEY|MODKEY2|ShiftMask,           XK_j,        spawn,          SHCMD("xbacklight -dec 3")},
 	//{ MODKEY|MODKEY2,           XK_r,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
