@@ -292,10 +292,10 @@
                                       :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
                                       :unnarrowed t)
 
-                                     ("ke" "explanation file" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/p:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* В файле описано\n- \n\n* TODO:"
-                                      :unnarrowed t)
+                                     ;("ke" "explanation file" plain (function org-roam--capture-get-point)
+                                     ; :file-name "~/.org/roam/p:/${slug},%<%Y.%m.%d.%H>"
+                                     ; :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* В файле описано\n- \n\n* TODO:"
+                                     ; :unnarrowed t)
 
                                      ;----------------- Physics special -------------------
 
@@ -360,6 +360,46 @@ If current line is empty, go to beginning of previous one
 instead."
   (beginning-of-line (and (looking-at-p "^$") 0)))
 (advice-add #'end-of-buffer :after #'my-end-of-buffer-dwim)
+
+; add "completely toggle drawers state"
+;(require 'org)
+;(defun org-cycle-hide-drawers (state)
+;  "Re-hide all drawers after a visibility state change."
+;  (when (and (derived-mode-p 'org-mode)
+;             (not (memq state '(overview folded contents))))
+;    (save-excursion
+;      (let* ((globalp (memq state '(contents all)))
+;             (beg (if globalp
+;                    (point-min)
+;                    (point)))
+;             (end (if globalp
+;                    (point-max)
+;                    (if (eq state 'children)
+;                      (save-excursion
+;                        (outline-next-heading)
+;                        (point))
+;                      (org-end-of-subtree t)))))
+;        (goto-char beg)
+;        (while (re-search-forward org-drawer-regexp end t)
+;          (save-excursion
+;            (beginning-of-line 1)
+;            (when (looking-at org-drawer-regexp)
+;              (let* ((start (1- (match-beginning 0)))
+;                     (limit
+;                       (save-excursion
+;                         (outline-next-heading)
+;                           (point)))
+;                     (msg (format
+;                            (concat
+;                              "org-cycle-hide-drawers:  "
+;                              "`:END:`"
+;                              " line missing at position %s")
+;                            (1+ start))))
+;                (if (re-search-forward "^[ \t]*:END:" limit t)
+;                  (outline-flag-region start (point-at-eol) t)
+;                  (user-error msg))))))))))
+;
+;(org-cycle-hide-drawers 'children)
 
 ;  (defun org-roam-buffer--insert-backlinks ()
 ;    "Insert the org-roam-buffer backlinks string for the current buffer."
@@ -465,44 +505,6 @@ instead."
 ;
 ;(global-set-key (kbd "C-c t") 'org-toggle-properties)
 
-(require 'org)
-(defun org-cycle-hide-drawers (state)
-  "Re-hide all drawers after a visibility state change."
-  (when (and (derived-mode-p 'org-mode)
-             (not (memq state '(overview folded contents))))
-    (save-excursion
-      (let* ((globalp (memq state '(contents all)))
-             (beg (if globalp
-                    (point-min)
-                    (point)))
-             (end (if globalp
-                    (point-max)
-                    (if (eq state 'children)
-                      (save-excursion
-                        (outline-next-heading)
-                        (point))
-                      (org-end-of-subtree t)))))
-        (goto-char beg)
-        (while (re-search-forward org-drawer-regexp end t)
-          (save-excursion
-            (beginning-of-line 1)
-            (when (looking-at org-drawer-regexp)
-              (let* ((start (1- (match-beginning 0)))
-                     (limit
-                       (save-excursion
-                         (outline-next-heading)
-                           (point)))
-                     (msg (format
-                            (concat
-                              "org-cycle-hide-drawers:  "
-                              "`:END:`"
-                              " line missing at position %s")
-                            (1+ start))))
-                (if (re-search-forward "^[ \t]*:END:" limit t)
-                  (outline-flag-region start (point-at-eol) t)
-                  (user-error msg))))))))))
-
-(org-cycle-hide-drawers 'children)
 ;(defun append-to-list (list-var elements)
 ;  "Append ELEMENTS to the end of LIST-VAR.
 ;The return value is the new value of LIST-VAR."
