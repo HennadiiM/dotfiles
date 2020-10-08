@@ -36,6 +36,7 @@ htop
 hwinfo
 i7z
 intel-ucode
+lf
 libmtp
 libreoffice-still
 libtool
