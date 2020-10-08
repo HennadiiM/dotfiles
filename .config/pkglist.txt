@@ -44,6 +44,7 @@ libva-intel-driver
 linux
 linux-firmware
 linux-headers
+luit
 m4
 maim
 make
@@ -113,7 +114,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
-xorg-luit
 xorg-mkfontscale
 xorg-server
 xorg-server-devel
