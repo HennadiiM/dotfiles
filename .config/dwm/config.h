@@ -5,19 +5,21 @@ static const int swallowfloating    = 1;        /* 1 means swallow floating wind
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "fontawesome:size=13", "Iosevka Medium:size=12"};
 static const char dmenufont[]       = "Iosevka Medium:size=13";
-// nord colors ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "" "#B48EAD" "#88C0D0" "#ECEFF4"])
+
+// my colors ["#272C37" "#BF6469" "#A1BA8E" "#E9CD89" "#76A2B9" "#B18FAA" "#88C3DB" "#EDEDF1"])
 // dark mode
-//static const char col_gray1[]       = "#2e3440";
-//static const char col_gray3[]       = "#eceff4";
-//static const char col_gray4[]       = "#2e3440";
+//static const char col_gray1[]       = "#272C37";
+//static const char col_gray3[]       = "#EDEDF1";
+//static const char col_gray4[]       = "#272C37";
 
 // light mode
-static const char col_gray1[]       = "#eceff4";
-static const char col_gray3[]       = "#2e3440";
-static const char col_gray4[]       = "#eceff4";
+static const char col_gray1[]       = "#EDEDF1";
+static const char col_gray3[]       = "#272C37";
+static const char col_gray4[]       = "#EDEDF1";
 
-static const char col_gray2[]       = "#5c82ca";
-static const char col_cyan[]        = "#81A1C1";
+//static const char col_gray2[]       = "#5c82ca";
+static const char col_gray2[]       = "#E9CD89";
+static const char col_cyan[]        = "#76A2B9";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -38,6 +40,7 @@ static const int messenger_tag = 6 ;
 //static const int slock_tag = 7; // idea was to lock and move to this tag to show wallpaper
 static const int torrent_tag = 7;
 static const int network_manager_tag = torrent_tag;
+static const int tools_tag = 8;
 
 static const Rule rules[] = {
 	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout */
@@ -49,7 +52,9 @@ static const Rule rules[] = {
 	{ "mpv",   		                NULL,      	NULL,		    1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
 	{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
 	{ "St",   		                NULL,      	"ranger",   	1 << file_browser_tag,            0,    		0,		        0, 	      -1 , -1},
+	// make it stay on previous tag { "St",   		                NULL,      	NULL,   	1 << ,            0,    		0,		        0, 	      -1 , -1},
 	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "zoom",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
 	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , -1},
 	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , -1},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
@@ -89,6 +94,7 @@ static const Layout layouts[] = {
 
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *password_manager[] = {"passmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
 static const char *screenshot_fancy[] = {"flameshot-save"};
@@ -126,6 +132,9 @@ static Key keys[] = {
     // audacity
 	{ MODKEY|ShiftMask,                   XK_a,	  	spawn,          SHCMD("wise-launch audacity")},
 	{ MODKEY|ShiftMask,                   XK_a,	  	view,          {.ui = 1 << recording_tag}},
+    // zoom
+	{ MODKEY|ShiftMask,                XK_z,	  	spawn,	        SHCMD("wise-launch zoom")},
+	{ MODKEY|ShiftMask,                   XK_z,	  	view,          {.ui = 1 << recording_tag}},
     // messenger
 	{ MODKEY,                       	XK_t,	  	spawn,          SHCMD("wise-launch telegram-desktop") },
 	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << messenger_tag}},
@@ -140,16 +149,18 @@ static Key keys[] = {
 	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
 	{ MODKEY,			                XK_l,	  	spawn,	        {.v = screenlock }},
     // screenshot
-	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenshot_clipboard }},
-	{ MODKEY,			                XK_s,	  	spawn,	        {.v = screenshot_save }},
-	{ MODKEY,			                XK_z,	  	spawn,	        {.v = screenshot_fancy }},
+	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
+   
+	{ MODKEY|ShiftMask,                       	XK_p,	  	spawn,          {.v = password_manager}},
 
     // audio control
 	{ MODKEY|ShiftMask,                 XK_m,	  	spawn,          SHCMD("st -e htop") },
 
+	{ MODKEY|ShiftMask,                       	XK_t,	  	spawn,          SHCMD("wise-launch st") },
+	{ MODKEY|ShiftMask,                       	XK_t,	  	view,          	{.ui = 1 << tools_tag}},
     //ordinary settings
 	{ MODKEY, 		                XK_q,     	killclient,     {0} },
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
