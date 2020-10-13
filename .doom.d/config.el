@@ -32,8 +32,10 @@
 
 
 (custom-set-variables
- '(ansi-color-names-vector
-   ["#272C36" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
+ ;'(ansi-color-names-vector  was by default
+ ;  ["#272C36" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
+ '(ansi-color-names-vector ; MYCOLORS
+   ["#272C37" "#BF6469" "#A1BA8E" "#E9CD89" "#76A2B9" "#B18FAA" "#88C3DB" "#EDEDF1"])
  '(custom-safe-themes
    (quote
     ("e074be1c799b509f52870ee596a5977b519f6d269455b84ed998666cf6fc802a" "bf387180109d222aee6bb089db48ed38403a1e330c9ec69fe1f52460a8936b66" "bc836bf29eab22d7e5b4c142d201bcce351806b7c1f94955ccafab8ce5b20208" "fe94e2e42ccaa9714dd0f83a5aa1efeef819e22c5774115a9984293af609fce7" default)))
@@ -83,6 +85,8 @@
  '(org-level-7 ((t (:height 1.00))))
  '(org-level-8 ((t (:height 1.00)))) ;:foreground "#ECEFF4"
  '(org-document-title ((t (:inherit bold :height 1.25)))) ;:foreground "#ECEFF4"
+ '(org-roam-link ((t (:foreground "#6b7994")))) ; :inherit italic
+ '(org-roam-link-current ((t (:foreground "#a6aebf"))))
  )
 
 (add-hook 'after-init-hook 'org-roam-server-mode)
