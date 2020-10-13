@@ -5,7 +5,9 @@ alsa-utils
 audacity
 autoconf
 automake
+baobab
 base
+bashtop
 binutils
 bison
 brave-bin
