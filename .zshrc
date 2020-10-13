@@ -216,6 +216,7 @@ export LC_ALL="en_US.UTF-8"
 
 alias n=nvim
 alias e=ranger
+alias a=alarm
 
 
 
@@ -256,8 +257,8 @@ alias sps='sudo pacman -S'
 alias spr='sudo pacman -R'
 alias sprs='sudo pacman -Rs'
 alias sprdd='sudo pacman -Rdd'
-alias syy='sudo pacman -Syy'
-alias syu='sudo pacman -Syu'
+alias Syy='sudo pacman -Syy'
+alias Syu='sudo pacman -Syu'
 
 alias msri='makepkg -sri'
 
@@ -323,8 +324,12 @@ alias yvdp7='youtube-dl -f "bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm
 
 alias ex='exit'
 alias shu='shutdown now'
+alias reb='reboot'
 alias s='startx'
 
+# mount phone, flash drive
 alias pm='simple-mtpfs --device 1 ~/sandbox/phone' #phone mount
 alias pu='fusermount -u ~/sandbox/phone'
 
+alias fm='mount /mnt/wtf-drive'
+alias fu='umount /mnt/wtf-drive'
