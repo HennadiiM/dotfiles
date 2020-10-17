@@ -37,6 +37,7 @@ hacksaw
 htop
 hwinfo
 i7z
+imagemagick
 intel-ucode
 lf
 libmtp
@@ -52,6 +53,7 @@ maim
 make
 mesa-demos
 minder
+mozjpeg
 mpv
 mtools
 mtpfs
