@@ -189,10 +189,11 @@ If there is more than one, they won't work right.
 (setq calendar-week-start-day 1) ; start week from Monday
 (setq org-hide-emphasis-markers t) ; org-mode conceall markup
 (setq org-list-allow-alphabetical nil) ; dont use a., a), ...
+;'(org-clock-into-drawer "clocking")
 (require 'org)
 
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.05)) ; increase latex formulas
-;(setq org-startup-folded t) ; fold everything on startup
+;(setq org-startup-folded showall) ; fold everything on startup
 
 ; reduce amount of garbage
 
@@ -216,10 +217,10 @@ If there is more than one, they won't work right.
           ("r" "30 min review" item ;check the documentation
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
-         
-          ("c" "capture idea/thought" item ;check the documentation
+
+          ("c" "capture idea/thought" entry ;check the documentation
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
-           "%U\n- [ ] %?") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           "**** %?\n- [ ] ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
            (file "~/.org/roam/k:/ideas.org") ;file and heading
@@ -364,12 +365,12 @@ If there is more than one, they won't work right.
                                      ("i" "just info") ;check the documentation
                                      ("im" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("is" "simple file" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;----------------- Physics special -------------------
