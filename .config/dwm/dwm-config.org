@@ -189,8 +189,8 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
 	{ MODKEY,                       	XK_f,	  	view,          {.ui = 1 << file_browser_tag}},
     // force
-	{ MODKEY|ShiftMask,                   XK_f,	  	spawn,          SHCMD("st -e ranger")},
-	{ MODKEY|ShiftMask,                   XK_f,	  	view,          {.ui = 1 << file_browser_tag}},
+	{ MODKEY|ShiftMask|ctrl,                   XK_f,	  	spawn,          SHCMD("st -e ranger")},
+	{ MODKEY|ShiftMask|ctrl,                   XK_f,	  	view,          {.ui = 1 << file_browser_tag}},
     // audacity
 	{ MODKEY|ShiftMask,                   XK_a,	  	spawn,          SHCMD("wise-launch audacity")},
 	{ MODKEY|ShiftMask,                   XK_a,	  	view,          {.ui = 1 << recording_tag}},
@@ -215,18 +215,18 @@ static Key keys[] = {
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
-   
+
 	{ MODKEY|ShiftMask,                       	XK_p,	  	spawn,          {.v = password_manager}},
 
     // audio control
-	{ MODKEY|ShiftMask,                 XK_m,	  	spawn,          SHCMD("st -e htop") },
+	{ MODKEY|ShiftMask,                 XK_b,	  	spawn,          SHCMD("st -e bpytop") },
 
 	{ MODKEY|ShiftMask,                       	XK_t,	  	spawn,          SHCMD("wise-launch st") },
 	{ MODKEY|ShiftMask,                       	XK_t,	  	view,          	{.ui = 1 << tools_tag}},
     //ordinary settings
 	{ MODKEY, 		                XK_q,     	killclient,     {0} },
 	{ MODKEY,                       XK_h,     	togglebar,      {0} },
-	{ MODKEY|ShiftMask,                       XK_d,     	spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,     	spawn,          {.v = dmenucmd } },
 	{ MODKEY,			            XK_c, 	  	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_j,     	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,     	focusstack,     {.i = -1 } },
@@ -260,15 +260,15 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,     	                8)
 	{ MODKEY|MODKEY2|ShiftMask,             XK_q,     	quit,           {0} },
 // Media keys
-	{ MODKEY|MODKEY2,                     XK_d,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
-	{ MODKEY|MODKEY2,                     XK_f,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
-	{ MODKEY|MODKEY2,                     XK_k,        spawn,          SHCMD("xbacklight -inc 10") },
-	{ MODKEY|MODKEY2,                     XK_j,        spawn,          SHCMD("xbacklight -dec 10")},
-	{ MODKEY|MODKEY2,           XK_m,   spawn,          SHCMD("amixer -q sset Master toggle")},
-	{ MODKEY|MODKEY2|ShiftMask,           XK_d,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
-	{ MODKEY|MODKEY2|ShiftMask,           XK_f,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
-	{ MODKEY|MODKEY2|ShiftMask,           XK_k,        spawn,          SHCMD("xbacklight -inc 3") },
-	{ MODKEY|MODKEY2|ShiftMask,           XK_j,        spawn,          SHCMD("xbacklight -dec 3")},
+	{ MODKEY|ShiftMask,                     XK_d,  spawn,          SHCMD("amixer -q sset Master 10%+" )},
+	{ MODKEY|ShiftMask,                     XK_f,   spawn,          SHCMD("amixer -q sset Master 10%-" )},
+	{ MODKEY|ShiftMask,                     XK_k,        spawn,          SHCMD("xbacklight -inc 10") },
+	{ MODKEY|ShiftMask,                     XK_j,        spawn,          SHCMD("xbacklight -dec 10")},
+	{ MODKEY|ShiftMask,           XK_x,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
+	{ MODKEY|ShiftMask,           XK_c,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
+	{ MODKEY|ctrl,           XK_k,        spawn,          SHCMD("xbacklight -inc 3") },
+	{ MODKEY|ctrl,           XK_j,        spawn,          SHCMD("xbacklight -dec 3")},
+	{ MODKEY|ctrl,           XK_m,   spawn,          SHCMD("amixer -q sset Master toggle")},
 	//{ MODKEY|MODKEY2,           XK_r,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
 	//{ MODKEY|MODKEY2,           XK_e,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
 	//{ MODKEY|MODKEY2,            XK_u,        spawn,          SHCMD("xbacklight -inc 3") },
