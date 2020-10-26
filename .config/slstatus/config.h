@@ -63,8 +63,8 @@ static const char unknown_str[] =  "0";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{kernel_release, ": %s   ::   "},
-	//{ wifi_perc,  " %s%%   •   ",  "wlp0s20f3" }, // don't see any use of it. even if 80% - sometimes bad/unstable connection
+	{kernel_release, "    : %s   ::   "},
+	{ wifi_perc,  " %s%%   •   ",  "wlp0s20f3" }, // don't see any use of it. even if 80% - sometimes bad/unstable connection
 	{ netspeed_tx,  " %sB/s   •   ",  "wlp0s20f3" }, //
 	{ netspeed_rx,  " %sB/s   ::   ",  "wlp0s20f3" }, //
 	{ cpu_perc,  " %s%%   •   ", NULL	      },
