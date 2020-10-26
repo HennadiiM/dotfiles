@@ -165,8 +165,8 @@
   (setq org-todo-keywords
         '(
           (sequence "TODO(t)" "PROJ(p@)" "BEGIN(b@)" "MIDD(m@)" "END(e@)" "|" "KILL(k)" "DONE(d)")
-          (sequence  "ANS!(a@)" "*(*)" "IDEA(i@)" "LATER(l)" "|" "KILL(k)" )
-          (sequence  "BIRTHDAY(B)" "|" "CONGRATULATED(C)" "FORGOT(F)")
+          ;(sequence  "ANS!(a@)" "*(*)" "IDEA(i@)" "LATER(l)" "|" "KILL(k)" ) пока что ненужно
+          ;(sequence  "BIRTHDAY(B)" "|" "CONGRATULATED(C)" "FORGOT(F)")
           ;(sequence "NOW!(n@)" "|" "KILL(k)" "DONE(d)" ) ; use A priority instead
           ;(sequence  "TECH(T)" "HEALTH(H)" "EARN(E)" "|") ; use tags instead
           ))
@@ -174,10 +174,10 @@
                                         ; todo faces
   (setq org-todo-keyword-faces
         '(
-          ("BIRTHDAY" . "#BF616A")
           ("TODO" . org-warning)
-          ("*" . org-done)
-          ("LATER" . org-done)
+          ;("BIRTHDAY" . "#BF616A")
+          ;("*" . org-done)
+          ;("LATER" . org-done)
           ;("NOW!" . "#BF616A")
           ;("HEALTH" . "#81A1C1")
           ;("EARN" . "#81A1C1")
@@ -277,47 +277,47 @@
 
                                      ("ia" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ic" "create a simple file about physics" plain (function org-roam--capture-get-point) ; I use ic instead of ib, because b is harder to type
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;-------------------- Knowledge notes --------------------
                                      ("k" "knowledge!") ;check the documentation
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;("ke" "explanation file" plain (function org-roam--capture-get-point)
                                      ; :file-name "~/.org/roam/p:/${slug},%<%Y.%m.%d.%H>"
-                                     ; :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* В файле описано\n- \n\n* TODO:"
+                                     ; :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                      ; :unnarrowed t)
 
                                      ;----------------- Physics special -------------------
 
                                      ("ka" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("kc" "create a simple file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
                                      ("d" "default" plain (function org-roam--capture-get-point)
                                       :file-name "${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* В файле описано\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* Зачем файл?\n- \n\n* TODO:"
                                       :unnarrowed t)
                                      ))
 )
