@@ -102,6 +102,7 @@ ttf-iosevka
 ueberzug
 unrar
 unzip
+vi
 vue
 wd719x-firmware
 webkit2gtk
