@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	// make it stay on previous tag { "St",   		                NULL,      	NULL,   	1 << ,            0,    		0,		        0, 	      -1 , -1},
 	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
 	{ "zoom",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
-	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , -1},
+	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , 1},
 	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , -1},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
