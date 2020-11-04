@@ -217,6 +217,7 @@ export LC_ALL="en_US.UTF-8"
 alias n=nvim
 alias e=ranger
 alias a=alarm
+alias p=python
 
 
 
