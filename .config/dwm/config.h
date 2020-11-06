@@ -43,20 +43,20 @@ static const int network_manager_tag = torrent_tag;
 static const int tools_tag = 8;
 
 static const Rule rules[] = {
-	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout */
+	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout (default) */
 	//{ "St",      		            NULL,     	NULL,           1 << 0,		            0,     		1,           	0,        -1, 0},
-	{ "Emacs",   		            NULL,       NULL,   	    1 << text_editor_tag,             0,    		0,		        0, 	          -1 , -1},
-	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << mindmap_tag,            0,    		0,		    0, 	              -1 , -1},
-	{ "Brave", 		                NULL,     	NULL,           1 << web_tag,		    0,    		0,           	0,            -1 , -1},
-	{ "Zathura", 		            NULL,     	NULL,           1 << reader_tag,		    0,     		0,           	0,            -1 , -1},
-	{ "mpv",   		                NULL,      	NULL,		    1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
-	{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , -1},
-	{ "St",   		                NULL,      	"ranger",   	1 << file_browser_tag,            0,    		0,		        0, 	      -1 , -1},
+	{ "Emacs",   		            NULL,       NULL,   	    1 << text_editor_tag,             0,    		0,		        0, 	          -1 , 0},
+	{ "Com.github.phase1geo.minder",NULL,       NULL,           1 << mindmap_tag,            0,    		0,		    0, 	              -1 , 0},
+	{ "Brave", 		                NULL,     	NULL,           1 << web_tag,		    0,    		0,           	0,            -1 , 0},
+	{ "Zathura", 		            NULL,     	NULL,           1 << reader_tag,		    0,     		0,           	0,            -1 , 0},
+	{ "mpv",   		                NULL,      	NULL,		    1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
+	{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
+	{ "St",   		                NULL,      	"ranger",   	1 << file_browser_tag,            0,    		0,		        0, 	      -1 , 0},
 	// make it stay on previous tag { "St",   		                NULL,      	NULL,   	1 << ,            0,    		0,		        0, 	      -1 , -1},
-	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
-	{ "zoom",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , -1},
+	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
+	{ "zoom",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
 	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , 1},
-	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , -1},
+	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , 0},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
