@@ -3,9 +3,21 @@
 ;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq org-directory "~/.org")
-(setq yas-snippet-dirs '("~/.doom.d/mysnippets"))
+;(setq yas-snippet-dirs '("~/.doom.d/mysnippets"))
                            ;"~/Downloads/interesting-snippets"))
-;(setq org-roam-directory "~/.org/roam")
+;    (set-language-environment "Latin-1")
+
+;(set-language-environment "Russian")
+;(defun my-chinese-setup()
+;  "Set up my private Chinese environment."
+;  (if (equal current-language-environment "Chinese-GB")
+;      (setq default-input-method "chinese-tonepy")))
+;
+;(add-hook 'set-language-environment-hook 'my-chinese-setup)
+
+;(set input-activate nil)
+;  (add-hook 'find-file-hook
+;            (lambda ()(if (eq input-activate t) (toggle-input-method))))
 
 (setq display-line-numbers-type 'visual)
 (setq default-input-method 'russian-computer) ; C-\ switch to completely russian support
@@ -28,7 +40,8 @@
     (set-frame-font "Iosevka-16" nil t)))
 
 
-(setq doom-theme 'doom-nord-light)
+(setq doom-theme 'doom-nord)
+;(setq doom-theme 'doom-nord-light)
 
 
 (custom-set-variables
@@ -75,6 +88,7 @@
     (cons 340 "#4C566A")
     (cons 360 "#4C566A")))
  '(vc-annotate-very-old-color nil))
+(setq org-roam-link-use-custom-faces 'everywhere) ; and futher settings begin to work
 (custom-set-faces
  '(org-level-1 ((t (:height 1.00)))) ; :inherit bold для жирного, там же где и foreground
  '(org-level-2 ((t (:height 1.00))))
@@ -87,6 +101,7 @@
  '(org-document-title ((t (:inherit bold :height 1.25)))) ;:foreground "#ECEFF4"
  '(org-roam-link ((t (:foreground "#6b7994")))) ; :inherit italic
  '(org-roam-link-current ((t (:foreground "#a6aebf"))))
+ '(org-drawer ((t (:foreground "#a6aebf"))))
  )
 
 (add-hook 'after-init-hook 'org-roam-server-mode)
@@ -97,6 +112,7 @@
 (global-set-key (kbd "C-c s") 'org-roam-server-mode)
 (global-set-key (kbd "C-c u") (kbd "gg C-c C-c C-c C-v t")) ; test, if no lags appears
 (global-set-key (kbd "C-c t") (kbd "SPC o a a a")) ; "todo"
+(global-set-key (kbd "C-c m") 'doom-modeline-mode) ; "todo"
 ;(global-set-key (kbd "C-c e") '(org-roam-mode org-roam))
 
 (setq org-cycle-separator-lines 2)
@@ -132,7 +148,7 @@
 
           ("c" "capture idea/thought" entry ;check the documentation
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
-           "**** %?\n- [ ] ") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+           "**** %?\n- [ ] \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
            (file "~/.org/roam/k:/ideas.org") ;file and heading
@@ -204,8 +220,12 @@
   :after org
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-(setq  org-bullets-bullet-list '("⁖"))
-
+(setq  org-bullets-bullet-list '("⁖")
+;       org-ellipsis " ▾ "
+;org-ellipsis " ••• " ⸬▾⚫⁖
+       ;org-ellipsis " ⸬ "
+       org-ellipsis " ·· " ;::  ⚫ꔷ
+       )
 )
 
           ;("r" "30 min review" item ;check the documentation
