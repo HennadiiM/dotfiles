@@ -11,11 +11,16 @@ static const char dmenufont[]       = "Iosevka Medium:size=13";
 //static const char col_gray1[]       = "#272C37";
 //static const char col_gray3[]       = "#EDEDF1";
 //static const char col_gray4[]       = "#272C37";
-#000000
+
+// dark mode 2
+static const char col_gray1[]       = "#2E3440";
+static const char col_gray3[]       = "#EDEDF1";
+static const char col_gray4[]       = "#272C37"; //
+
 // light mode
-static const char col_gray1[]       = "#EDEDF1";
-static const char col_gray3[]       = "#272C37";
-static const char col_gray4[]       = "#EDEDF1";
+//static const char col_gray1[]       = "#EDEDF1";
+//static const char col_gray3[]       = "#272C37";
+//static const char col_gray4[]       = "#EDEDF1";
 
 //static const char col_gray2[]       = "#5c82ca";
 static const char col_gray2[]       = "#E9CD89";
@@ -41,6 +46,7 @@ static const int messenger_tag = 6 ;
 static const int torrent_tag = 7;
 static const int network_manager_tag = torrent_tag;
 static const int tools_tag = 8;
+static const int steam_tag = 8;
 
 static const Rule rules[] = {
 	/* class     		            instance  	title 	    tags mask  	            isfloating  	isterminal	noswallow  	monitor xkb_layout (default) */
@@ -149,7 +155,10 @@ static Key keys[] = {
 	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
 	{ MODKEY,			                XK_l,	  	spawn,	        {.v = screenlock }},
     // screenshot
-	{ MODKEY|ShiftMask,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
+	{ MODKEY,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
+
+	{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("wise-launch steam") },
+	{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
@@ -179,6 +188,7 @@ static Key keys[] = {
 	{ MODKEY|ctrl,        XK_m,     	setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ctrl,        XK_f,     	setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ctrl,        XK_n, 	    setlayout,      {0} },
+
 	{ MODKEY,                       XK_parenleft, focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_parenright,focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_parenleft, tagmon,         {.i = -1 } },
