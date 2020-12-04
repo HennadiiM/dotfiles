@@ -64,6 +64,7 @@ handle_extension() {
             7z l -p -- "${FILE_PATH}" && exit 5
             exit 1;;
 
+        # H: (or it's because of djvu) comment, because consumed all memory and cpu 
         ## PDF
         pdf)
             ## Preview as text conversion
@@ -139,7 +140,7 @@ handle_image() {
         #           && exit 6 || exit 1;;
 
         ## Image
-        image/*)
+        image/jpeg|image/png)
             local orientation
             orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FILE_PATH}" )"
             ## If orientation data is present and the image actually
@@ -311,12 +312,13 @@ handle_mime() {
                 -- "${FILE_PATH}" && exit 5
             exit 2;;
 
-        ## DjVu
-        image/vnd.djvu)
-            ## Preview as text conversion (requires djvulibre)
-            djvutxt "${FILE_PATH}" | fmt -w "${PV_WIDTH}" && exit 5
-            exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+        # H: comment, because consumed all memory and cpu
+        ### DjVu
+        #image/vnd.djvu)
+        #    ## Preview as text conversion (requires djvulibre)
+        #    djvutxt "${FILE_PATH}" | fmt -w "${PV_WIDTH}" && exit 5
+        #    exiftool "${FILE_PATH}" && exit 5
+        #    exit 1;;
 
         ## Image
         image/*)
