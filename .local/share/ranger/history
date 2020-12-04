@@ -1,50 +1,50 @@
-shell 
-rename 1day
-rename 2day
-rename 3day
-rename 4day
-shell nvim mindmapping-soft
-rename mindmapping-soft.md
-shell nvim 4.find-cool-recruiter
-shell nvim 4.find-cool-recruiter.md
-shell mkdir 4-day
-rename 1-day
-rename 2-day
-rename 3-day
-shell mkdir 5day
-shell nvim 5-day.md
-shell mkdir 5-day
-rename 3day.md
-rename 2day.md
-rename 1day.md
-rename 5day.md
+search stay
+search away
+search bey
+open_with 
+rename 03 - With You.mp3
+find 
+shell mkdir olimpiad-ftl-check
+rename olimpiad-ftl-check
+rename olimpiad-ftl-check_2
+w
+search asi
+;
+search or
+search /
+search не_надо
+shell mkdir .all
+rename распечатай-меня.pdf
+search атом
+search распе
+rename атом-конспект-лекций.pdf
+search ste
 search 
-find com.
-search com.
-rename srca
-rename pkgf
-find com
-search c
-search com
-search minder
-search mind
-rename main-philosophy.md
-shell mkdir 6day
-shell touch 
-shell nvim 6day.md
-find loval
-find .lo
-find Tr
+search tra
+search lu
+rename S.T.A.L.K.E.R. - Shadow of Chernobyl
+rename 1-вступ_з-ны_тепл_изл.mp4
+rename 2-ф-ла_Планка_фотоэффект.mp4
+rename 3-тепловое-излучение_х-ки-фотонов.mp4
+rename 4-Томсон,Релей-россеяние_тормозное-рентген-излуч_Комптон-рассеяние.mp4
+search red
+shell mkdir 
+shell mkdir 2,3
+shell mkdir lec
+bulkrename 
+shell touch internet-sources.md
+shell mkdir 3-funnel-realization
+shell mkdir 4-
+shell mkdir 4
+rename 4-pushing
+shell mkdir 5-selling-funnel
+shell 
+rename katia-jest-interview-2.bin
+rename katia-jest-interview-1.bin
+search tab
+shell mkdir 5
+rename Tenet.2020.1080p.HDRip.DD5.1.X.264-EVO.srt
+shell mkdir 6
+rename 1.png
+rename 11.png
 delete
-shell mkdir 7-day
-shell mkdir 8-day.md
-rename 8-day
-rename ДЕНЬ 9 - Регулярный менеджмент и основные показатели в бизнесе.pdf
-shell mkdir 9-day
-shell nvim learning-event.py
-rename 9.learning-event.py
-4
-rename event-ROI.xlsx
-rename event-ROI.ods
-
-rename The Losers (2010) [1080p] {5.1}gg
