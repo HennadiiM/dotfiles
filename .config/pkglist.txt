@@ -99,7 +99,6 @@ patch
 pavucontrol
 picom
 pkgconf
-plasma-desktop
 powertop
 pulseaudio
 pulseaudio-alsa
