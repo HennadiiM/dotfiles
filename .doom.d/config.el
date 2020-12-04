@@ -133,8 +133,8 @@
               '("AUTO" "babel" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
               '("" "mathtext" t ("pdflatex")))
- (add-to-list 'org-latex-packages-alist
-              '("condensed,math" "anttor" t ("pdflatex")))
+ ;(add-to-list 'org-latex-packages-alist
+ ;             '("condensed,math" "anttor" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
               '("AUTO" "polyglossia" t ("xelatex" "lualatex")))
  )
@@ -297,12 +297,12 @@
 
                                      ("ia" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ic" "create a simple file about physics" plain (function org-roam--capture-get-point) ; I use ic instead of ib, because b is harder to type
                                       :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;-------------------- Knowledge notes --------------------
