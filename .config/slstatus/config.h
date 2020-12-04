@@ -77,7 +77,7 @@ static const struct arg args[] = {
 	{battery_remaining,    "%s  •   ",          "BAT0"},
 	{ ram_used,  " %s   ::   ", NULL	      },
     { keymap, "%s   •   ", NULL},
-	{ datetime,  "%s",            "%d  %b,  %a   •   %r" },
+	{ datetime,  "%s ",            "%d  %b,  %a   •   %r" },
 	//{kernel_release, "   : %s   ::   "},
 	//{ wifi_perc,  " %s%%   •   ",  "wlp0s20f3" }, // don't see any use of it. even if 80% - sometimes bad/unstable connection
 	//{ netspeed_tx,  " %sB/s   •   ",  "wlp0s20f3" }, //
