@@ -243,7 +243,9 @@ alias dpkg='dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt"'
 alias dnvim='dot add ~/.config/nvim/init.vim && dot commit -m'
 alias dulti='dot add ~/.config/nvim/UltiSnips/tex.snippets && dot commit -m'
 alias dzath='dot add ~/.config/zathura && dot commit -m'
+alias dranger='dot add ~/.config/ranger'
 
+alias dhist='dot add ~/.local/share/ranger && dot add ~/.local/share/zathura'
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
 
 # standard git commands
@@ -258,8 +260,11 @@ alias sn='sudo nvim'
 
 alias sps='sudo pacman -S'
 alias spr='sudo pacman -R'
+
+# wtf?
 alias sprs='sudo pacman -Rs'
 alias sprdd='sudo pacman -Rdd'
+
 alias Syy='sudo pacman -Syy'
 alias Syu='sudo pacman -Syu'
 
@@ -277,7 +282,7 @@ alias msri='makepkg -sri'
 #alias k='n /home/prodper/Documents/knowledge-base/3.efficiency/keyboard.rst'
 #alias chi='n /home/prodper/Documents/knowledge-base/3.efficiency/chill.md'
 
-alias csc='cd $SCREENSHOT'
+#alias csc='cd $SCREENSHOT'
 
 # network connection aliases
 #alias senm='systemctl enable NetworkManager'
