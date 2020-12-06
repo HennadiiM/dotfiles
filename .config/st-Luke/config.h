@@ -8,7 +8,7 @@
 //static char *font = "mono:pixelsize=20:antialias=true:autohint=true";
 
 // P: own font
-static char *font = "Iosevka Medium:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Iosevka Curly Medium:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
