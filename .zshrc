@@ -232,6 +232,7 @@ alias dp='dot push'
 
 # fast commit specific program
 alias ddwm='dot add ~/.config/dwm && dot commit -m'
+alias dst='dot add ~/.config/st-Luke && dot commit -m'
 alias ddoom='dot add ~/.doom.d && dot commit -m'
 alias dzshrc='dot add ~/.zshrc && dot commit -m'
 alias dzshenv='dot add ~/.zshenv && dot commit -m'
