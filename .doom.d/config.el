@@ -25,20 +25,35 @@
 (setq recentf-max-menu-items 1000)
 (setq recentf-max-saved-items 1000)
 
+;(defun rag-set-face (frame)
+;  "Configure faces on frame creation"
+;  (select-frame frame)
+;  (if (display-graphic-p)
+;      (progn
+;        (when (member "Iosevka" (font-family-list))
+;          (progn
+;            (set-frame-font "Iosevka-16" nil t))))))
+;
+;(add-hook 'after-make-frame-functions #'rag-set-face)
+;;; set frame font when running emacs normally
+;(when (member "Iosevka" (font-family-list))
+;  (progn
+;    (set-frame-font "Iosevka-16" nil t)))
+
 (defun rag-set-face (frame)
   "Configure faces on frame creation"
   (select-frame frame)
   (if (display-graphic-p)
       (progn
-        (when (member "Iosevka" (font-family-list))
+        (when (member "Iosevka Curly" (font-family-list))
           (progn
-            (set-frame-font "Iosevka-16" nil t))))))
+            (set-frame-font "Iosevka Curly 16" nil t))))))
+
 (add-hook 'after-make-frame-functions #'rag-set-face)
 ;; set frame font when running emacs normally
-(when (member "Iosevka" (font-family-list))
+(when (member "Iosevka Curly" (font-family-list))
   (progn
-    (set-frame-font "Iosevka-16" nil t)))
-
+    (set-frame-font "Iosevka Curly 16" nil t)))
 
 (setq doom-theme 'doom-nord)
 ;(setq doom-theme 'doom-nord-light)
