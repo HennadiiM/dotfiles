@@ -1,4 +1,0 @@
-#!/bin/bash
-
-#youtube-dl -f "bestvideo[ext=webm][height<=1080]+bestaudio[ext=webm]" \'"$1"\'
-echo \'"$1"\'
