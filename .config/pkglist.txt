@@ -9,6 +9,7 @@ baobab
 base
 binutils
 bison
+blueman
 bluez-utils
 brave-bin
 cmake
@@ -95,7 +96,6 @@ reflector
 ripgrep
 scrot
 shotgun
-snapper
 sof-firmware
 sudo
 system76-dkms
@@ -130,7 +130,6 @@ xorg-server-devel
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
-xorg-server-xwayland
 xorg-sessreg
 xorg-smproxy
 xorg-x11perf
@@ -158,6 +157,7 @@ xorg-xrefresh
 xorg-xset
 xorg-xsetroot
 xorg-xvinfo
+xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
