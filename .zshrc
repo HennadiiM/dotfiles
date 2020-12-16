@@ -319,6 +319,8 @@ alias es='~/.emacs.d/bin/doom sync'
 
 alias yvw='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
 alias yvw7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
+alias yvwm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+alias yvwm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
 alias yaw='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
 alias yad='youtube-dl -f "bestaudio[ext=webm]"'
 alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
@@ -342,3 +344,8 @@ alias pu='fusermount -u ~/sandbox/phone'
 
 alias fm='mount /mnt/wtf-drive'
 alias fu='umount /mnt/wtf-drive'
+
+# system76-power manadgement
+alias pbal='sudo system76-power profile balanced'
+alias pbat='sudo system76-power profile battery'
+alias pstat='system76-power profile' 
