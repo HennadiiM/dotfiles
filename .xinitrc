@@ -57,30 +57,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 : '
-blue-moon.jpg
-fire-water.jpg
-fog-mountai.jpg
-fox-stone.jpg
-golden-brown-road.jpg
-lake-autumn.jpg
-lake-leaves-purple.jpg
-lake-mountain.jpg
-lake-summer.jpg
-leaves-red-blue.jpg
-leaves-red.jpg
-river(center)-forest.jpg
-river-forest.jpg
-rubick.jpg
-sakura.jpg
-stones-forest.jpg
-terror.jpg
-train-winter.jpg
-woolf.jpg
+polar-river.jpg
+show-beach-mountain.jpg
+desert-black.jpg
+pink-clouds-mountains.jpg
 '
 
 #xxkb &
-fw woolf.jpg &
-picom -f &
+fw show-beach-mountain.jpg &
+picom &
 slstatus &
 low-battery &
 #redshift &
