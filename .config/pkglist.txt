@@ -117,6 +117,7 @@ which
 wireless_tools
 wpa_supplicant
 xclip
+xcompmgr
 xf86-video-intel
 xf86-video-vesa
 xorg-bdftopcf
