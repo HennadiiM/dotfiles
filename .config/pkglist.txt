@@ -19,6 +19,7 @@ dmenu
 dosfstools
 efibootmgr
 emacs
+evince
 fakeroot
 feh
 firefox
