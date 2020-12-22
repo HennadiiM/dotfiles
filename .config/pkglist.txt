@@ -44,6 +44,7 @@ imagemagick
 intel-ucode
 libmtp
 libreoffice-still
+libreoffice-still-ru
 libtool
 libva-intel-driver
 linux
