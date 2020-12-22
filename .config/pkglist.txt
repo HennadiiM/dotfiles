@@ -1,3 +1,4 @@
+0ad
 acpi
 acpilight
 alsa-utils
@@ -25,6 +26,7 @@ feh
 firefox
 flameshot
 flex
+freeciv
 gcc
 gdb
 git
@@ -118,6 +120,7 @@ wget
 which
 wireless_tools
 wpa_supplicant
+xautolock
 xclip
 xcompmgr
 xf86-video-intel
