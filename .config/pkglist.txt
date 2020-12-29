@@ -101,6 +101,7 @@ ripgrep
 scrot
 shotgun
 sof-firmware
+steam
 sudo
 system76-dkms
 system76-power
