@@ -98,8 +98,10 @@ ranger
 redshift
 reflector
 ripgrep
+rsync
 scrot
 shotgun
+simple-mtpfs
 sof-firmware
 steam
 sudo
