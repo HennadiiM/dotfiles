@@ -118,6 +118,7 @@ ueberzug
 ufw
 unzip
 vi
+vlc
 webkit2gtk
 wget
 which
