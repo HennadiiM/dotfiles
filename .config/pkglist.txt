@@ -15,6 +15,11 @@ bluez-utils
 brave-bin
 cmake
 cmus
+deepin-desktop-base
+deepin-desktop-schemas
+deepin-gtk-theme
+deepin-icon-theme
+deepin-sound-theme
 dialog
 dmenu
 dosfstools
@@ -64,6 +69,7 @@ mpg123
 mpv
 mtools
 mtpfs
+multibootusb
 neovim
 network-manager-applet
 networkmanager
@@ -113,9 +119,12 @@ the_silver_searcher
 thermald
 tk
 tlp
+tor
+torbrowser-launcher
 ttf-font-awesome
 ueberzug
 ufw
+unrar
 unzip
 vi
 vlc
