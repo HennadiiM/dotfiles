@@ -245,6 +245,7 @@ alias dnvim='dot add ~/.config/nvim/init.vim && dot commit -m'
 alias dulti='dot add ~/.config/nvim/UltiSnips/tex.snippets && dot commit -m'
 alias dzath='dot add ~/.config/zathura && dot commit -m'
 alias dranger='dot add ~/.config/ranger'
+alias dpicom='dot add ~/.config/picom.conf && dot commit -m'
 
 alias dhist='dot add ~/.local/share/ranger && dot add ~/.local/share/zathura'
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
@@ -339,8 +340,8 @@ alias reb='reboot'
 alias s='startx'
 
 # mount phone, flash drive
-alias pm='simple-mtpfs --device 1 ~/sandbox/phone' #phone mount
-alias pu='fusermount -u ~/sandbox/phone'
+alias pm='simple-mtpfs --device 1 ~/soft/Phone' #phone mount
+alias pu='fusermount -u ~/soft/phone'
 
 alias fm='mount /mnt/wtf-drive'
 alias fu='umount /mnt/wtf-drive'
