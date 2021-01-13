@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# xrandr --setprovideroutputsource modesetting NVIDIA-0 
+# xrandr --auto 
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -38,7 +41,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-
 #xrdb -merge .Xresources
 
 #setxkbmap -layout us,ru -option grp:caps_toggle
@@ -57,20 +59,25 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 : '
-polar-river.jpg
-show-beach-mountain.jpg
+cold-snow-trees.jpg
 desert-black.jpg
+night-king-with-his-dragon.jpg
 pink-clouds-mountains.jpg
+polar-river.jpg
+rain-shower-lightning.jpg
+snow-beach-mountain.jpg
 '
 
 #xxkb &
-fw show-beach-mountain.jpg &
+fw snow-beach-mountain.jpg &
 picom &
 slstatus &
 low-battery &
+xautolock -time 1 -corners 0-00 -locker slock & #top l, top r, bottom 
+
+#xsidle.sh slock &
 #redshift &
 #xrandr --output eDP-1 --mode 1920x1080 &
-
 
 # Launch dwmstatus
 #dwmstatus 2>&1 >/dev/null &
@@ -78,6 +85,8 @@ low-battery &
 while true; do
     dwm >/dev/null 2>&1
 done
+#exec startdde
+
 #
 ## any of 2 lines above doesn't work! No wallpaper appears.
 ##xpmroot ~/Downloads/wallpaper.jpg &
