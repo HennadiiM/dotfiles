@@ -32,24 +32,28 @@ static const char *fonts[]          = { "fontawesome:size=13", "Iosevka Curly Me
 static const char dmenufont[]       = "Iosevka Curly Medium:size=13";
 
 // my colors ["#272C37" "#BF6469" "#A1BA8E" "#E9CD89" "#76A2B9" "#B18FAA" "#88C3DB" "#EDEDF1"])
-// dark mode
-//static const char col_gray1[]       = "#272C37";
-//static const char col_gray3[]       = "#EDEDF1";
-//static const char col_gray4[]       = "#272C37";
 
 // dark mode 2
 static const char col_gray1[]       = "#2E3440";
 static const char col_gray3[]       = "#EDEDF1";
 static const char col_gray4[]       = "#272C37"; //
 
+// dark mode
+//static const char col_gray1[]       = "#272C37";
+//static const char col_gray3[]       = "#EDEDF1";
+//static const char col_gray4[]       = "#272C37";
+
+
+
 // light mode
 //static const char col_gray1[]       = "#EDEDF1";
 //static const char col_gray3[]       = "#272C37";
 //static const char col_gray4[]       = "#EDEDF1";
 
+
 //static const char col_gray2[]       = "#5c82ca";
 static const char col_gray2[]       = "#E9CD89";
-static const char col_cyan[]        = "#76A2B9";
+static const char col_cyan[]        = "#B18FAA"; //"#76A2B9";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
