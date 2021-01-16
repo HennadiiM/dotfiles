@@ -28,7 +28,6 @@ search
 shell mkdir bad-quol-pic
 shell mpv 0.bin
 shell mkdir docs-online-bazar
-
 shell mpv 7.mp4
 rename Spectre.2015.1080p.BRRip.x264.AAC-ETRG.srt
 shell 
@@ -48,3 +47,4 @@ find tras
 search nvi
 find share
 find nv
+
