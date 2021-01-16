@@ -1,8 +1,3 @@
-shell mkdir gifs
-rename before-picom.mp4
-rename after-picom.mp4
-bulkrename 
-shell brave Мамасита\ _\ Правила\ возврата.html
 search x-ter
 search gnome
 search gnome-ter
@@ -46,5 +41,10 @@ open_with
 cd 
 rename 2.jpg
 rename 3.jpg
-shell mkdir sandbox
 delete
+shell tras
+shell Tra
+find tras
+search nvi
+find share
+find nv
