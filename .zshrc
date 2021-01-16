@@ -231,6 +231,7 @@ alias ds='pacman -Qqe > ~/.config/pkglist.txt &&
     dot add ~/.local/share/zathura &&
     dot add ~/.config/qBittorrent &&
     dot add ~/.local/share/nvim &&
+dot add ~/Pictures/wallpapers &&
     dot commit -m "update pkglist and minor changes" &&
     dot status' #automatically update pkg list
 alias doa='dot add'
