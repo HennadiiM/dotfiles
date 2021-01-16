@@ -1,50 +1,50 @@
-search stay
-search away
-search bey
-open_with 
-rename 03 - With You.mp3
-find 
-shell mkdir olimpiad-ftl-check
-rename olimpiad-ftl-check
-rename olimpiad-ftl-check_2
-w
-search asi
-;
-search or
-search /
-search не_надо
-shell mkdir .all
-rename распечатай-меня.pdf
-search атом
-search распе
-rename атом-конспект-лекций.pdf
-search ste
-search 
-search tra
-search lu
-rename S.T.A.L.K.E.R. - Shadow of Chernobyl
-rename 1-вступ_з-ны_тепл_изл.mp4
-rename 2-ф-ла_Планка_фотоэффект.mp4
-rename 3-тепловое-излучение_х-ки-фотонов.mp4
-rename 4-Томсон,Релей-россеяние_тормозное-рентген-излуч_Комптон-рассеяние.mp4
-search red
-shell mkdir 
-shell mkdir 2,3
-shell mkdir lec
+shell mkdir gifs
+rename before-picom.mp4
+rename after-picom.mp4
 bulkrename 
-shell touch internet-sources.md
-shell mkdir 3-funnel-realization
-shell mkdir 4-
-shell mkdir 4
-rename 4-pushing
-shell mkdir 5-selling-funnel
+shell brave Мамасита\ _\ Правила\ возврата.html
+search x-ter
+search gnome
+search gnome-ter
+search gnome-term
+search terminal-em
+search st
+search terminal
+shell nvim x-terminal-emulator
+search x-term
+search zsh
+shell evince атомка.pdf 
+rename 1.mp2
+rename snow-beach-mountain.jpg
+shell zathura metodychka2019-перетворено.pdf
+rename Диктант.pdf
+find hist
+search Борг
+search verti
+find vertic
+shell mkdir torrent
+search tra
+find 
+shell mkdir .cache
+rename .cache-g
+shell mkdir
+shell mkdir .cache-rev
+search 
+shell mkdir bad-quol-pic
+shell mpv 0.bin
+shell mkdir docs-online-bazar
+
+shell mpv 7.mp4
+rename Spectre.2015.1080p.BRRip.x264.AAC-ETRG.srt
 shell 
-rename katia-jest-interview-2.bin
-rename katia-jest-interview-1.bin
-search tab
-shell mkdir 5
-rename Tenet.2020.1080p.HDRip.DD5.1.X.264-EVO.srt
-shell mkdir 6
-rename 1.png
-rename 11.png
+rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.mp4
+rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.srt
+rename docs-itself
+shell nvim 123.mp4
+search qbi
+open_with 
+cd 
+rename 2.jpg
+rename 3.jpg
+shell mkdir sandbox
 delete
