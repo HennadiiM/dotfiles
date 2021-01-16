@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# xrandr --setprovideroutputsource modesetting NVIDIA-0 
-# xrandr --auto 
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -67,6 +65,9 @@ polar-river.jpg
 rain-shower-lightning.jpg
 snow-beach-mountain.jpg
 '
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0 
+xrandr --auto 
 
 #xxkb &
 fw snow-beach-mountain.jpg &
