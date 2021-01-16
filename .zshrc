@@ -225,7 +225,14 @@ alias ste='prime-run steam'
 
 # dot add <filename> -- for store dotfiles 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
-alias ds='pacman -Qqe > ~/.config/pkglist.txt && dot add ~/.config/pkglist.txt && dot commit -m "update pkglist.txt" && dot status' #automatically update pkg list
+alias ds='pacman -Qqe > ~/.config/pkglist.txt && 
+    dot add ~/.config/pkglist.txt && 
+    dot add ~/.local/share/ranger &&
+    dot add ~/.local/share/zathura &&
+    dot add ~/.config/qBittorrent &&
+    dot add ~/.local/share/nvim &&
+    dot commit -m "update pkglist and minor changes" &&
+    dot status' #automatically update pkg list
 alias doa='dot add'
 alias dc='dot commit -m'
 alias dp='dot push'
@@ -247,7 +254,7 @@ alias dzath='dot add ~/.config/zathura && dot commit -m'
 alias dranger='dot add ~/.config/ranger'
 alias dpicom='dot add ~/.config/picom.conf && dot commit -m'
 
-alias dhist='dot add ~/.local/share/ranger && dot add ~/.local/share/zathura'
+alias dminor='dot add ~/.local/share/ranger && dot add ~/.local/share/zathura && ~/.config/qBittorrent && ~/.local/share/nvim -m "minor updates"'
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
 
 # standard git commands
