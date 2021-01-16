@@ -15,6 +15,7 @@ bluez-utils
 brave-bin
 cmake
 cmus
+cuda
 deepin-desktop-base
 deepin-desktop-schemas
 deepin-gtk-theme
@@ -49,6 +50,7 @@ hwinfo
 i7z
 imagemagick
 intel-ucode
+lib32-nvidia-utils
 libmtp
 libreoffice-still
 libreoffice-still-ru
