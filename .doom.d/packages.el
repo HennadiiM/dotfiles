@@ -50,7 +50,7 @@
 ;(unpin! t)
 
 (package! evil-snipe :disable t)
-(package! org-super-agenda) ;???
+(package! org-super-agenda)
 (package! rainbow-mode)
 (package! simple-httpd)
 (package! org-roam-server)
