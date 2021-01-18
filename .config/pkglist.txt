@@ -1,4 +1,3 @@
-0ad
 acpi
 acpilight
 alsa-utils
