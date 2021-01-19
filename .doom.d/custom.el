@@ -56,5 +56,5 @@
  '(org-level-6 ((t (:height 1.0))))
  '(org-level-7 ((t (:height 1.0))))
  '(org-level-8 ((t (:height 1.0))))
- '(org-roam-link ((t (:foreground "#6b7994"))))
+ '(org-roam-link ((t (:foreground "#96A0B4"))))
  '(org-roam-link-current ((t (:foreground "#a6aebf")))))
