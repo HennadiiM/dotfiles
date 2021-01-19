@@ -374,7 +374,6 @@
 :bmark kin-prob
 :bmark kin-sol
 :bmark dyn-sol
-:blist kin-sol
 :blist
 :blist kin-prob
 :blist dyn-sol
@@ -384,3 +383,6 @@
 /По поверх
 /Леополь
 /9.62
+:blist kin-sol
+:bmark dyn-26
+:blist dyn-26
