@@ -186,8 +186,8 @@ static Key keys[] = {
     // screenshot
 	{ MODKEY,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
 
-	{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("wise-launch steam") },
-	{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
+	//{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("wise-launch steam") },
+	//{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
