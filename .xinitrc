@@ -77,7 +77,7 @@ low-battery &
 xautolock -time 1 -corners 0-00 -locker slock & #top l, top r, bottom 
 
 #xsidle.sh slock &
-#redshift &
+redshift &
 #xrandr --output eDP-1 --mode 1920x1080 &
 
 # Launch dwmstatus
