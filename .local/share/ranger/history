@@ -40,7 +40,6 @@ open_with
 cd 
 rename 2.jpg
 rename 3.jpg
-delete
 shell tras
 shell Tra
 find tras
@@ -48,3 +47,4 @@ search nvi
 find share
 find nv
 
+delete

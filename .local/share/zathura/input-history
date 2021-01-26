@@ -375,7 +375,6 @@
 :bmark kin-sol
 :bmark dyn-sol
 :blist
-:blist kin-prob
 :blist dyn-sol
 /14.6
 /2.43
@@ -388,3 +387,4 @@
 :blist dyn-26
 /2.52
 /2.61
+:blist kin-prob
