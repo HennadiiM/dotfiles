@@ -347,7 +347,7 @@ If there is more than one, they won't work right.
 ;       org-ellipsis " ▾ "
 ;org-ellipsis " ••• " ⸬▾⚫⁖
        ;org-ellipsis " ⸬ "
-       org-ellipsis " ·· " ;::  ⚫ꔷ
+       org-ellipsis " ··· " ;::  ⚫ꔷ
        )
 )
 #+END_SRC

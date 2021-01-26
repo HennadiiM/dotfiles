@@ -117,8 +117,8 @@
  '(org-level-7 ((t (:height 1.00))))
  '(org-level-8 ((t (:height 1.00)))) ;:foreground "#ECEFF4"
  '(org-document-title ((t (:inherit bold :height 1.25)))) ;:foreground "#ECEFF4"
- '(org-roam-link ((t (:foreground "#ECEFF4")))) ; :inherit italic
- '(org-roam-link-current ((t (:foreground "#ECEFF4"))))
+ '(org-roam-link ((t (:foreground "#6b7994")))) ; :inherit italic
+ '(org-roam-link-current ((t (:foreground "#a6aebf"))))
  '(org-drawer ((t (:foreground "#a6aebf"))))
  )
 
@@ -252,7 +252,7 @@
 ;       org-ellipsis " ▾ "
 ;org-ellipsis " ••• " ⸬▾⚫⁖
        ;org-ellipsis " ⸬ "
-       org-ellipsis " ·· " ;::  ⚫ꔷ
+       org-ellipsis " ··· " ;::  ⚫ꔷ
        )
 )
 
