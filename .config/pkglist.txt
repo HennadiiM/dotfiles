@@ -50,6 +50,7 @@ htop
 hwinfo
 i7z
 imagemagick
+intel-media-driver
 intel-ucode
 lib32-nvidia-utils
 libmtp
@@ -81,6 +82,7 @@ notification-daemon
 npm
 ntfs-3g
 nvidia
+nvidia-dkms
 nvidia-prime
 nvidia-settings
 nvidia-utils
@@ -117,6 +119,7 @@ sof-firmware
 steam
 sudo
 system76-dkms
+system76-io-dkms
 system76-power
 telegram-desktop
 texinfo
@@ -141,8 +144,6 @@ wpa_supplicant
 xautolock
 xclip
 xcompmgr
-xf86-video-intel
-xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
