@@ -280,6 +280,7 @@ alias Syy='sudo pacman -Syy'
 alias Syu='sudo pacman -Syu'
 
 alias msri='makepkg -sri'
+alias msi='makepkg -si'
 
 # for files
 #alias wh='n $HOME/Documents/knowledge-base/optimization/what-when-to-do/want-to.md'
