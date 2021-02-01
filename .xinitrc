@@ -1,6 +1,10 @@
 #!/bin/sh
 
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0 
+xrandr --auto 
+xrandr --dpi 96
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -56,6 +60,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
 : '
 cold-snow-trees.jpg
 desert-black.jpg
@@ -66,8 +72,6 @@ rain-shower-lightning.jpg
 snow-beach-mountain.jpg
 '
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0 
-xrandr --auto 
 
 #xxkb &
 fw snow-beach-mountain.jpg &
@@ -86,6 +90,7 @@ redshift &
 while true; do
     dwm >/dev/null 2>&1
 done
+
 #exec startdde
 
 #
