@@ -1,36 +1,12 @@
-search x-ter
-search gnome
-search gnome-ter
-search gnome-term
-search terminal-em
-search st
-search terminal
-shell nvim x-terminal-emulator
-search x-term
-search zsh
-shell evince атомка.pdf 
-rename 1.mp2
-rename snow-beach-mountain.jpg
-shell zathura metodychka2019-перетворено.pdf
-rename Диктант.pdf
-find hist
-search Борг
-search verti
-find vertic
-shell mkdir torrent
-search tra
 find 
 shell mkdir .cache
 rename .cache-g
-shell mkdir
 shell mkdir .cache-rev
-search 
 shell mkdir bad-quol-pic
 shell mpv 0.bin
 shell mkdir docs-online-bazar
 shell mpv 7.mp4
 rename Spectre.2015.1080p.BRRip.x264.AAC-ETRG.srt
-shell 
 rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.mp4
 rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.srt
 rename docs-itself
@@ -47,4 +23,28 @@ search nvi
 find share
 find nv
 
+find roo
+search steam
+search stea
+shell 
+find steam
+rename .steampath
+rename .steampid
+find stea
+rename .steam
+search calib
+search kalib
+rename lightbulb.jpg
+search 
+search 9-10
+shell mkdir olymp-7-8
+rename olym
+search 7-8
+search Бела
+search бела
+search 10
+shell mkdir olymp-9-10
 delete
+shell mkdir olymp-9
+shell mkdir
+rename olymp-8

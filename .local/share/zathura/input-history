@@ -375,16 +375,23 @@
 :bmark kin-sol
 :bmark dyn-sol
 :blist
-:blist dyn-sol
 /14.6
 /2.43
 /2.53
 /По поверх
 /Леополь
 /9.62
-:blist kin-sol
 :bmark dyn-26
 :blist dyn-26
 /2.52
 /2.61
 :blist kin-prob
+/21.12
+/21.28
+:blist kin-sol
+:blist dyn-sol
+/Из точек А и В
+/Из точек A и B
+/на одной горизонтальной прямой
+/1.11
+/1.1.1
