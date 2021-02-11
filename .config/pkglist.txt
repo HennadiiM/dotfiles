@@ -78,6 +78,7 @@ libva-intel-driver
 linux
 linux-firmware
 linux-headers
+lollypop
 lshw
 luit
 lutris

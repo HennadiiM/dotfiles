@@ -1,13 +1,3 @@
-find 
-shell mkdir .cache
-rename .cache-g
-shell mkdir .cache-rev
-shell mkdir bad-quol-pic
-shell mpv 0.bin
-shell mkdir docs-online-bazar
-shell mpv 7.mp4
-rename Spectre.2015.1080p.BRRip.x264.AAC-ETRG.srt
-rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.mp4
 rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.srt
 rename docs-itself
 shell nvim 123.mp4
@@ -44,7 +34,17 @@ search Бела
 search бела
 search 10
 shell mkdir olymp-9-10
-delete
 shell mkdir olymp-9
 shell mkdir
 rename olymp-8
+w
+rename 8_105l.pdf
+shell brave zadachi2020.pdf
+search xlsx
+shell mkdir motion-2021
+shell mkdir musi
+shell mkdir mus-temp
+search кабар
+rename 9_1-3.pdf
+search 8
+delete
