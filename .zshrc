@@ -218,7 +218,7 @@ alias n=nvim
 alias e=ranger
 alias a=alarm
 alias p=python
-alias jup='jupyter-lab --notebook-dir=~/.org/knu/3-1'
+alias jup='jupyter-lab --notebook-dir=~/.org/knu/3-2'
 alias ste='prime-run steam'
 
 
