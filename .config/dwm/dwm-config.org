@@ -122,7 +122,8 @@ static const Rule rules[] = {
 	{ "Brave", 		                NULL,     	NULL,           1 << web_tag,		    0,    		0,           	0,            -1 , 0},
 	{ "Zathura", 		            NULL,     	NULL,           1 << reader_tag,		    0,     		0,           	0,            -1 , 0},
 	{ "mpv",   		                NULL,      	NULL,		    1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
-	{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
+	//{ "St",   		                NULL,       "cmus v2.8.0",	1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
+	{ "Lollypop",   		                NULL,       NULL,	1 << video_audio_tag,                 0,    		0,		        0,    -1 , 0},
 	{ "St",   		                NULL,      	"ranger",   	1 << file_browser_tag,            0,    		1,		        0, 	      -1 , 0},
 	// make it stay on previous tag { "St",   		                NULL,      	NULL,   	1 << ,            0,    		0,		        0, 	      -1 , -1},
 	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
@@ -218,7 +219,8 @@ static Key keys[] = {
     // mpv
 	{ MODKEY,                       	XK_m,	  	view,          	{.ui = 1 << video_audio_tag}},
     // audio player
-	{ MODKEY,                       	XK_a,	  	spawn,          SHCMD("st -e wise-launch cmus")},
+	//{ MODKEY,                       	XK_a,	  	spawn,          SHCMD("st -e wise-launch cmus")},
+	{ MODKEY,                       	XK_a,	  	spawn,          SHCMD("wise-launch lollypop")},
 	{ MODKEY,                       	XK_a,	  	view,          	{.ui = 1 << video_audio_tag}},
     // file manager
 	{ MODKEY,                       	XK_f,	  	spawn,          SHCMD("st -e wise-launch ranger")},
@@ -248,8 +250,8 @@ static Key keys[] = {
     // screenshot
 	{ MODKEY,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
 
-	//{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("wise-launch steam") },
-	//{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
+	{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("prime-run steam") },
+	{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
@@ -311,7 +313,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,                     XK_j,        spawn,          SHCMD("xbacklight -dec 10")},
 	{ MODKEY|ctrl,           XK_k,        spawn,          SHCMD("xbacklight -inc 3") },
 	{ MODKEY|ctrl,           XK_j,        spawn,          SHCMD("xbacklight -dec 3")},
-	{ MODKEY|ctrl,           XK_m,   spawn,          SHCMD("pamixer -t")},
+	{ MODKEY|ShiftMask,           XK_m,   spawn,          SHCMD("pamixer -t")},
 	//{ MODKEY|MODKEY2,           XK_r,  spawn,          SHCMD("amixer -q sset Master 3%+" )},
 	//{ MODKEY|MODKEY2,           XK_e,   spawn,          SHCMD("amixer -q sset Master 3%-" )},
 	//{ MODKEY|MODKEY2,            XK_u,        spawn,          SHCMD("xbacklight -inc 3") },
