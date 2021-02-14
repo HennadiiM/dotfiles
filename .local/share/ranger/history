@@ -1,9 +1,3 @@
-rename R.I.P.D..2013.1080p.BluRay.x264.YIFY.srt
-rename docs-itself
-shell nvim 123.mp4
-search qbi
-open_with 
-cd 
 rename 2.jpg
 rename 3.jpg
 shell tras
@@ -25,7 +19,6 @@ rename .steam
 search calib
 search kalib
 rename lightbulb.jpg
-search 
 search 9-10
 shell mkdir olymp-7-8
 rename olym
@@ -47,4 +40,11 @@ shell mkdir mus-temp
 search кабар
 rename 9_1-3.pdf
 search 8
+shell mkdir data
+rename 1.txt
+search 
+search tra
+rename зянития-на-день.ods
+rename задачи-кванты.pdf
+shell mkdir quant
 delete

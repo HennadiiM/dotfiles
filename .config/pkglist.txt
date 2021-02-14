@@ -39,7 +39,6 @@ gcc
 gdb
 git
 gnome-bluetooth
-gnome-control-center
 gnome-settings-daemon
 gparted
 groff
