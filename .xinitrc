@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0 
-xrandr --auto 
-xrandr --dpi 96
+#xrandr --setprovideroutputsource modesetting NVIDIA-0 
+#xrandr --auto 
+#xrandr --dpi 96
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -79,6 +79,7 @@ picom &
 slstatus &
 low-battery &
 xautolock -time 1 -corners 0-00 -locker slock & #top l, top r, bottom 
+flameshot & # in background
 
 #xsidle.sh slock &
 redshift &
