@@ -77,7 +77,7 @@ fw snow-beach-mountain.jpg &
 picom &
 slstatus &
 low-battery &
-xautolock -time 1 -corners 0-00 -locker slock & #top l, top r, bottom 
+xautolock -time 1 -corners 00-0 -locker slock & #top l, top r, bottom 
 flameshot & # in background
 
 redshift &
