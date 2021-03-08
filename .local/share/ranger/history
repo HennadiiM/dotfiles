@@ -1,50 +1,50 @@
-rename 2.jpg
-rename 3.jpg
-shell tras
-shell Tra
-find tras
-search nvi
-find share
-find nv
-
-find roo
-search steam
-search stea
-shell 
-find steam
-rename .steampath
-rename .steampid
-find stea
-rename .steam
-search calib
-search kalib
-rename lightbulb.jpg
-search 9-10
-shell mkdir olymp-7-8
-rename olym
-search 7-8
-search Бела
-search бела
-search 10
-shell mkdir olymp-9-10
-shell mkdir olymp-9
-shell mkdir
-rename olymp-8
-w
-rename 8_105l.pdf
-shell brave zadachi2020.pdf
-search xlsx
-shell mkdir motion-2021
-shell mkdir musi
-shell mkdir mus-temp
-search кабар
-rename 9_1-3.pdf
-search 8
-shell mkdir data
-rename 1.txt
+rename 1kr-1g.jp
+rename 1kr-1.jp
+rename 1kr-1.jpg
+rename Фундаментальный анализ компанийa.mp4
+search main
+find torb
+open_with 
+shell mkdir сила-трения
+shell mkdir img
+rename friction-force.tex
+bulkrename 
+rename 5.21.jpg
+rename 5.2.jpg
+rename 5.1.jpg
+shell mkdir безпека-життедияльности
+rename mainmksir.tex
+shell mkdir annotation
+shell touch annotation.tex
+rename common-passwords.png
+rename 12-22
+rename 12-22.png
+rename 47.pn
+rename 47.png
+shell mkdir bezpeka-test
 search 
-search tra
-rename зянития-на-день.ods
-rename задачи-кванты.pdf
-shell mkdir quant
+find ma
+rename bezpeka-referat
+search co
+find conc 
+find con
+rename main.pdf
+rename ФВЕ-Меланіч.pdf
+search on fire
+shell mkdir for-telegram
+shell 
+rename Занимательная физика. Книга 1. Парадоксы, головоломки, задачи, опыты, замысловатые вопросы и рассказы из области физики by Перельман Я.И.djvu
+rename volodymir.pdf
+search nudat
+shell mkdir line-error.txt
+shell nvim line-error.txt
+rename Портфельная стратегия Smart Estimate.mp4
+shell mkdir 1
+rename 1-Меланіча.odt
+shell mkdir backup
+shell nvim exclusions
+find steam
+find .steam
+search flow
+search krakn
 delete

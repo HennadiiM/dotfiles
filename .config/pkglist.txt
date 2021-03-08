@@ -39,6 +39,7 @@ gcc
 gdb
 git
 gnome-bluetooth
+gnome-control-center
 gnome-settings-daemon
 gparted
 groff
@@ -131,7 +132,6 @@ rsync
 scrot
 shotgun
 simple-mtpfs
-skypeforlinux-stable-bin
 sof-firmware
 steam
 steam-fonts
@@ -205,6 +205,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xournalpp
 youtube-dl
 zathura
 zathura-djvu
