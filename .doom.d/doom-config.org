@@ -485,35 +485,35 @@ If there is more than one, they won't work right.
                                      ("k" "knowledge!") ;check the documentation
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;("ke" "explanation file" plain (function org-roam--capture-get-point)
                                      ; :file-name "~/.org/roam/p:/${slug},%<%Y.%m.%d.%H>"
-                                     ; :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                     ; :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:     \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                      ; :unnarrowed t)
 
                                      ;----------------- Physics special -------------------
 
                                      ("ka" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("kc" "create a simple file about physics" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ; move d to botton to avoid addint notes in .org/roam directory instead of one of k: or s:
                                      ("d" "default" plain (function org-roam--capture-get-point)
                                       :file-name "${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* Зачем файл?\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
                                      ))
 )
