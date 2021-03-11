@@ -357,6 +357,11 @@ alias fm='mount /mnt/wtf-drive'
 alias fu='umount /mnt/wtf-drive'
 
 # system76-power manadgement
-alias pbal='sudo system76-power profile balanced'
-alias pbat='sudo system76-power profile battery'
-alias pstat='system76-power profile' 
+alias spro='system76-power profile' 
+alias sbal='sudo system76-power profile balanced'
+alias sbat='sudo system76-power profile battery'
+
+alias sgra='sudo system76-power graphics'
+alias sgrapow='sudo system76-power graphics power'
+alias sint='sudo system76-power graphics integrated'
+alias shyb='sudo system76-power graphics hybrid'
