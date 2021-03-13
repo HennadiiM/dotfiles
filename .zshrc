@@ -270,7 +270,7 @@ alias sn='sudo nvim'
 
 
 alias sps='sudo pacman -S'
-alias spr='sudo pacman -R'
+alias spr='sudo pacman -Rsu'
 
 # wtf?
 alias sprs='sudo pacman -Rs'
