@@ -1,9 +1,3 @@
-rename friction-force.tex
-bulkrename 
-rename 5.21.jpg
-rename 5.2.jpg
-rename 5.1.jpg
-shell mkdir безпека-життедияльности
 rename mainmksir.tex
 shell mkdir annotation
 shell touch annotation.tex
@@ -48,3 +42,9 @@ rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmtea.str
 rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmteam.srt
 rename xmonad.hs
 delete
+find fon
+find xm
+search xmon
+find 
+find xmon
+find .xmo
