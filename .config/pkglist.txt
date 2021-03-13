@@ -172,6 +172,8 @@ wpa_supplicant
 xautolock
 xclip
 xcompmgr
+xmonad
+xmonad-contrib
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
