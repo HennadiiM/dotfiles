@@ -17,7 +17,7 @@ alarm="/home/prodper/pic-mus/music/cheerful-2.mp3"
 warning_level=75
 
 # How often to check battery status, in minutes
-check_interval=30
+check_interval=15
 
 while true; do
   battery_level=$(acpi -b \
