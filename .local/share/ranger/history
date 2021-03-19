@@ -1,28 +1,3 @@
-rename mainmksir.tex
-shell mkdir annotation
-shell touch annotation.tex
-rename common-passwords.png
-rename 12-22
-rename 12-22.png
-rename 47.pn
-rename 47.png
-shell mkdir bezpeka-test
-search 
-find ma
-rename bezpeka-referat
-search co
-find conc 
-find con
-rename main.pdf
-rename ФВЕ-Меланіч.pdf
-search on fire
-shell mkdir for-telegram
-shell 
-rename Занимательная физика. Книга 1. Парадоксы, головоломки, задачи, опыты, замысловатые вопросы и рассказы из области физики by Перельман Я.И.djvu
-rename volodymir.pdf
-search nudat
-shell mkdir line-error.txt
-shell nvim line-error.txt
 rename Портфельная стратегия Smart Estimate.mp4
 shell mkdir 1
 rename 1-Меланіча.odt
@@ -41,10 +16,35 @@ rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmteam.str
 rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmtea.str
 rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmteam.srt
 rename xmonad.hs
-delete
 find fon
 find xm
 search xmon
 find 
 find xmon
 find .xmo
+search nap
+search silat
+search nucle
+search nucleous
+search radioa
+find kr
+search kri
+find kri
+find tra
+rename friction-coefs.png
+find torb
+shell mkdir kozel
+find so
+search .pdf
+shell nvim -01.cap
+find mai
+find main.te
+search test
+search naplo
+shell mkdir prez
+shell m
+search org
+w
+search mkt
+shell mkdir playing-to-write-slodeshow-solution
+delete

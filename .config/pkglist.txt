@@ -1,5 +1,6 @@
 acpi
 acpilight
+aircrack-ng
 alsa-utils
 arc-gtk-theme
 audacity
@@ -47,16 +48,19 @@ groff
 grub
 grub-btrfs
 grub-customizer
+gst-plugins-good
 gtk2
 hacksaw
 htop
 hwinfo
 i7z
 imagemagick
+inkscape
 intel-media-driver
 intel-ucode
 iucode-tool
 kcm-wacomtablet
+krita
 lib32-gamemode
 lib32-giflib
 lib32-gnutls
@@ -99,6 +103,7 @@ mpv
 mtools
 mtpfs
 multibootusb
+mypaint
 neovim
 network-manager-applet
 networkmanager
@@ -168,7 +173,8 @@ vulkan-intel
 webkit2gtk
 wget
 which
-wine-staging
+wine
+wine-mono
 wireless_tools
 wpa_supplicant
 xautolock
