@@ -270,10 +270,10 @@ alias sn='sudo nvim'
 
 
 alias sps='sudo pacman -S'
-alias spr='sudo pacman -Rsu'
+alias spr='sudo pacman -R'
+alias Rsu='sudo pacman -Rsu'
 
 # wtf?
-alias sprs='sudo pacman -Rs'
 alias sprdd='sudo pacman -Rdd'
 
 alias Syy='sudo pacman -Syy'
@@ -353,11 +353,13 @@ alias s='startx'
 alias pm='simple-mtpfs --device 1 ~/soft/Phone' #phone mount
 alias pu='fusermount -u ~/soft/phone'
 
-alias fm='mount /mnt/wtf-drive'
-alias fu='umount /mnt/wtf-drive'
+#alias fm='mount /mnt/wtf-drive'
+#alias fu='umount /mnt/wtf-drive'
+alias fm='mount ~/soft/flash'
+alias fu='umount ~/soft/flash'
 
 # system76-power manadgement
-alias spro='system76-power profile' 
+alias spro='sudo system76-power profile' 
 alias sbal='sudo system76-power profile balanced'
 alias sbat='sudo system76-power profile battery'
 
