@@ -73,39 +73,43 @@ snow-beach-mountain.jpg
 '
 
 
-fw snow-beach-mountain.jpg &
+fw laguna-beach-seascape-long-exposure-5k-2a.jpg &
 picom &
-slstatus &
 low-battery &
 xautolock -time 1 -corners 00-0 -locker slock & #top l, top r, bottom 
 flameshot & # in background
 
 redshift &
+
 #xrandr --output eDP-1 --mode 1920x1080 &
 
 # Launch dwmstatus
 #dwmstatus 2>&1 >/dev/null &
 
+slstatus &
 while true; do
     dwm >/dev/null 2>&1
 done
 
+#xmobar ~/.config/xmobarrc &
+#/bin/xmonad
+
+
+# plasma
 #export DESKTOP_SESSION=plasma 
 #exec startplasma-x11
 
+#
 #exec startdde
 
-#
-## any of 2 lines above doesn't work! No wallpaper appears.
-##xpmroot ~/Downloads/wallpaper.jpg &
-##xloadimage -onroot -fullscreen ~/Downloads/wallpaper.jpg 
-#
-#exec dwm
-#
-##exec startplasma-x11
-#
-#/bin/xmonad
+# gnome
 
+# classic session
 #export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
 #export GNOME_SHELL_SESSION_MODE=classic
 #exec gnome-session --session=gnome-classic
+
+# xorg session
+#export XDG_SESSION_TYPE=x11
+#export GDK_BACKEND=x11
+#exec gnome-session
