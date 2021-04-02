@@ -14,7 +14,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#191C25" "#434C5E"))
  '(objed-cursor-color "#BF616A")
  '(org-agenda-files
-   '("~/.org/roam/k:/план_к_23_годам,2020.10.22.11.org" "~/.org/roam/k:/people_to_communicate_with,2020.09.18.20.org" "~/.org/roam/k:/first_priorities,2020.08.30.10.org" "~/.org/agenda.org"))
+   '("~/.org/roam/k:/молекулярная_теория,2021.03.16.20.org" "~/.org/roam/k:/план_к_23_годам,2020.10.22.11.org" "~/.org/roam/k:/people_to_communicate_with,2020.09.18.20.org" "~/.org/roam/k:/first_priorities,2020.08.30.10.org" "~/.org/agenda.org"))
  '(org-log-into-drawer t)
  '(package-selected-packages '(reverse-im linum-relative use-package))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))

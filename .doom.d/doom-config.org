@@ -129,15 +129,19 @@ If there is more than one, they won't work right.
   (progn
     (set-frame-font "Iosevka Curly 16" nil t)))
 
-(setq doom-theme 'doom-nord)
-;(setq doom-theme 'doom-nord-light)
+;(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord-light)
 
 
 (custom-set-variables
  ;'(ansi-color-names-vector  was by default
  ;  ["#272C36" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
  '(ansi-color-names-vector ; MYCOLORS
-   ["#272C37" "#BF6469" "#A1BA8E" "#E9CD89" "#76A2B9" "#B18FAA" "#88C3DB" "#EDEDF1"])
+   ["#272C37" "#BF6469" "#A1BA8E" "#E9CD89" "#76A2B9" "#B18FAA" "#88C3DB" "#EDEDF1"]) ; + google_green_color "#d2ebd3". My modified: "#d4ead1".
+; white_rgb: (237,237,241), violet_rgb: (177,143,170), green_modified_grb (212,234,209)
+; google_viotel "#e2d6f3" grb_violet: 226,214,243
+; google_gray "#e4e6e7" grb_gray: 228,230,231
+
  '(custom-safe-themes
    (quote
     ("e074be1c799b509f52870ee596a5977b519f6d269455b84ed998666cf6fc802a" "bf387180109d222aee6bb089db48ed38403a1e330c9ec69fe1f52460a8936b66" "bc836bf29eab22d7e5b4c142d201bcce351806b7c1f94955ccafab8ce5b20208" "fe94e2e42ccaa9714dd0f83a5aa1efeef819e22c5774115a9984293af609fce7" default)))
@@ -227,7 +231,7 @@ If there is more than one, they won't work right.
 ;; Drag-and-drop to `dired`
 (add-hook 'dired-mode-hook 'org-download-enable)
 (setq-default org-download-image-dir "~/.org/images/")
-(setq org-download-timestamp nil)
+;(setq org-download-timestamp nil)
 
 
 (setq org-cycle-separator-lines 2)
@@ -246,10 +250,35 @@ If there is more than one, they won't work right.
 
 (after! org
                                         ; for presentations
- (add-to-list 'org-latex-packages-alist
-              '("AUTO" "babel" t ("pdflatex")))
- (add-to-list 'org-latex-packages-alist
-              '("" "mathtext" t ("pdflatex")))
+
+(setq org-latex-default-packages-alist
+      '(
+  ("" "mathtext" t ("pdflatex"))
+ ("T2A" "fontenc" t ("pdflatex"))
+ ("AUTO" "inputenc" t ("pdflatex"))
+  ("english, russian" "babel" t ("pdflatex"))
+ ("" "graphicx" t)
+ ("" "grffile" t)
+ ("" "longtable" nil)
+ ("" "wrapfig" nil)
+ ("" "rotating" nil)
+ ("normalem" "ulem" t)
+ ("" "amsmath" t)
+ ("" "textcomp" t)
+ ("" "amssymb" t)
+ ("" "capt-of" nil)
+ ("" "hyperref" nil))
+)
+
+
+; (add-to-list 'org-latex-default-packages-alist
+;              '("T2A" "fontenc" t ("pdflatex")))
+; (add-to-list 'org-latex-default-packages-alist
+;              '("english, russian" "babel" t ("pdflatex")))
+; (add-to-list 'org-latex-default-packages-alist
+;              '("T2A" "fontenc" t ("pdflatex")))
+; (add-to-list 'org-latex-packages-alist
+;              '("" "mathtext" t ("pdflatex")))
  ;(add-to-list 'org-latex-packages-alist
  ;             '("condensed,math" "anttor" t ("pdflatex")))
  (add-to-list 'org-latex-packages-alist
@@ -270,16 +299,16 @@ If there is more than one, they won't work right.
            "**** %?\n- [ ] \n\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("i" "ideas" entry ;check the documentation
-           (file "~/.org/roam/k:/ideas.org") ;file and heading
+           (file "~/.org/roam/k/ideas.org") ;file and heading
            "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
           ("a" "answers needed!") ;check the documentation
           ("ag" "answer to Gleb" entry ;check the documentation
-           (file "~/.org/roam/k:/questions_to_answer.org") ;file and heading
+           (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
            "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
 
           ("ao" "answers to other people, sources" entry ;check the documentation
-           (file "~/.org/roam/k:/questions_to_answer.org") ;file and heading
+           (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
            "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
           ;("c" "conclusions" entry ;check the documentation
@@ -287,11 +316,11 @@ If there is more than one, they won't work right.
           ; "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
           ("t" "todo" entry ;check the documentation
-           (file "~/.org/roam/k:/todo.org") ;file and heading
+           (file "~/.org/roam/k/todo.org") ;file and heading
            "* TODO %?\n:LOGBOOK:\n\n:END:\n")
 
           ("g" "important big idea = goal" entry ;check the documentation
-           (file "~/.org/roam/k:/goals.org") ;file and heading
+           (file "~/.org/roam/k/goals.org") ;file and heading
            "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
@@ -460,36 +489,36 @@ If there is more than one, they won't work right.
                                      ;-------------------- Info notes --------------------
                                      ("i" "just info") ;check the documentation
                                      ("im" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/i/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("is" "simple file" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/i/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;----------------- Physics special -------------------
 
                                      ("ia" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/p/i/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru   \n\ng:   \n%a    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ic" "create a simple file about physics" plain (function org-roam--capture-get-point) ; I use ic instead of ib, because b is harder to type
-                                      :file-name "~/.org/roam/p:/i:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/p/i/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;-------------------- Knowledge notes --------------------
                                      ("k" "knowledge!") ;check the documentation
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/k/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/k/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
@@ -501,12 +530,12 @@ If there is more than one, they won't work right.
                                      ;----------------- Physics special -------------------
 
                                      ("ka" "create a mechanism file for this file about physics" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/p/k/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("kc" "create a simple file about physics" plain (function org-roam--capture-get-point)
-                                      :file-name "~/.org/roam/p:/k:/${slug},%<%Y.%m.%d.%H>"
+                                      :file-name "~/.org/roam/p/k/${slug},%<%Y.%m.%d.%H>"
                                       :head "#+title: ${title}\n#+roam_alias: \"%?\"\n#+roam_tags: \n#+startup: latexpreview\n#+language: ru     \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
                                       :unnarrowed t)
 
