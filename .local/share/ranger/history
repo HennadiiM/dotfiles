@@ -1,50 +1,50 @@
-rename Портфельная стратегия Smart Estimate.mp4
-shell mkdir 1
-rename 1-Меланіча.odt
-shell mkdir backup
-shell nvim exclusions
-find steam
-find .steam
-search flow
-search krakn
-search список
-search борги
-rename мастер-группа-1-созвон.mp4
-shell mkdir investments
-find tras
-rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmteam.str
-rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmtea.str
-rename the.fate.of.the.furious.2017.1080p.web.dl.6ch.hevc.x265.rmteam.srt
-rename xmonad.hs
-find fon
-find xm
-search xmon
-find 
-find xmon
-find .xmo
-search nap
-search silat
-search nucle
-search nucleous
-search radioa
-find kr
-search kri
-find kri
-find tra
-rename friction-coefs.png
-find torb
-shell mkdir kozel
-find so
-search .pdf
-shell nvim -01.cap
-find mai
-find main.te
-search test
-search naplo
-shell mkdir prez
-shell m
-search org
+find rou
+find pdf
+rename молекулярная_теория,2021.03.16.2.pdf_
+rename молекулярная_теория,2021.03.16.20.pdf_
+rename молекулярная_теория,2021.03.16.20.pdf
+search l1
+search l2
+search l3
+search l5
+shell mkdir mriv
+rename mriv-lec
+shell mkdir
+shell mkdir img
+find sa
+shell mkdir beamer-testing
+shell nvim test-beamer.tex
+
+open_with 
+shell mkdir telegram-better
+shell mkdir better
+rename img
+shell mkdir solutions
 w
-search mkt
-shell mkdir playing-to-write-slodeshow-solution
+shell mkdir 
+rename инвестиции.ods
+find torb
+search believe
+shell mkdir logos
+bulkrename 
+search кр
+rename Zadachi_Irodov_1988.djvu
+search kin
+rename kinsv'T.pdf
+search 1.2
+rename [pirat.biz] [Алексей Красиков] 21 сезон (2020)3.zip
+shell evince ФВЕ-Меланіч-МКР-1.pdf
+rename ФВЕ_Меланіч-МКР-1.pdf
+rename ФВЕ_Меланіч_Г.А_МКР-1.pdf
+find 
+search say
+search 
+search gra
+find tras
+search my man
+search old
+search lab
+shell mkdir 1
+search main
+search ann
 delete
