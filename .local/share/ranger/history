@@ -1,6 +1,3 @@
-find rou
-find pdf
-rename молекулярная_теория,2021.03.16.2.pdf_
 rename молекулярная_теория,2021.03.16.20.pdf_
 rename молекулярная_теория,2021.03.16.20.pdf
 search l1
@@ -48,3 +45,6 @@ shell mkdir 1
 search main
 search ann
 delete
+search fstab
+search roo
+search fsta
