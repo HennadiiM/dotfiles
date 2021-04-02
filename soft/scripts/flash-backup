@@ -1,0 +1,6 @@
+#!/bin/sh
+
+flash_folder = ~/soft/flash/.all
+
+rsync -aurP --delete-after ~/Documents "$flash_folder" && rsync -aurP --delete-after ~/.password-store "$flash_folder" && rsync -aurP --delete-after --exclude '.git' ~/.org "$flash_folder"
+#find $flash_folder -type f -exec chmod 644 {} \;

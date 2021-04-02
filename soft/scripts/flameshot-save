@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
 flameshot gui -p "$HOME/Pictures/"
