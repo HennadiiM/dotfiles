@@ -90,7 +90,7 @@ static const char *colors[][3]      = {
   =static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };=
 - programs positions in tags first number = tag number (tags numbers start from 0)
 #+BEGIN_SRC c
-static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" };
+static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //
 
 static const int text_editor_tag = 0;
 static const int mindmap_tag = 0;
@@ -106,6 +106,7 @@ static const int torrent_tag = 7;
 static const int network_manager_tag = torrent_tag;
 static const int tools_tag = 8;
 static const int steam_tag = 8;
+static const int crypto_tag = 8;
 #+END_SRC
 
 ** Own tag for each program
@@ -128,8 +129,10 @@ static const Rule rules[] = {
 	// make it stay on previous tag { "St",   		                NULL,      	NULL,   	1 << ,            0,    		0,		        0, 	      -1 , -1},
 	{ "Audacity",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
 	{ "zoom",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
+	{ "discord",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
 	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , 1},
 	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , 0},
+	{ "Binance",                NULL,     	NULL,           1 << crypto_tag,		        0,     		0,           	0,    -1 , 0},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
 	//{ "FreeMind",    NULL,     	NULL,           1 << 7,		1,     		0,           	0,        -1 },
@@ -206,8 +209,8 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
 	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << text_editor_tag}},
     // minder
-	{ MODKEY,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
-	{ MODKEY,                       	XK_b,	  	view,          	{.ui = 1 << mindmap_tag}},
+	{ MODKEY|ctrl|ShiftMask,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
+	{ MODKEY|ctrl|ShiftMask,                       	XK_b,	  	view,          	{.ui = 1 << mindmap_tag}},
     // browser
 	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
 	{ MODKEY,                  	    XK_w,      	view,           {.ui = 1 << web_tag} },
@@ -234,6 +237,12 @@ static Key keys[] = {
     // zoom
 	{ MODKEY|ShiftMask,                XK_z,	  	spawn,	        SHCMD("wise-launch zoom")},
 	{ MODKEY|ShiftMask,                   XK_z,	  	view,          {.ui = 1 << recording_tag}},
+    // discord
+	{ MODKEY|ShiftMask|ctrl,                XK_d,	  	spawn,	        SHCMD("wise-launch discord")},
+	{ MODKEY|ShiftMask|ctrl,                   XK_d,	  	view,          {.ui = 1 << recording_tag}},
+    // discord
+	{ MODKEY|ShiftMask|ctrl,                XK_d,	  	spawn,	        SHCMD("wise-launch discord")},
+	{ MODKEY|ShiftMask|ctrl,                   XK_d,	  	view,          {.ui = 1 << recording_tag}},
     // messenger
 	{ MODKEY,                       	XK_t,	  	spawn,          SHCMD("wise-launch telegram-desktop") },
 	{ MODKEY,                       	XK_t,	  	view,          	{.ui = 1 << messenger_tag}},
@@ -250,13 +259,16 @@ static Key keys[] = {
     // screenshot
 	{ MODKEY,			    XK_s,	  	spawn,	        {.v = screenshot_fancy }},
 
-	{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("prime-run steam") },
-	{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
+//	{ MODKEY|ShiftMask,                       	XK_s,	  	spawn,          SHCMD("prime-run steam") },
+//	{ MODKEY|ShiftMask,                       	XK_s,	  	view,          	{.ui = 1 << steam_tag}},
 
     // audio control
 	{ MODKEY,                       	XK_p,	  	spawn,          SHCMD("st -e pulsemixer") },
 
 	{ MODKEY|ShiftMask,                       	XK_p,	  	spawn,          {.v = password_manager}},
+
+	{ MODKEY,                 XK_b,	  	spawn,          SHCMD("wise-launch binance") },
+	{ MODKEY,                 XK_b,	  	view,          	{.ui = 1 << crypto_tag}},
 
     // audio control
 	{ MODKEY|ShiftMask,                 XK_b,	  	spawn,          SHCMD("st -e bpytop") },
