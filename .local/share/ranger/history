@@ -1,26 +1,10 @@
-rename молекулярная_теория,2021.03.16.20.pdf_
-rename молекулярная_теория,2021.03.16.20.pdf
-search l1
-search l2
-search l3
-search l5
-shell mkdir mriv
-rename mriv-lec
-shell mkdir
-shell mkdir img
-find sa
-shell mkdir beamer-testing
-shell nvim test-beamer.tex
-
 open_with 
 shell mkdir telegram-better
 shell mkdir better
 rename img
 shell mkdir solutions
-w
 shell mkdir 
 rename инвестиции.ods
-find torb
 search believe
 shell mkdir logos
 bulkrename 
@@ -37,14 +21,30 @@ find
 search say
 search 
 search gra
-find tras
 search my man
 search old
 search lab
 shell mkdir 1
 search main
 search ann
+rename kontrol-work-03.04.2021
+rename ball-walls.jpg
+find nap
+rename 5.jpg
+rename 6.jpg
+w
+find torb
+find gra
+find tras
+shell mkdirj
+rename vstup-fve-labs
+shell mkdir vstup-fve
+rename zvit_1.odt
+rename loop_05-1.cxx_
+rename loop_05-1.cxx
+rename lab-2.odt
+rename lab-3.odt
+rename lab-1.odt
 delete
-search fstab
-search roo
-search fsta
+find pul
+find tra

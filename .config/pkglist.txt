@@ -1,6 +1,7 @@
 acpi
 acpilight
 aircrack-ng
+alsa-firmware
 alsa-utils
 arc-gtk-theme
 audacity
@@ -9,6 +10,7 @@ automake
 awesome-terminal-fonts
 baobab
 base
+binance
 binutils
 bison
 blueman
@@ -130,6 +132,7 @@ libreoffice-still
 libreoffice-still-ru
 libtool
 libva-intel-driver
+libva-utils
 libxft-bgra
 linux-firmware
 linux-zen
