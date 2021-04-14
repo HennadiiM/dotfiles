@@ -73,6 +73,8 @@ snow-beach-mountain.jpg
 '
 
 
+
+
 fw laguna-beach-seascape-long-exposure-5k-2a.jpg &
 picom &
 low-battery &
@@ -81,12 +83,8 @@ flameshot & # in background
 
 redshift &
 
-#xrandr --output eDP-1 --mode 1920x1080 &
-
-# Launch dwmstatus
-#dwmstatus 2>&1 >/dev/null &
-
 slstatus &
+
 while true; do
     dwm >/dev/null 2>&1
 done
@@ -103,13 +101,17 @@ done
 #exec startdde
 
 # gnome
-
-# classic session
-#export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
-#export GNOME_SHELL_SESSION_MODE=classic
-#exec gnome-session --session=gnome-classic
-
 # xorg session
 #export XDG_SESSION_TYPE=x11
 #export GDK_BACKEND=x11
 #exec gnome-session
+
+
+
+#xrandr --output eDP-1 --mode 1920x1080 &
+
+# Launch dwmstatus
+#dwmstatus 2>&1 >/dev/null &
+
+# deepin
+#exec startdde
