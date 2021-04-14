@@ -146,6 +146,7 @@ struct Monitor {
 	Monitor *next;
 	Window barwin;
 	const Layout *lt[2];
+	unsigned int alttag;
 };
 
 typedef struct {
@@ -230,6 +231,7 @@ static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *);
+
 static void togglebar(const Arg *arg);
 // HennadiiM added
 //static void hidebar(const Arg *arg);

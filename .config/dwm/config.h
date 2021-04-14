@@ -60,7 +60,12 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //
+//static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //
+//static const char *tags[] = { "       ", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //             
+//static const char *tags[] = { "                 ", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //             
+//static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", ""}; //  ,  
+static const char *tags[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", ""}; //  ,  
+//static const char *tagsalt[] = { "", "", "",/*3*/ "", "", "",/*6*/ "", "", "" }; //
 
 static const int text_editor_tag = 0;
 static const int mindmap_tag = 0;
@@ -74,6 +79,7 @@ static const int messenger_tag = 6 ;
 //static const int slock_tag = 7; // idea was to lock and move to this tag to show wallpaper
 static const int torrent_tag = 7;
 static const int network_manager_tag = torrent_tag;
+static const int draw_tag = torrent_tag;
 static const int tools_tag = 8;
 static const int steam_tag = 8;
 static const int crypto_tag = 8;
@@ -95,6 +101,7 @@ static const Rule rules[] = {
 	{ "discord",   		                NULL,       NULL,	1 << recording_tag,                 0,    		0,		        0,    -1 , 0},
 	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , 1},
 	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , 0},
+	{ "krita",                NULL,     	NULL,           1 << draw_tag,		        0,     		0,           	0,    -1 , 0},
 	{ "Binance",                NULL,     	NULL,           1 << crypto_tag,		        0,     		0,           	0,    -1 , 0},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
@@ -137,8 +144,8 @@ static const char *password_manager[] = {"passmenu", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenlock[] = {"slock", NULL};
 static const char *screenshot_fancy[] = {"flameshot-save"};
-static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
-static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
+//static const char *screenshot_save[] = {"save_shotgun_hacksaw"};
+//static const char *screenshot_clipboard[] = {"shotgun_hacksaw"};
 //static const char *system_monitor[] = {"shotgun_hacksaw"};
 
 static Key keys[] = {
@@ -190,6 +197,9 @@ static Key keys[] = {
     // network manager
 	{ MODKEY,                       	XK_n,	  	spawn,          SHCMD("st -e wise-launch nmtui") },
 	{ MODKEY,                       	XK_n,	  	view,          	{.ui = 1 << network_manager_tag}},
+   // draw program
+	{ MODKEY,                 XK_x,	  	spawn,          SHCMD("wise-launch krita") },
+	{ MODKEY,                 XK_x,	  	view,          	{.ui = 1 << draw_tag}},
     // screen lock
 	//{ MODKEY,                       	XK_l,	  	view,          	{.ui = 1 << slock_tag}},
 	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
@@ -236,6 +246,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_parenright,focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_parenleft, tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_parenright,tagmon,         {.i = +1 } },
+  //{ MODKEY|ShiftMask,                       XK_n,      togglealttag,   {0} },
 	{ MODKEY|ShiftMask,             XK_plus,     	incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_minus,     	incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_0,     	view,           {.ui = ~0 } },
