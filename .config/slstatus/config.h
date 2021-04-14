@@ -63,12 +63,12 @@ static const char unknown_str[] =  "0";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{kernel_release, "   : %s   ::   "},
+	//{kernel_release, "   : %s   ::   "},
 	{ wifi_perc,  " %s   •   ",  "wlp0s20f3" }, // don't see any use of it. even if 80% - sometimes bad/unstable connection
 	{ netspeed_tx,  " %s   •   ",  "wlp0s20f3" }, //
 	{ netspeed_rx,  " %s   ::   ",  "wlp0s20f3" }, //
 	{ cpu_perc,  " %s   •   ", NULL	      },
-	{ temp, 	" %s°C   ::   ", 		"/sys/class/thermal/thermal_zone0/temp"},
+	{ temp, 	"%s°C   ::   ", 		"/sys/class/thermal/thermal_zone0/temp"},
 	//{ run_command,  " %2s   •   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ run_command,  " %2s   •   ",  "pamixer --get-volume"},
 	//{ run_command,  "%4s   ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
