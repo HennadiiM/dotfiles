@@ -351,7 +351,7 @@ alias s='startx'
 
 # mount phone, flash drive
 alias pm='simple-mtpfs --device 1 ~/soft/Phone' #phone mount
-alias pu='fusermount -u ~/soft/phone'
+alias pu='fusermount -u ~/soft/Phone'
 
 #alias fm='mount /mnt/wtf-drive'
 #alias fu='umount /mnt/wtf-drive'
@@ -362,6 +362,7 @@ alias fu='umount ~/soft/flash'
 alias spro='sudo system76-power profile' 
 alias sbal='sudo system76-power profile balanced'
 alias sbat='sudo system76-power profile battery'
+alias sper='sudo system76-power profile performance'
 
 alias sgra='sudo system76-power graphics'
 alias sgrapow='sudo system76-power graphics power'
