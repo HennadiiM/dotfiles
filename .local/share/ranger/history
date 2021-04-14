@@ -1,31 +1,3 @@
-open_with 
-shell mkdir telegram-better
-shell mkdir better
-rename img
-shell mkdir solutions
-shell mkdir 
-rename инвестиции.ods
-search believe
-shell mkdir logos
-bulkrename 
-search кр
-rename Zadachi_Irodov_1988.djvu
-search kin
-rename kinsv'T.pdf
-search 1.2
-rename [pirat.biz] [Алексей Красиков] 21 сезон (2020)3.zip
-shell evince ФВЕ-Меланіч-МКР-1.pdf
-rename ФВЕ_Меланіч-МКР-1.pdf
-rename ФВЕ_Меланіч_Г.А_МКР-1.pdf
-find 
-search say
-search 
-search gra
-search my man
-search old
-search lab
-shell mkdir 1
-search main
 search ann
 rename kontrol-work-03.04.2021
 rename ball-walls.jpg
@@ -34,8 +6,6 @@ rename 5.jpg
 rename 6.jpg
 w
 find torb
-find gra
-find tras
 shell mkdirj
 rename vstup-fve-labs
 shell mkdir vstup-fve
@@ -45,6 +15,36 @@ rename loop_05-1.cxx
 rename lab-2.odt
 rename lab-3.odt
 rename lab-1.odt
-delete
 find pul
+rename kalibr
+search my_
+search khsy
+search khsu
+rename khsu.cls
+shell python ba.py
+rename na.svg
+shell shiv na.svg
+shell feh na.svg
+shell root cs1.C
+rename unnamed.pdf
+rename unnamed.svg
+rename cs.svg
+shell python line.py
+rename calibration
+rename line.png
+rename женский-интенсив-3-1.mp2
+rename женский-интенсив-2-2.mp2
+find gra
+search grav
+search org
+search доку
+search 
+search torb
 find tra
+search alsa
+find tras
+search pdf
+find 
+shell n Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
+shell nvim Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
+delete
