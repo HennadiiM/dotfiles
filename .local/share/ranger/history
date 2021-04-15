@@ -1,37 +1,3 @@
-search ann
-rename kontrol-work-03.04.2021
-rename ball-walls.jpg
-find nap
-rename 5.jpg
-rename 6.jpg
-w
-find torb
-shell mkdirj
-rename vstup-fve-labs
-shell mkdir vstup-fve
-rename zvit_1.odt
-rename loop_05-1.cxx_
-rename loop_05-1.cxx
-rename lab-2.odt
-rename lab-3.odt
-rename lab-1.odt
-find pul
-rename kalibr
-search my_
-search khsy
-search khsu
-rename khsu.cls
-shell python ba.py
-rename na.svg
-shell shiv na.svg
-shell feh na.svg
-shell root cs1.C
-rename unnamed.pdf
-rename unnamed.svg
-rename cs.svg
-shell python line.py
-rename calibration
-rename line.png
 rename женский-интенсив-3-1.mp2
 rename женский-интенсив-2-2.mp2
 find gra
@@ -47,4 +13,38 @@ search pdf
 find 
 shell n Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
 shell nvim Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
+shell root main_1.C
+shell root analysis.C
+shell root main.C
+shell 
+shell mkdir lab-vivr
+search cs_co
+search Cs_
+shell mkdir data
+rename cs137.py
+shell touch
 delete
+rename cs137_co60_30_2.py
+rename cs137_co60_70_1.py
+rename Cs137_Co60slab_40.py
+rename cs137_Co60slab_40.py
+rename cs137_co60_70_2.py
+rename pcs137_Co60slab_40.py
+rename pcs137_co60_70_1.py
+rename pcs137_co60_30_2.py
+rename pcs137.py
+rename pcs137_co60_70_2.py
+rename cs137_c
+rename Cs137_Co60_70_2.py
+rename pCs137_Co60_70_2.py
+rename pCs137_Co60_70_.py
+rename Cs137_Co60_70_2.txt
+rename cs137_co60slab_10.txt
+rename pcs137_co60slab_10.py
+rename j
+rename pCs137_Co60_15_2.py
+shell mkdir 2-part
+shell mkdir line
+open_with root anal
+shell root analisys_1.C
+shell mkdir 3
