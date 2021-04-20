@@ -214,7 +214,7 @@ If there is more than one, they won't work right.
 
 * key-bindings
 #+BEGIN_SRC elisp
-(global-set-key (kbd "C-c j") 'org-capture)
+(global-set-key (kbd "C-c o") 'org-capture) ; my old default was C-c j
 (global-set-key (kbd "C-c s") 'org-roam-server-mode)
 (global-set-key (kbd "C-c u") (kbd "gg C-c C-c C-c C-v t")) ; test, if no lags appears
 (global-set-key (kbd "C-c t") (kbd "SPC o a a a")) ; "todo"
@@ -290,40 +290,43 @@ If there is more than one, they won't work right.
 (after! org
   (setq org-capture-templates
         '(
-          ("r" "30 min review" item ;check the documentation
-           (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
-           "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
-
           ("c" "capture idea/thought" entry ;check the documentation
            (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
            "**** %?\n- [ ] \n\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
-          ("i" "ideas" entry ;check the documentation
-           (file "~/.org/roam/k/ideas.org") ;file and heading
-           "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
+          ;("r" "30 min review" item ;check the documentation
+          ; (file+olp+datetree "~/.org/2_min_Diary.org" ) ;file and heading
+          ; "%U\n- это было здорово:\n\t- [ ] %?\n- можно еще круче:\n   \t- [ ]    \n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
-          ("a" "answers needed!") ;check the documentation
-          ("ag" "answer to Gleb" entry ;check the documentation
-           (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
-           "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
+          ;("i" "ideas" entry ;check the documentation
+          ; (file "~/.org/roam/k/ideas.org") ;file and heading
+          ; "* IDEA %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("ao" "answers to other people, sources" entry ;check the documentation
-           (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
-           "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
+          ;("a" "answers needed!") ;check the documentation
+          ;("ag" "answer to Gleb" entry ;check the documentation
+          ; (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
+          ; "* ANS! =ГЛЕБ= %?\n:LOGBOOK:\n\n:END:\n")
 
-          ;("c" "conclusions" entry ;check the documentation
-          ; (file "~/.org/roam/k:/conclusions.org") ;file and heading
-          ; "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
+          ;("ao" "answers to other people, sources" entry ;check the documentation
+          ; (file "~/.org/roam/k/questions_to_answer.org") ;file and heading
+          ; "* ANS! %?\n:LOGBOOK:\n\n:END:\n")
 
-          ("t" "todo" entry ;check the documentation
-           (file "~/.org/roam/k/todo.org") ;file and heading
-           "* TODO %?\n:LOGBOOK:\n\n:END:\n")
+          ;;("c" "conclusions" entry ;check the documentation
+          ;; (file "~/.org/roam/k:/conclusions.org") ;file and heading
+          ;; "* %?\n:LOGBOOK:\n\n:END:\n") ; :tree-type year (or day) change nothing, :tree-type week also almosed nothing
 
-          ("g" "important big idea = goal" entry ;check the documentation
-           (file "~/.org/roam/k/goals.org") ;file and heading
-           "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
+          ;("t" "todo" entry ;check the documentation
+          ; (file "~/.org/roam/k/todo.org") ;file and heading
+          ; "* TODO %?\n:LOGBOOK:\n\n:END:\n")
+
+          ;("g" "important big idea = goal" entry ;check the documentation
+          ; (file "~/.org/roam/k/goals.org") ;file and heading
+          ; "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
+
+(global-set-key (kbd "C-c j") (kbd "C-c o c")) ; "todo"
+
 #+END_SRC
 ** Keywords
 #+BEGIN_SRC elisp
@@ -474,7 +477,7 @@ If there is more than one, they won't work right.
    :desc "org-roam" "r" #'org-roam
    :desc "org-roam-find-file" "f" #'org-roam-find-file
    :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
-   :desc "org-roam-add-link" "l" #'org-roam-insert ; use default template?
+   :desc "org-roam-add-link" "k" #'org-roam-insert ; use default template?
    ;:desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't use, because no loop feedback
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
    :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
