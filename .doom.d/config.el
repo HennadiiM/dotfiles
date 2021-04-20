@@ -135,6 +135,7 @@
 (global-set-key (kbd "C-c u") (kbd "gg C-c C-c C-c C-v t")) ; test, if no lags appears
 (global-set-key (kbd "C-c t") (kbd "SPC o a a a")) ; "todo"
 (global-set-key (kbd "C-c m") 'doom-modeline-mode) ; "todo"
+(global-set-key (kbd "C-c j") (kbd "C-c o c")) ; "todo"
 ;(global-set-key (kbd "C-c e") '(org-roam-mode org-roam))
 
 (require 'org-download)
@@ -233,8 +234,6 @@
           ; "* PROJ %?\n:LOGBOOK:\n\n:END:\n")
           ))
 )
-
-(global-set-key (kbd "C-c j") (kbd "C-c o c")) ; "todo"
 
 (after! org
   (setq org-todo-keywords
