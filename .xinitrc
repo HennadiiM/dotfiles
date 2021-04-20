@@ -97,8 +97,6 @@ done
 #export DESKTOP_SESSION=plasma 
 #exec startplasma-x11
 
-#
-#exec startdde
 
 # gnome
 # xorg session
