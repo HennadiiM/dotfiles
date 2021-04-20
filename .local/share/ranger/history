@@ -1,29 +1,10 @@
-rename женский-интенсив-3-1.mp2
-rename женский-интенсив-2-2.mp2
-find gra
-search grav
-search org
-search доку
-search 
-search torb
-find tra
-search alsa
-find tras
-search pdf
-find 
-shell n Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
-shell nvim Revolver\ \(2005\)\ 720p\ BluRay\ DD5.1\ x264-KiNGS_E.srt
-shell root main_1.C
 shell root analysis.C
 shell root main.C
-shell 
 shell mkdir lab-vivr
 search cs_co
 search Cs_
-shell mkdir data
 rename cs137.py
 shell touch
-delete
 rename cs137_co60_30_2.py
 rename cs137_co60_70_1.py
 rename Cs137_Co60slab_40.py
@@ -48,3 +29,22 @@ shell mkdir line
 open_with root anal
 shell root analisys_1.C
 shell mkdir 3
+rename 3-lab-Melanich.docx
+shell mkdir data
+rename cs-co.py
+rename -ba.py
+shell touch E-channel.txt
+shell touch line.py
+rename x.py
+shell mkdir error.txt
+rename шеремета-bsk.mp2
+rename theory
+shell 
+search believe
+search cant
+search org
+find tras
+search level
+shell mkdir sth-course
+delete
+find torb
