@@ -116,7 +116,7 @@ static const int messenger_tag = 6 ;
 static const int torrent_tag = 7;
 static const int network_manager_tag = torrent_tag;
 static const int draw_tag = torrent_tag;
-static const int tools_tag = 8;
+static const int tools_tag = 7;
 static const int steam_tag = 8;
 static const int crypto_tag = 8;
 #+END_SRC
