@@ -476,7 +476,7 @@ If there is more than one, they won't work right.
    :desc "org-roam" "r" #'org-roam
    :desc "org-roam-find-file" "f" #'org-roam-find-file
    :desc "org-roam-add-info-to-existing-note" "a" #'org-roam-capture
-   :desc "org-roam-add-link" "k" #'org-roam-insert ; use default template?
+   :desc "org-roam-add-link" "l" #'org-roam-insert ; use default template?
    ;:desc "org-roam-add-a-link(file)" "l" #'org-roam-insert-immediate ; don't use, because no loop feedback
    :desc "org-roam-show-graph" "g" #'org-roam-show-graph
    :desc "org-roam-switch-to-buffer" "v" #'org-roam-switch-to-buffer)
@@ -516,12 +516,12 @@ If there is more than one, they won't work right.
                                      ("k" "knowledge!") ;check the documentation
                                      ("km" "create a mechanism file for this note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:   \n%a    \n\n\n* Файл для того, чтобы:\n- \n\n* Рассуждения:\n- \n\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ("ks" "simple note" plain (function org-roam--capture-get-point)
                                       :file-name "~/.org/roam/k/${slug},%<%Y.%m.%d.%H>"
-                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* TODO:"
+                                      :head "#+title: ${title}\n#+roam_tags: %?    \n\ng:    \n\n\n* Файл для того, чтобы:\n- \n\n* Рассуждения:\n- \n\n\n* TODO:"
                                       :unnarrowed t)
 
                                      ;("ke" "explanation file" plain (function org-roam--capture-get-point)
