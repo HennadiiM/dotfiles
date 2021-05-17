@@ -278,6 +278,7 @@ alias sprdd='sudo pacman -Rdd'
 
 alias Syy='sudo pacman -Syy'
 alias Syu='sudo pacman -Syu'
+alias Sua='paru -Sua'
 
 alias msri='makepkg -sri'
 alias msi='makepkg -si'
@@ -328,10 +329,10 @@ alias nx='n $HOME/.xinitrc'
 alias es='~/.emacs.d/bin/doom sync'
 
 
-alias yvw='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
-alias yvw7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
-alias yvwm='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-alias yvwm7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
+alias yvw='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
+alias yvw7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
+alias yvww='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
+alias yvww7='mpv --ytdl-format="bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm]"'
 alias yaw='mpv --no-video --ytdl-format="bestaudio[ext=webm]"'
 alias yad='youtube-dl -f "bestaudio[ext=webm]"'
 alias yvd='youtube-dl -f "bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
@@ -359,12 +360,17 @@ alias fm='mount ~/soft/flash'
 alias fu='umount ~/soft/flash'
 
 # system76-power manadgement
-alias spro='sudo system76-power profile' 
-alias sbal='sudo system76-power profile balanced'
-alias sbat='sudo system76-power profile battery'
-alias sper='sudo system76-power profile performance'
+alias spro='system76-power profile' 
+alias sbal='system76-power profile balanced'
+alias sbat='system76-power profile battery'
+alias sper='system76-power profile performance'
 
-alias sgra='sudo system76-power graphics'
-alias sgrapow='sudo system76-power graphics power'
-alias sint='sudo system76-power graphics integrated'
-alias shyb='sudo system76-power graphics hybrid'
+alias sgra='system76-power graphics'
+alias sgrapow='system76-power graphics power'
+alias sint='system76-power graphics integrated'
+alias shyb='system76-power graphics hybrid'
+
+# rsync 
+alias rp='rsync -aurP --delete-after ~/.password-store ~/soft/flash/.all'
+alias ro='rsync -aurP --delete-after --exclude '.git' ~/.org ~/soft/flash/.all'
+alias rd='rsync -aurP --delete-after ~/Documents ~/soft/flash/.all'
