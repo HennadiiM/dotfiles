@@ -7,6 +7,7 @@ arc-gtk-theme
 audacity
 autoconf
 automake
+avidemux-qt
 awesome-terminal-fonts
 baobab
 base
@@ -62,6 +63,7 @@ intel-media-driver
 intel-ucode
 iucode-tool
 kcm-wacomtablet
+klavaro
 krita
 kvantum-qt5
 lib32-gamemode
@@ -110,7 +112,6 @@ mpv
 mtools
 mtpfs
 multibootusb
-mypaint
 neovim
 network-manager-applet
 networkmanager
@@ -118,6 +119,7 @@ nodejs
 notification-daemon
 npm
 ntfs-3g
+nvidia-dkms
 nvidia-prime
 nvidia-settings
 nvidia-utils
@@ -158,7 +160,9 @@ simple-mtpfs
 skypeforlinux-stable-bin
 sof-firmware
 sudo
+system76-acpi-dkms
 system76-dkms
+system76-io-dkms
 system76-power
 telegram-desktop
 texinfo
@@ -173,6 +177,7 @@ tracker
 ttf-font-awesome
 ueberzug
 ufw
+unoconv
 unrar
 unzip
 vi

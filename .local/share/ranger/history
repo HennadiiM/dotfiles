@@ -1,50 +1,50 @@
-shell root analysis.C
-shell root main.C
-shell mkdir lab-vivr
-search cs_co
-search Cs_
-rename cs137.py
-shell touch
-rename cs137_co60_30_2.py
-rename cs137_co60_70_1.py
-rename Cs137_Co60slab_40.py
-rename cs137_Co60slab_40.py
-rename cs137_co60_70_2.py
-rename pcs137_Co60slab_40.py
-rename pcs137_co60_70_1.py
-rename pcs137_co60_30_2.py
-rename pcs137.py
-rename pcs137_co60_70_2.py
-rename cs137_c
-rename Cs137_Co60_70_2.py
-rename pCs137_Co60_70_2.py
-rename pCs137_Co60_70_.py
-rename Cs137_Co60_70_2.txt
-rename cs137_co60slab_10.txt
-rename pcs137_co60slab_10.py
-rename j
-rename pCs137_Co60_15_2.py
-shell mkdir 2-part
-shell mkdir line
-open_with root anal
-shell root analisys_1.C
-shell mkdir 3
-rename 3-lab-Melanich.docx
-shell mkdir data
-rename cs-co.py
-rename -ba.py
-shell touch E-channel.txt
-shell touch line.py
-rename x.py
-shell mkdir error.txt
-rename шеремета-bsk.mp2
-rename theory
-shell 
-search believe
-search cant
-search org
-find tras
-search level
-shell mkdir sth-course
+rename 21
+rename 21-Красиков
+search kh
+search tit
+w
+rename [pirat.biz] 01. Что такое факт-карта
+rename Итоги занятия 1.pdf
+shell chmod -x Итоги\ занятия\ 1.pdf
+rename [pirat.biz] [Андрей Курпатов] Факт-карты (2020).zip
+rename [pirat.biz] LIVE для онлайн курса Факт карты.mp4
+rename [pirat.biz] 3.LIVE для онлайн курса Факт карты.mp4
+rename [pirat.biz] 5.LIVE  для онлайн курса Факт карты.mp4
+rename [pirat.biz] 8.LIVE для онлайн-курса Факт-карты.mp4
+
+bulkrename 
+find cac
+search mpv
+search mp
+search loc
+rename факт-карты Курпатов
+rename ipo-maraphone(useless?)
+shell mkdir sales
+rename philosophy-курпатов
+rename Продолжение обучения, скринет
+rename рост и падение рынка, как определять, как я докупаю компании
+rename Мультипликаторы подробнее, стопы, тейки и лимитные заявки – Telegraph.pdf
+rename Курс Start The History no1.pdf
+rename g_сразу_прописываи_любую_критику_и_разбираися_в_неи,2020.09.06.12.org
+rename ipo-maraphone(useless)
+rename ipo-maraphone-kondrashov(useless)
+rename Отчеты
+rename лр-1_Меланіч.pdf
+shell mkdir 4
+search burning
+rename lab_9_2.odt
+rename 6.jpg
+rename 5.jpg
+rename all.jpg
+shell krita 6.jpg
+shell krita 5.jpg
+search 
+search bib
+find 
+find tra
+search cma
+search someo
+rename мнение_другого_человека_обо_мне_не_может_приченить_мне_вреда,2020.08.31.13.org
+rename conserva-intro.kra
 delete
-find torb
+search anti
