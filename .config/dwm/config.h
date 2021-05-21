@@ -22,7 +22,7 @@
 //       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 //};
 
-static const unsigned int borderpx  = 0;        /* border pixel of Mod4Maskdows */
+static const unsigned int borderpx  = 1;        /* border pixel of Mod4Maskdows */
 static const unsigned int snap      = 0;//32;       /* snap pixel */
 static const unsigned int gappx     = 3;        /* gaps between windows */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -42,8 +42,6 @@ static const char dmenufont[]       = "Iosevka Curly Medium:size=13";
 //static const char col_gray1[]       = "#272C37";
 //static const char col_gray3[]       = "#EDEDF1";
 //static const char col_gray4[]       = "#272C37";
-
-
 
 // light mode
 static const char col_gray1[]       = "#EDEDF1";
@@ -151,7 +149,8 @@ static const char *screenshot_fancy[] = {"flameshot-save"};
 static Key keys[] = {
 	/* modifier                     key       	function        argument */
     // editor
-	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") },
+	//{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch-emacs") }, // wise-launch emacsclient -c -a 'emacs' (alterna)
+	{ MODKEY,                       	XK_e,	  	spawn,          SHCMD("wise-launch emacs") }, // wise-launch emacsclient -c -a 'emacs' (alterna)
 	{ MODKEY,                       	XK_e,	  	view,          {.ui = 1 << text_editor_tag}},
     // minder
 	{ MODKEY|ctrl|ShiftMask,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
