@@ -75,12 +75,12 @@ snow-beach-mountain.jpg
 
 
 
-fw laguna-beach-seascape-long-exposure-5k-2a.jpg &
+fw pink-clouds-mountains.jpg &
 picom &
 low-battery &
 xautolock -time 1 -corners 00-0 -locker slock & #top l, top r, bottom 
 flameshot & # in background
-
+#/usr/bin/emacs --daemon &
 redshift &
 
 slstatus &
