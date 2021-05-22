@@ -1,0 +1,8 @@
+# in /etc
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+__GL_THREADED_OPTIMIZATIONS=1	# Активация многопоточной обработки GL.
+__GL_MaxFramesAllowed=1		# Для фпс. (Увеличивает задержку)
+__GL_YIELD="USLEEP"		# Фикс разрывов и увеличение плавности.

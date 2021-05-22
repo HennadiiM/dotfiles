@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = xmonad
+
+[Action]
+Description = Recompiling xmonad... Place in /etc/pacman.d/hooks
+When = PostTransaction
+Exec = /usr/bin/sudo -u prodper /usr/bin/xmonad --recompile
