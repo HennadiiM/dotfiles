@@ -1,8 +1,3 @@
-rename ipo-maraphone-kondrashov(useless)
-rename Отчеты
-rename лр-1_Меланіч.pdf
-shell mkdir 4
-search burning
 rename lab_9_2.odt
 rename 6.jpg
 rename 5.jpg
@@ -11,7 +6,6 @@ shell krita 6.jpg
 shell krita 5.jpg
 search bib
 find 
-find tra
 search cma
 search someo
 rename мнение_другого_человека_обо_мне_не_может_приченить_мне_вреда,2020.08.31.13.org
@@ -41,10 +35,16 @@ shell krita
 shell convert ФВЕ,Меланіч-Г.А.,МКР2.jpg ФВЕ,Меланіч-Г.А.,МКР2.pdf
 search kins
 shell mkdir den
-search 
 search cmas
 find one
 search one
 rename nuclear-lab
 shell root form.C
 delete
+search 
+find tras
+search konse
+find kons
+find tra
+search konser
+find conse

@@ -145,6 +145,7 @@ pulsemixer
 python-pip
 python-pyalsa
 python-pynvim
+python-pywal
 qbittorrent
 qt5-connectivity
 qt5ct
