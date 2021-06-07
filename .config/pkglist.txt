@@ -44,6 +44,7 @@ flex
 gamemode
 gcc
 gdb
+gimp
 git
 gparted
 groff
@@ -59,6 +60,7 @@ hwinfo
 i7z
 imagemagick
 inkscape
+intel-compute-runtime
 intel-media-driver
 intel-ucode
 iucode-tool
@@ -160,6 +162,7 @@ shotgun
 simple-mtpfs
 skypeforlinux-stable-bin
 sof-firmware
+steam
 sudo
 system76-acpi-dkms
 system76-dkms
