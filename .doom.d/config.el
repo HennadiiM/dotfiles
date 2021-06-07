@@ -120,7 +120,7 @@
  '(org-level-6 ((t (:height 1.00))))
  '(org-level-7 ((t (:height 1.00))))
  '(org-level-8 ((t (:height 1.00)))) ;:foreground "#ECEFF4"
- '(org-document-title ((t (:inherit bold :height 1.25)))) ;:foreground "#ECEFF4"
+ '(org-document-title ((t (:inherit bold :height 1.00)))) ;:foreground "#ECEFF4"
  '(org-roam-link ((t (:foreground "#6b7994")))) ; :inherit italic
  '(org-roam-link-current ((t (:foreground "#a6aebf"))))
  '(org-drawer ((t (:foreground "#a6aebf"))))
@@ -358,6 +358,7 @@
           ; (file+headline "~/.org/3.efficiency/hierarchy-of-issues.org" "Diary") ;file and heading
           ; "* %^{Select option|one|two|three}\n SCHEDULED: %^t\n %i\n %?")
 
+(setq org-roam-buffer-width 0.5)
 (use-package! org-roam
 ;  :commands (org-roam-insert org-roam-find-file org-roam-switch-to-buffer org-roam)
   :hook
@@ -463,7 +464,7 @@
           org-roam-server-port 8080
           org-roam-server-export-inline-images t
           org-roam-server-authenticate nil
-          org-roam-server-network-poll nil ; if `nil', reload using Reload botton (useful when big network)
+          org-roam-server-network-poll t ; if `nil', reload using Reload botton (useful when big network)
           ;org-roam-server-network-arrows "middle"
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
