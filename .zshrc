@@ -347,8 +347,8 @@ alias yvdp7='youtube-dl -f "bestvideo[ext=webm][height<=?720]+bestaudio[ext=webm
 
 
 alias ex='exit'
-alias shu='shutdown now'
-alias reb='reboot'
+alias shutdownn='shutdown now'
+#alias reb='reboot'
 alias s='startx'
 
 # mount phone, flash drive
@@ -375,3 +375,4 @@ alias shyb='system76-power graphics hybrid'
 alias rp='rsync -aurP --delete-after ~/.password-store ~/soft/flash/.all'
 alias ro='rsync -aurP --delete-after --exclude '.git' ~/.org ~/soft/flash/.all'
 alias rd='rsync -aurP --delete-after ~/Documents ~/soft/flash/.all'
+alias ra='rp && ro && rd'
