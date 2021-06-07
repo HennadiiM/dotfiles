@@ -143,6 +143,7 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",            NULL,     	NULL,           1 << messenger_tag,		        0,     		0,           	0,-1 , 1},
 	{ "qBittorrent",                NULL,     	NULL,           1 << torrent_tag,		        0,     		0,           	0,    -1 , 0},
 	{ "krita",                NULL,     	NULL,           1 << draw_tag,		        0,     		0,           	0,    -1 , 0},
+	{ "Gimp",                NULL,     	NULL,           1 << draw_tag,		        0,     		0,           	0,    -1 , 0},
 	{ "Binance",                NULL,     	NULL,           1 << crypto_tag,		        0,     		0,           	0,    -1 , 0},
 	{ NULL,      		            NULL,     	"Event Tester", 0,     		        1,     		0,           	1,        -1 }, /* xev */
 	//{ "Gimp",    		NULL,  		NULL,   	0,    		1,   		0,        	0,        -1 },
@@ -267,6 +268,9 @@ static Key keys[] = {
    // draw program
 	{ MODKEY,                 XK_x,	  	spawn,          SHCMD("wise-launch krita") },
 	{ MODKEY,                 XK_x,	  	view,          	{.ui = 1 << draw_tag}},
+   // mind-draw program
+	{ MODKEY,                 XK_g,	  	spawn,          SHCMD("wise-launch gimp") },
+	{ MODKEY,                 XK_g,	  	view,          	{.ui = 1 << draw_tag}},
     // screen lock
 	//{ MODKEY,                       	XK_l,	  	view,          	{.ui = 1 << slock_tag}},
 	//{ MODKEY,                           XK_l,     	togglebar,      {0} },
