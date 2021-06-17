@@ -11,7 +11,7 @@
 
 # Set the alert tone for battery, or leave it as empty quotes.
 # .mp3 or .ogg audio file
-alarm="/home/prodper/pic-mus/music/cheerful-2.mp3"
+alarm="~/pic-mus/music/cheerful-2.mp3"
 
 # Notify when below this percentage
 warning_level=80
