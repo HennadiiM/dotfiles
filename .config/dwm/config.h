@@ -157,7 +157,7 @@ static Key keys[] = {
 	{ MODKEY|ctrl|ShiftMask,                       	XK_b,	  	spawn,          SHCMD("wise-launch com.github.phase1geo.minder") },
 	{ MODKEY|ctrl|ShiftMask,                       	XK_b,	  	view,          	{.ui = 1 << mindmap_tag}},
     // browser
-	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch brave") },
+	{ MODKEY,                       	XK_w,	  	spawn,          SHCMD("wise-launch-brave") },
 	{ MODKEY,                  	    XK_w,      	view,           {.ui = 1 << web_tag} },
     // brain-viewer
 	{ MODKEY,                       	XK_u,	  	spawn,          SHCMD("firefox") },
