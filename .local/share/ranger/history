@@ -1,37 +1,5 @@
-shell pdfunite * out.pdf
-shell pdfunite 1rkm.pdf 2.pdf 3.pdf 4.pdf 5.pdf 6.pdf 7.pdf 8.pdf 9.pdf 10.pdf 11.pdf 12.pdf 13.pdf 14.pdf 15.pdf out.pdf
-search RQ
-shell mkdir separated-lec
-rename rkm-full.pdf
-shell mkdir lec-video
-shell mkdir quant-maybe-do
-search con
-shell convert conserva-last.jpg conserva-last.pdf
-shell 
-shell convert kvazistat-nabluzh.jpg kvazistat-nabluzh.pdf
-search 15
-search 15.pdf
-search l
-search L14
-search 2
-rename 
-rename 15.pdf
-rename rkm-full-lec.pdf
-rename rkm-exapmles.pdf
-rename face.jpg
-rename some-randome-face.jpg
-rename -ДЗ__Релятивістська_інваріантність_рівняння_Дірака_.pdf
-rename -Теорія фотоефекту.pdf
-rename -ДЗ__Частинка_з_півцілим_спіном_у_постійному_магнітному_полі_Рівні.pdf
-rename +ДЗ__Частинка_з_півцілим_спіном_у_постійному_магнітному_полі_Рівні.pdf
-rename ркм_лекции_макс_коротко,2021.05.31.00.html
-rename ркм_лекции_макс_коротко,2021.05.31.00.pdf
-rename +ДЗ__Частинка_з_півцілим_спіном_у_змінному_магнітному_полі_.pdf
-rename Death.Race.2.2010.1080p.BrRip.x264.YIFY.mp4
 search nerav
 search sv
-search kin
-search 
 search svte
 rename +ДЗ__Атом_водню_в_теорії_Клейна_Гордона_Фока_.pdf
 rename -ДЗ__Матриці_Паулі,_Дірака_у_різних_представленнях_Оператор_спіну.pdf
@@ -46,5 +14,37 @@ shell chmod -x Итоги\ занятия\ 1.pdf
 find 
 rename brush-settings.png
 find dow
-delete
 open_with qq
+find stea
+rename Бліц-exam.pdf
+shell mkdir олейник
+rename о-крипте.mkv
+shell mkdir danya
+rename +квантова_теорія_дисперсії_світла.pdf
+rename +атом_воднюв_теорії_клейня_гордона.pdf
+rename +теорія_випромінення_і_поглинання.pdf
+rename +hw_4_semestr_2_kovalenko (3).pdf
+rename +змінне магнітне поле.pdf
+rename +постійне_магнітне_поле_півцілий_індекс.pdf
+rename +йонізація водню.pdf
+rename +матриці_паулі_дірака_у_різних_представленнях.pdf
+rename +Ширина спектральної лінії.pdf
+shell pdfunite quant-theory-dispers.pdf quant-theory-dispers-2.pdf quant-theory-dispers-svitla.pdf
+rename 1.png
+rename Ебаный блиц.odt
+search test
+search 
+shell mkdir exam
+search lectures
+find vim
+rename motion-better-summer
+rename заслуж-уважен-люб.kra
+rename work-заслуж-уважен-люб.kra
+rename общежитие-оплата-2021-06.pdf
+find cons
+search kin
+delete
+rename kinsv (3).pdf
+rename -kw_nucl_2.pdf
+shell 
+rename -scripts

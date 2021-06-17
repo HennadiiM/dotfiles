@@ -61,6 +61,7 @@ i7z
 imagemagick
 inkscape
 intel-compute-runtime
+intel-gpu-tools
 intel-media-driver
 intel-ucode
 iucode-tool
@@ -95,9 +96,13 @@ libreoffice-still-ru
 libtool
 libva-intel-driver
 libva-utils
+libva-vdpau-driver
+libvdpau-va-gl
 libxft-bgra
 linux-firmware
 linux-headers
+linux-zen
+linux-zen-headers
 lollypop
 lshw
 luit
@@ -121,7 +126,6 @@ nodejs
 notification-daemon
 npm
 ntfs-3g
-nvidia-dkms
 nvidia-prime
 nvidia-settings
 nvidia-utils
@@ -148,6 +152,7 @@ python-pip
 python-pyalsa
 python-pynvim
 python-pywal
+python2
 qbittorrent
 qt5-connectivity
 qt5ct
@@ -184,6 +189,7 @@ ufw
 unoconv
 unrar
 unzip
+vdpauinfo
 vi
 vlc
 vulkan-intel
