@@ -256,6 +256,7 @@ alias dulti='dot add ~/.config/nvim/UltiSnips/tex.snippets && dot commit -m'
 alias dzath='dot add ~/.config/zathura && dot commit -m'
 alias dranger='dot add ~/.config/ranger'
 alias dpicom='dot add ~/.config/picom.conf && dot commit -m'
+alias dmpv='dot add ~/.config/mpv && dot commit -m'
 
 alias dminor='dot add ~/.local/share/ranger && dot add ~/.local/share/zathura && ~/.config/qBittorrent && ~/.local/share/nvim -m "minor updates"'
 alias gorg='cd ~/.org/ && git add . && git commit -m "more knowledge" && git push'
@@ -330,6 +331,7 @@ alias nx='n $HOME/.xinitrc'
 alias es='~/.emacs.d/bin/doom sync'
 
 
+#alias mpv='mpv --vo=gpu --hwdec=auto' 
 alias yvw='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
 alias yvw7='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
 alias yvww='mpv --ytdl-format="bestvideo[ext=webm][height<=?1080]+bestaudio[ext=webm]"'
